@@ -17,6 +17,9 @@ export default function PeoplePage() {
       <Divider />
 
       <ExpandPeople text={"PhD Students"} people={peopleList.phds} />
+      <Divider />
+
+      <OtherExpandPerson text={"Master/Undergrad Students"} people={peopleList.masters_and_undergrad} />
 
     </div>
   );
@@ -78,4 +81,27 @@ export function PersonCard(person: Person) {
     </Card>
   )
 
+}
+
+function OtherExpandPerson(person: Person) {
+  return (
+      <li key={person.name}>
+        <OtherPersonCard {...person} />
+      </li>
+  )
+}
+
+export function OtherPersonCard(person: Person) {
+  return (
+    <Card className="py-4 border-none" shadow="none">
+      <CardBody>
+        <div className="grid grid-cols-4">
+          <div className="flex flex-col">
+              <p className="text-justify"><strong>{person.name}:</strong>  {person.position}</p>
+            </div>
+        </div>
+            
+      </CardBody>
+    </Card>
+  )
 }

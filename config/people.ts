@@ -5,6 +5,7 @@ export interface Person {
     intro: string;
     homepage: string;
     photo: string | null;
+    position: Partial<string>;
 }
 
 export const peopleList = {
@@ -69,5 +70,16 @@ export const peopleList = {
             homepage: "https://google.com",
             photo: "people/no_avt.png",
         },
+    ],
+    "masters_and_undergrad": [
+        {
+            name: "Chuhan Li",
+            position: "Master Student",
+        },
+        {
+            name: "Qifan Zhang",
+            position: "Master Student",
+        },
     ]
+
 }
