@@ -53,20 +53,18 @@ export function PersonCard(person: Person) {
       <CardBody>
         <div className="grid grid-cols-4">
           <div className="col-span-1">
-            <div className="relative aspect-[500/300]">
+            <div className="relative aspect-[500/300] ">
               <Image 
-                src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=6fqNXooAAAAJ&citpid=1"
+                src={person.photo}
                 alt={person.name}
                 height={2}
                 radius="none"
-                // layout="fill"
+                layout="fill"
                 className="h-full"
-                // classNames={{ wrapper: "w-full min-h-full"}}
+                classNames={{ wrapper: "w-full min-h-full"}}
               />
             </div>
-
           </div>
-
           <div className="col-span-3 flex">
             <div className="flex flex-col">
               <h2 className={subtitle()}>{person.name}</h2>
