@@ -1,10 +1,13 @@
 import { title, subtitle } from "@/components/primitives";
 import { Placeholder } from "@/components/placeholder";
 import { peopleList, PeopleList, Person } from "@/config/people";
-import { Image } from "@nextui-org/image";
 import { Link } from "@nextui-org/link";
 import { Divider } from "@nextui-org/divider";
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
+
+import Image from "next/image";
+// import { Image } from "@nextui-org/image";
+
 
 
 export default function PeoplePage() {
@@ -46,22 +49,20 @@ function ExpandPerson(person: Person) {
   )
 }
 
-
 export function PersonCard(person: Person) {
   return (
-    <Card className="py-4 border-none" shadow="none">
+    <Card className="py-4 border-none bg-transparent" shadow="none">
       <CardBody>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-4 gap-4">
           <div className="col-span-1">
-            <div className="relative aspect-[500/300]">
+            <div className="relative h-64">
               <Image 
-                src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=6fqNXooAAAAJ&citpid=1"
+                src={person.photo || "/favicon.ico"}
                 alt={person.name}
-                height={2}
-                radius="none"
-                // layout="fill"
-                className="h-full"
-                // classNames={{ wrapper: "w-full min-h-full"}}
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
               />
             </div>
 
@@ -70,8 +71,8 @@ export function PersonCard(person: Person) {
           <div className="col-span-3 flex">
             <div className="flex flex-col">
               <h2 className={subtitle()}>{person.name}</h2>
-              <p className="text-justify">{person.intro}</p>
-              <Link href={person.homepage}>Homepage</Link>
+              <p className="text-justify mb-4">{person.intro}</p>
+              {person.homepage && <Link href={person.homepage}>Homepage</Link>}
             </div>
           </div>
 
