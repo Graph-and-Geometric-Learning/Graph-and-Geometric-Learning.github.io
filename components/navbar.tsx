@@ -29,8 +29,8 @@ import {
 export const Navbar = () => {
   return (
     <NextUINavbar maxWidth="full" position="sticky">
-      <NavbarContent className="basis-1/3 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
+      <NavbarContent className="basis-1/4" justify="start">
+        <NavbarBrand as="li" className="gap-3 w-96">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
             <p className="font-bold text-inherit">Graph and Geometric Learning Lab</p>

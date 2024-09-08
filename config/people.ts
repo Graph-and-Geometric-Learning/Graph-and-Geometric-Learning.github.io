@@ -5,51 +5,81 @@ export interface Person {
     intro: string;
     homepage: string;
     photo: string | null;
+    position: Partial<string>;
 }
 
 export const peopleList = {
     director : [
         {
             name: "Rex Ying",
-            intro: "Nulla dolore velit anim cupidatat ex quis. Ut consequat occaecat sit officia aliquip irure. Laboris velit in fugiat magna reprehenderit incididunt sint. Pariatur nisi duis cupidatat sint. Consectetur proident aliquip anim tempor proident esse aliqua sunt velit et excepteur proident. Exercitation cillum eiusmod aliqua irure deserunt. Velit consectetur non id ea laborum eu ex Lorem mollit elit officia velit consectetur. Deserunt laborum sit excepteur aliqua eiusmod quis dolor ex consectetur ad. Cillum amet culpa exercitation enim. Proident voluptate velit pariatur labore. Sint sunt aliqua reprehenderit magna pariatur voluptate mollit cillum quis pariatur ipsum culpa velit anim. Nulla in sint voluptate laborum id dolore elit nisi nulla consequat excepteur ad voluptate ea. Dolore tempor dolore dolore consectetur ad labore mollit laboris cupidatat proident sit nisi magna. Enim exercitation in ad consectetur laborum ex in occaecat labore proident consectetur consectetur occaecat. Dolor consequat ullamco eu reprehenderit anim qui occaecat. Et ex sint Lorem aliqua quis quis commodo consequat pariatur ad. Est ad nisi quis tempor consequat.",
+            intro: "We are a group of data-driven machine learning enthusiasts who are primarily interested in building unified approaches to integrate and learn from complex real-world data. Beyond just text and images, we also build novel deep learning models that consider graphs, time series, geometry and tabular data, and use them to solve a wide array of applications in domains such as biology, medicine, chemistry, physics, neuroscience, social networks, science of science and supply chain.  Motivated by real-world use cases, we focus on efficient and scalable techniques that combine relational reasoning, multimodal learning, geometric deep learning and foundation models. Furthermore, we are actively doing research in trustworthy deep learning to allow safe, transparent and reliable deployment of such models.",
             homepage: "https://cs.stanford.edu/~rexy/",
-            photo: null
+            photo: "/people/rex.png",
         }
     ],
 
     postdocs : [
         {
             name: "Menglin Yang",
-            intro: "Elit voluptate consequat nostrud pariatur anim amet excepteur. Aliqua veniam commodo aliqua pariatur. Consequat magna ex ea qui elit. Laborum pariatur excepteur occaecat nostrud aute velit eu pariatur sint Lorem. Consequat laboris cillum esse enim pariatur magna exercitation sit dolor ex enim nulla aliqua mollit. Quis velit mollit Lorem eu tempor elit dolor laboris cillum ea ex. Reprehenderit velit do magna veniam ad laborum labore aute cillum pariatur nulla. Non do sit nisi adipisicing adipisicing labore elit sint sit.",
-            homepage: "https://google.com",
-            photo: null,
+            intro: "Geometry has always been palying an instrumental role driving scientific discovery. In the era of foundation models and LLM, geometry helps us understand the underlying structures in data, enabling better data perception, modeling, and reasoning. My current research focuses on hyperbolic machine learning methods and their applications, with a particular interest in large language models (LLM), Transformers, recommendation systems, and AI for Science (AI4SCI).",
+            homepage: "https://yangmenglin.site/",
+            photo: '/people/menglin.png',
         }
     ],
 
     phds: [
         {
-            name: "Tinglin Huang",
-            intro: "Ut minim fugiat occaecat eu culpa ad ullamco in id exercitation ut. Dolore sit esse tempor do officia ipsum. In minim id elit Lorem qui fugiat anim proident exercitation. Qui aliquip in culpa proident officia. Cupidatat aliqua in esse quis labore laborum incididunt dolor sint. Magna amet duis qui velit culpa. Deserunt in sit voluptate in. Est adipisicing officia veniam do. Ad amet aute velit reprehenderit dolor aliquip deserunt consectetur laborum non sit aliquip sint proident. Cillum duis magna proident anim dolor in. Mollit nisi do aute ea officia dolore. Lorem enim laboris et nisi nulla laborum.",
-            homepage: "https://google.com",
-            photo: null,
+            name: "Borui Wang",
+            intro: "<Bio>",
+            homepage: "https://borui-wang.github.io/",
+            photo: "/people/no_avt.png",
         },
         {
             name: "Tinglin Huang",
-            intro: "Ut minim fugiat occaecat eu culpa ad ullamco in id exercitation ut. Dolore sit esse tempor do officia ipsum. In minim id elit Lorem qui fugiat anim proident exercitation. Qui aliquip in culpa proident officia. Cupidatat aliqua in esse quis labore laborum incididunt dolor sint. Magna amet duis qui velit culpa. Deserunt in sit voluptate in. Est adipisicing officia veniam do. Ad amet aute velit reprehenderit dolor aliquip deserunt consectetur laborum non sit aliquip sint proident. Cillum duis magna proident anim dolor in. Mollit nisi do aute ea officia dolore. Lorem enim laboris et nisi nulla laborum.",
-            homepage: "https://google.com",
-            photo: null,
+            intro: "My research interests revolve around computational biology, including macromolecule modeling and geometric deep learning on 3D molecular structure.",
+            homepage: "https://huangtinglin.github.io/",
+            photo: "/people/tinglin.png",
         },
         {
-            name: "Tinglin Huang",
-            intro: "Ut minim fugiat occaecat eu culpa ad ullamco in id exercitation ut. Dolore sit esse tempor do officia ipsum. In minim id elit Lorem qui fugiat anim proident exercitation. Qui aliquip in culpa proident officia. Cupidatat aliqua in esse quis labore laborum incididunt dolor sint. Magna amet duis qui velit culpa. Deserunt in sit voluptate in. Est adipisicing officia veniam do. Ad amet aute velit reprehenderit dolor aliquip deserunt consectetur laborum non sit aliquip sint proident. Cillum duis magna proident anim dolor in. Mollit nisi do aute ea officia dolore. Lorem enim laboris et nisi nulla laborum.",
-            homepage: "https://google.com",
-            photo: null,
+            name: "Jialin Chen",
+            intro: "My research focuses on advancing multimodal learning techniques to seamlessly integrate heterogeneous data modalities, with a focus on leveraging linguistic information to enhance graph representation learning. I also explore cutting-edge approaches to develop robust graph foundation models and scalable pretraining strategies, pushing the boundaries of AI’s ability to reason over complex and structured data. Alongside these directions, I’m also committed to advancing Trustworthy AI that aims to address the explainability and reliability concerns associated with large models (e.g., LLMs) and real-world applications.",
+            homepage: "https://cather-chen.github.io/",
+            photo: "/people/jialin.jpg",
         },
         {
-            name: "Tinglin Huang",
-            intro: "Ut minim fugiat occaecat eu culpa ad ullamco in id exercitation ut. Dolore sit esse tempor do officia ipsum. In minim id elit Lorem qui fugiat anim proident exercitation. Qui aliquip in culpa proident officia. Cupidatat aliqua in esse quis labore laborum incididunt dolor sint. Magna amet duis qui velit culpa. Deserunt in sit voluptate in. Est adipisicing officia veniam do. Ad amet aute velit reprehenderit dolor aliquip deserunt consectetur laborum non sit aliquip sint proident. Cillum duis magna proident anim dolor in. Mollit nisi do aute ea officia dolore. Lorem enim laboris et nisi nulla laborum.",
+            name: "Weikang Kiu",
+            intro: "Weikang Qiu is a third-year computer science Ph.D. student at Yale University, advised by Prof. Rex Ying. He previously obtained his B.S. degree in Zhejiang University, advised by Prof. Jake Zhao. He is interested in the intersection of machine learning and neuroscience. The ultimate goal of his research is to transform humans - or at least himself - to AIs. This represents a pathway for humanity to transcend its biological limitations (e.g. immortality) and is the only way for modern humans to evolve. In addition to his academic pursuits, Weikang actively contributes to several open-source projects, such as Blender.",
             homepage: "https://google.com",
-            photo: null,
-        }
+            photo: "/people/weikang.png",
+        },
+        {
+            name: "Ngoc Bui",
+            intro: "My research interests are machine learning and deep learning with a focus on their responsible use in real-world systems where humans and high measurement uncertainties exist in the loop. Recently, He has been focusing on multimodal large language models and their emerging capabilities in real-world applications.",
+            homepage: "https://ngocbh.github.io",
+            photo: "/people/ngoc.png",
+        },
+        {
+            name: "Hiren Madhu",
+            intro: "Ever wonder what secrets lurk within the messy data most of the world holds? Graphs offer a way to untangle this mess, but the key lies in extracting knowledge from this organized chaos. That is where I come in. I'm particularly interested in answering how we can use machine learning methods with limited labeled data to learn representations of these geometric structures (i.e., graphs, simplicial complexes, etc.) and draw insights from them. Imagine unlocking valuable insights without needing mountains of hand-labeled data – the potential excites me! I want to push the boundaries of machine learning with limited labeled data. You might find me playing video games when I'm not tackling these data tangles. Assassin's Creed is my favorite game series.",
+            homepage: "https://hirenmadhu.github.io/",
+            photo: "/people/hiren.jpeg",
+        },
+        {
+            name: "Yangtian Zhang",
+            intro: "<Bio>",
+            homepage: "https://google.com",
+            photo: "/people/no_avt.png",
+        },
+    ],
+    "masters_and_undergrad": [
+        {
+            name: "Chuhan Li",
+            position: "Master Student",
+        },
+        {
+            name: "Qifan Zhang",
+            position: "Master Student",
+        },
     ]
+
 }
