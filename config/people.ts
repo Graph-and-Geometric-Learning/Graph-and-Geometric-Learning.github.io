@@ -66,9 +66,9 @@ export const peopleList = {
         },
         {
             name: "Yangtian Zhang",
-            intro: "<Bio>",
-            homepage: "https://google.com",
-            photo: "people/no_avt.png",
+            intro: "My research interests are focused on Generative Models, Graph Algorithms, and, more recently, Multi-Modal Foundation Models. Currently, I am exploring innovative solutions for real-world applications and scientific challenges.",
+            homepage: "https://zytzrh.github.io/",
+            photo: "people/yangtian.png",
         },
     ],
     "masters_and_undergrad": [
