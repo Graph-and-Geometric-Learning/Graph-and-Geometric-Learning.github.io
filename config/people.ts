@@ -28,12 +28,12 @@ export const peopleList = {
     ],
 
     phds: [
-        {
-            name: "Borui Wang",
-            intro: "<Bio>",
-            homepage: "https://borui-wang.github.io/",
-            photo: "/people/no_avt.png",
-        },
+        // {
+        //     name: "Borui Wang",
+        //     intro: "<Bio>",
+        //     homepage: "https://borui-wang.github.io/",
+        //     photo: "/people/no_avt.png",
+        // },
         {
             name: "Tinglin Huang",
             intro: "My research interests revolve around computational biology, including macromolecule modeling and geometric deep learning on 3D molecular structure.",
@@ -68,7 +68,7 @@ export const peopleList = {
             name: "Yangtian Zhang",
             intro: "My research interests are focused on Generative Models, Graph Algorithms, and, more recently, Multi-Modal Foundation Models. Currently, I am exploring innovative solutions for real-world applications and scientific challenges.",
             homepage: "https://zytzrh.github.io/",
-            photo: "people/yangtian.png",
+            photo: "/people/yangtian.png",
         },
     ],
     "masters_and_undergrad": [

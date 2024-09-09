@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
 import { Code } from "@nextui-org/code";
@@ -22,6 +24,9 @@ function ResearchDirection({ title, image } : {
     <Card className="col-span-1 aspect-square py-4" 
     isFooterBlurred
     isPressable
+    onClick={() => {
+        window.location.href = `/publications?tag=${title}`;
+      }}
     >
       {/* <CardBody className="relative"> */}
         <Image
@@ -82,7 +87,7 @@ export default function Home() {
     </div>
     <div className="grid grid-cols-4 gap-4 p-8">
     <ResearchDirection title="Graph Representation Learning" image="/graph_learning.webp" />
-    <ResearchDirection title="Multi-Modal Foundation Model" image="/graph_learning.webp" />
+    <ResearchDirection title="Multi-Modal Foundation Model" image="/multimodal.webp" />
     <ResearchDirection title="Trustworthy AI" image="/trustworthy.webp" />
     <ResearchDirection title="Application" image="/application.webp" />
     </div>

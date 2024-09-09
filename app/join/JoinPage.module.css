@@ -1,0 +1,11 @@
+.container ul {
+    @apply list-disc list-inside space-y-1
+  }
+
+.container h4 {
+  @apply text-2xl mt-4 mb-2
+}
+
+.container h3 {
+  @apply text-3xl font-bold mt-8 mb-4
+}

@@ -49,14 +49,17 @@ const courses: Course[] = [
     "intro": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia odit culpa doloremque enim nostrum laudantium, dolor rem velit. Atque, molestias corporis porro ipsa veritatis maxime earum. Cupiditate commodi pariatur cum.",
     "happens": [
       {
+        "year": "2024 Fall",
+        "link": "https://graph-and-geometric-learning.github.io/cpsc483-583-website-24fall/",
+      },
+      {
         "year": "2023 Fall",
         "link": "https://graph-and-geometric-learning.github.io/cpsc483-583-website-23fall/",
       },
       {
         "year": "2022 Fall",
         "link": "https://graph-and-geometric-learning.github.io/CPSC483-website/"
-      }
-
+      },
     ]
   }
 ]
