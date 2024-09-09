@@ -10,8 +10,9 @@ export default function PublicationsPage() {
         {publications.map((publication) => (
           <li key={publication.title}>
             [{publication.venue}] {publication.title}. {publication.authors}. 
-
-            <ApplicationTag />
+            <ApplicationTag tag={publication.tag} />
+            <p>{publication.abstract}</p>
+            <p>{publication.impact}</p>
           </li>
         ))}
       </ul>
