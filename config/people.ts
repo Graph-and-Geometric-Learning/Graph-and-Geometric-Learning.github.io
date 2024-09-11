@@ -30,13 +30,13 @@ export const peopleList = {
     phds: [
         {
             name: "Borui Wang",
-            intro: "<Bio>",
+            intro: "I am a final-year CS Ph.D. Student working on large language models, natural language processing and machine learning. My main research directions are in large language models, LLM-powered reinforcement learning, knowledge and logical reasoning, neuro-symbolic reasoning, graph neural networks, multimodal language grounding, and applications of LLMs and deep learning in quantitative finance and financial technology.",
             homepage: "https://borui-wang.github.io/",
-            photo: "people/no_avt.png",
+            photo: "people/borui.jpg",
         },
         {
             name: "Tinglin Huang",
-            intro: "My research interests revolve around computational biology, including macromolecule modeling and geometric deep learning on 3D molecular structure.",
+            intro: "I am a third-year Ph.D. student at Yale University, advised by Prof. Rex Ying. Previously, I worked with Prof. Jie Tang from Tsinghua University, and Prof. Tat-Seng Chua from National University of Singapore. My research interests revolve around computational biology, including macromolecule modeling and geometric deep learning on 3D molecular structure.",
             homepage: "https://huangtinglin.github.io/",
             photo: "people/tinglin.png",
         },
@@ -54,7 +54,7 @@ export const peopleList = {
         },
         {
             name: "Ngoc Bui",
-            intro: "My research interests are machine learning and deep learning with a focus on their responsible use in real-world systems where humans and high measurement uncertainties exist in the loop. Recently, He has been focusing on multimodal large language models and their emerging capabilities in real-world applications.",
+            intro: "My research interests are machine learning and deep learning with a focus on their responsible use in real-world systems where humans and high measurement uncertainties exist in the loop. Recently, I am focusing on multimodal large language models and their emerging capabilities in real-world applications.",
             homepage: "https://ngocbh.github.io",
             photo: "people/ngoc.png",
         },
