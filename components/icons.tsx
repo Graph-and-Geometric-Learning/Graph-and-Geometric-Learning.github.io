@@ -1,15 +1,15 @@
 import * as React from "react";
+import Image from "next/image";
 
 import { IconSvgProps } from "@/types";
-import Image from 'next/image'
 
 export const Logo = () => (
   <Image
+    alt="Graph and Geometric Learning Lab"
+    height={50}
     src="/favicon.ico"
     width={50}
-    height={50}
-    alt="Graph and Geometric Learning Lab"
-    />
+  />
 );
 
 export const DiscordIcon: React.FC<IconSvgProps> = ({

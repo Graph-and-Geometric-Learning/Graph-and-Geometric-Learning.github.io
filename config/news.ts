@@ -1,4 +1,4 @@
 export interface News {
-    content: any;
-    date: string | undefined;
+  content: any;
+  date: string | undefined;
 }

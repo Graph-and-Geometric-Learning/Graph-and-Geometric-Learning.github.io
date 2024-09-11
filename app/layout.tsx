@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import Image from "next/image";
 
 import { Providers } from "./providers";
 
@@ -47,17 +47,40 @@ export default function RootLayout({
             <main className="container mx-auto max-w-6xl pt-4 px-6 flex-grow">
               {children}
             </main>
-            {/* <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
-              </Link>
-            </footer> */}
+            <footer className="w-full flex flex-row items-center justify-center pb-3 pt-12 text-center gap-6">
+              <div>
+                <p className="text-gray-600">Sponsored by</p>
+              </div>
+              <div className="flex items-end gap-6">
+                <div>
+                  <Image
+                    alt="nsf"
+                    height={60}
+                    src="/sponsors/nsf.png"
+                    width={60}
+                  />
+                  NSF
+                </div>
+                <div>
+                  <Image
+                    alt="snap"
+                    height={60}
+                    src="/sponsors/snap.png"
+                    width={60}
+                  />
+                  Snap Inc
+                </div>
+                <div>
+                  <Image
+                    alt="aws"
+                    height={60}
+                    src="/sponsors/aws.png"
+                    width={60}
+                  />
+                  AWS
+                </div>
+              </div>
+            </footer>
           </div>
         </Providers>
       </body>

@@ -23,7 +23,7 @@ export const siteConfig = {
     {
       label: "Join the Lab",
       href: "/join",
-    }
+    },
   ],
   links: {
     github: "https://github.com/Graph-and-Geometric-Learning",
