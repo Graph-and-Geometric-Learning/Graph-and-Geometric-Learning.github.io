@@ -44,7 +44,7 @@ const courses: Course[] = [
   {
     id: "CPSC 483/583",
     intro:
-      "Graph structure emerges in many important domain applications, including but not limited to natural sciences, social networks, language, vision and database. This course offers a guide to model real-world data in the form of graphs and apply deep learning algorithms to perform predictive and generative AI tasks. The first part of the course is an introduction to representation learning for graphs, and covers thoery and algorithms in the field, including distributed node embeddings, graph neural networks, deep graph generative models, knowledge graphs and non-Euclidean embeddings. The second part touches upon topics of recent interests including graph Transformers and graph learning explainability. The second part of the course also focuses on the emerging field of graph foundation models. Additionally, the course covers important applications of graph machine learning. We learn ways to model data as graphs and apply graph learning techniques to problems in domains including online recommender systems, knowledge graphs, biological networks, molecular structure and physical simulations. The course covers many deep techniques (graph neural networks, graph deep generative models) catered to graph structures. The course assumes background in basic deep learning and PyTorch programming. We will provide a brief basic deep learning tutorial in this course.",
+      "This course provides an introduction to machine learning algorithms designed for graph-structured data, such as social networks, knowledge graphs, and molecular structures. The course covers key graph representation learning techniques, such as node embeddings, graph neural networks, deep generative models for graphs, and non-Euclidean embeddings and other practical topics like AutoML and explainability in graph learning. We also explore applications of graph machine learning, showing how to model and apply graph learning techniques to areas such as online recommender systems, knowledge graphs, biological networks, and physical simulations.",
     happens: [
       {
         year: "2024 Fall",
@@ -57,6 +57,17 @@ const courses: Course[] = [
       {
         year: "2022 Fall",
         link: "https://graph-and-geometric-learning.github.io/CPSC483-website/",
+      },
+    ],
+  },
+  {
+    id: "CPSC 471/571",
+    intro:
+      "This course provides an in-depth exploration of the principles and practices required to build reliable, fair, and secure machine learning systems. As machine learning models become more embedded in critical applications, such as healthcare, finance, and autonomous systems, ensuring their trustworthiness is becoming increasingly essential. The course covers key topics including robustness against adversarial attacks, fairness in algorithmic decision-making, model interpretability, and privacy-preserving techniques such as differential privacy, federated learning and machine unlearning.",
+    happens: [
+      {
+        year: "2024 Spring",
+        link: "https://graph-and-geometric-learning.github.io/cpsc471-571-website-24spring",
       },
     ],
   },

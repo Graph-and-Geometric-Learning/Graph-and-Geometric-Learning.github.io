@@ -17,16 +17,6 @@ export interface Publication {
 
 export const publications = [
   {
-    title: "HEART: Learning Better Representation of EHR Data with a Heterogeneous Relation-Aware Transformer",
-    authors: "T Huang, SA Rizvi, R Krishna Thakur, V Socrates, M Gupta, D Dijk, RA Taylor, R Ying",
-    venue: "Preprint",
-    code: null,
-    paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4904741",
-    abstract: "We propose HEART, a pretrained language model for structured EHR data. HEART seamlessly encodes heterogeneous medical entity information through a novel relation embedding module and a multi-level attention scheme.",
-    impact: "This novel pretrained framework, featuring a new architecture and dedicated objectives, can inspire future research on foundation models in EHR.",
-    tags: [Tag.Applications],
-  },
-  {
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
     authors: "Tinglin Huang, Zhenqiao Song, Rex Ying, Wengong Jin",
     venue: "MLSB Workshop, NeurIPS, 2023",
@@ -59,6 +49,16 @@ export const publications = [
       "Traditional methods only focus on pariwise connectivity of brain regions. We proposed a new framework based on information bottleneck that learns high-order relationships of brain regions.",
     impact:
       "The learned high-order relationships achieve SOTA performance on predictive tasks and are demonstrated significantly more effective than traditional pairwise methods.",
+  },
+  {
+    title: "HEART: Learning Better Representation of EHR Data with a Heterogeneous Relation-Aware Transformer",
+    authors: "T Huang, SA Rizvi, R Krishna Thakur, V Socrates, M Gupta, D Dijk, RA Taylor, R Ying",
+    venue: "Preprint",
+    code: null,
+    paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4904741",
+    abstract: "We propose HEART, a pretrained language model for structured EHR data. HEART seamlessly encodes heterogeneous medical entity information through a novel relation embedding module and a multi-level attention scheme.",
+    impact: "This novel pretrained framework, featuring a new architecture and dedicated objectives, can inspire future research on foundation models in EHR.",
+    tags: [Tag.Applications],
   },
   {
     title: "Online Detection of Anomalies in Temporal Knowledge Graphs with Interpretability",

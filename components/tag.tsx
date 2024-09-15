@@ -22,25 +22,25 @@ function PublicationTag({ tag }: { tag: Tag }) {
   switch (tag) {
     case Tag.Applications:
       name = "Applications";
-      color = "#ffe119";
+      color = "primary";
       break;
     case Tag.TrustworthyAI:
       name = "Trustworthy AI";
-      color = "#3cb44b";
+      color = "secondary";
       break;
     case Tag.MultiModalFoundationModel:
       name = "Multi-Modal Foundation Model";
-      color = "#4363d8";
+      color = "success";
       break;
     case Tag.GraphRepresentationLearning:
       name = "Graph Representation Learning";
-      color = "#f58231";
+      color = "warning";
       break;
   }
 
   return (
     <>
-      <Chip style={{ backgroundColor: color }}>{name}</Chip>
+      <Chip color={ color }>{name}</Chip>
     </>
   );
 }
