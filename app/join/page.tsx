@@ -5,7 +5,7 @@ export default function JoinPage() {
     <div className={styles.container}>
       For perspective students, I appreciate reading the following before
       reaching out to me through email. To make it easier for me to identify the
-      applications, use "PhD (or Postdoc, Visiting Student) Application" as your
+      applications, use "PhD (or Postdoc, Visiting Student) Applications" as your
       title. Due to the abundance of application emails, I might not be able to
       always respond to the email. But if you believe that you possess the
       credentials and quality mentioned below, feel free to remind me if you

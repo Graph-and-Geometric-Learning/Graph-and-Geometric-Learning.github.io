@@ -5,23 +5,23 @@ import React from "react";
 
 import { Tag } from "@/config/publications";
 
-function ApplicationTags({ tags }: { tags: Tag[] }) {
+function PublicationTags({ tags }: { tags: Tag[] }) {
   return (
     <>
       {tags.map((tag) => (
-        <ApplicationTag key={tag} tag={tag} />
+        <PublicationTag key={tag} tag={tag} />
       ))}
     </>
   );
 }
 
-function ApplicationTag({ tag }: { tag: Tag }) {
+function PublicationTag({ tag }: { tag: Tag }) {
   let name;
   let color;
 
   switch (tag) {
-    case Tag.Application:
-      name = "Application";
+    case Tag.Applications:
+      name = "Applications";
       color = "#ffe119";
       break;
     case Tag.TrustworthyAI:
@@ -45,4 +45,4 @@ function ApplicationTag({ tag }: { tag: Tag }) {
   );
 }
 
-export { ApplicationTags };
+export { PublicationTags };

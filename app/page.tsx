@@ -130,7 +130,7 @@ export default function Home() {
           title="Multi-Modal Foundation Model"
         />
         <ResearchDirection image="/trustworthy.webp" title="Trustworthy AI" />
-        <ResearchDirection image="/application.webp" title="Application" />
+        <ResearchDirection image="/application.webp" title="Applications" />
       </div>
     </>
   );

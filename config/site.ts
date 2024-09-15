@@ -28,5 +28,6 @@ export const siteConfig = {
   links: {
     github: "https://github.com/Graph-and-Geometric-Learning",
     twitter: "https://twitter.com/getnextui",
+    linkedin: "https://www.linkedin.com/in/rex-ying-92770148/",
   },
 };

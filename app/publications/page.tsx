@@ -4,7 +4,7 @@ import { Link } from "@nextui-org/link";
 import { useSearchParams } from "next/navigation";
 
 import { publications } from "@/config/publications";
-import { ApplicationTags } from "@/components/tag";
+import { PublicationTags } from "@/components/tag";
 
 export default function PublicationsPage() {
   const searchParams = useSearchParams();
@@ -26,7 +26,7 @@ export default function PublicationsPage() {
             <div className="my-4">
               <div className="flex flex-row gap-4">
                 <div>
-                  <ApplicationTags tags={publication.tags} />
+                  <PublicationTags tags={publication.tags} />
                 </div>
                 <div>
                   <h2 className="font-bold text-xl">{publication.title}</h2>
