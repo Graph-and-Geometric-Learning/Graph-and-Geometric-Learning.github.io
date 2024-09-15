@@ -40,7 +40,7 @@ function PublicationTag({ tag }: { tag: Tag }) {
 
   return (
     <>
-      <Chip color={ color }>{name}</Chip>
+      <Chip color={ color as any }>{name}</Chip>
     </>
   );
 }

@@ -6,6 +6,14 @@ import { useSearchParams } from "next/navigation";
 import { publications } from "@/config/publications";
 import { PublicationTags } from "@/components/tag";
 
+function Links({ paper, code, page }: { paper: string, code: string | null; page: string | null }) {
+  if (code === null) {
+    return <Link href={paper}>paper</Link>;
+  } else {
+    return <> <Link href={paper}>paper</Link> / <Link href={code}>code</Link> </>
+  }
+}
+
 export default function PublicationsPage() {
   const searchParams = useSearchParams();
 
@@ -34,8 +42,7 @@ export default function PublicationsPage() {
               </div>
               <div className="flex flex-col mx-4 my-2">
                 <p className="pb-1 text-sm font-bold">
-                  {publication.venue}, <Link href={publication.code}>code</Link>{" "}
-                  / <Link href={publication.paper}>paper</Link>
+                  {publication.venue}, <Links paper={publication.paper} code={publication.code} page={publication.page} />
                 </p>
                 <p className="pb-1 text-sm">{publication.authors}</p>
                 <p className="pb-1">{publication.abstract}</p>
