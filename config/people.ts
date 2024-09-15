@@ -29,12 +29,12 @@ export const peopleList = {
   ],
 
   phds: [
-    // {
-    //     name: "Borui Wang",
-    //     intro: "<Bio>",
-    //     homepage: "https://borui-wang.github.io/",
-    //     photo: "/people/no_avt.png",
-    // },
+    {
+      name: "Borui Wang",
+      intro: "I am a final-year CS Ph.D. Student working on large language models, natural language processing and machine learning. My main research directions are in large language models, LLM-powered reinforcement learning, knowledge and logical reasoning, neuro-symbolic reasoning, graph neural networks, multimodal language grounding, and applications of LLMs and deep learning in quantitative finance and financial technology.",
+      homepage: "https://borui-wang.github.io/",
+      photo: "people/borui.jpg",
+    },
     {
       name: "Tinglin Huang",
       intro:
