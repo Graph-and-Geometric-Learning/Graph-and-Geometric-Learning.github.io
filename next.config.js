@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/lab-website",
+    basePath: "/",
     images: {
         formats: ["image/avif", "image/webp"],
         remotePatterns: [
