@@ -41,6 +41,9 @@ export default function Home() {
         <h1 className={subtitle()}>🔥 News</h1>
         <ScrollShadow className="w-full h-[180px] px-8">
           <ul>
+	  <li>
+	  <p>The lab has received an <Link href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2403317&HistoricalAwards=false">NSF core program award</Link> on building foundation models for scientific discovery</p>
+	  </li>
             <li>
               Rex gave a tutorial on Machine Learning in Network Science at{" "}
               <Link href="https://netsci2024.com/en/schools">NetSci 2024</Link>
