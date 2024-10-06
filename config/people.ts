@@ -59,7 +59,7 @@ export const peopleList = {
     {
       name: "Ngoc Bui",
       intro:
-        "My research interests are machine learning and deep learning with a focus on their responsible use in real-world systems where humans and high measurement uncertainties exist in the loop. Recently, He has been focusing on multimodal large language models and their emerging capabilities in real-world applications.",
+        "My research interests are machine learning and deep learning with a focus on their responsible use in real-world systems where humans and high measurement uncertainties exist in the loop. Recently, I'm focusing on multimodal large language models and their emerging capabilities in real-world applications.",
       homepage: "https://ngocbh.github.io",
       photo: "/people/ngoc.png",
     },
