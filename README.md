@@ -1,53 +1,28 @@
-# Next.js & NextUI Template
+# Update Guide
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+Lab members can update their bios, publications, and news on the website. The update is made through a pull request submitted by the member and approved by the website admin. Make sure your updates are accurate and properly formatted.
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+## Publications
+Publications are stored in `config/publications.ts`. Each publication item is a json-like dictionary, with the following fields
 
-## Technologies Used
-
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-
-## How to Use
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
+```typescript
+export interface Publication {
+  title: string;
+  authors: string;
+  venue: string;
+  page: string | null;
+  paper: string;
+  code: string | null;
+  tags: Tag[];
+}
 ```
+Find examples in the same file.
 
-### Install dependencies
+## Bio
+The information is stored in `config/people.ts`. Update the content of yours accordingly. If you want to update your headshot, upload your photo to `/public/people`. Find examples in the same file.
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+## News
+News should be inserted here
+https://github.com/Graph-and-Geometric-Learning/Graph-and-Geometric-Learning.github.io/blob/d294a5bb559925e109aa7117faa575f9543da622/app/page.tsx#L44-L46
 
-```bash
-npm install
-```
-
-### Run the development server
-
-```bash
-npm run dev
-```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@nextui-org/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+The news item should be wrapped by `<li>...</li>`. Wrap the text with `<Link href="link.com">...</Link>` if you want to add a link to your text. Check examples in the same file for reference.
