@@ -1,6 +1,7 @@
 # Update Guide
 
 Lab members can update their bios, publications, and news on the website. The update is made through a pull request submitted by the member and approved by the website admin. Make sure your updates are accurate and properly formatted.
+**NOTE**: The pull request should be made in terms of the `master` branch.
 
 ## Publications
 Publications are stored in `config/publications.ts`. Each publication item is a json-like dictionary, with the following fields
