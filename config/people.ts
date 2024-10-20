@@ -24,7 +24,7 @@ export const peopleList = {
       intro:
         "Geometry has always been palying an instrumental role driving scientific discovery. In the era of foundation models and LLM, geometry helps us understand the underlying structures in data, enabling better data perception, modeling, and reasoning. My current research focuses on hyperbolic machine learning methods and their applications, with a particular interest in large language models (LLM), Transformers, recommendation systems, and AI for Science (AI4SCI).",
       homepage: "https://yangmenglin.site/",
-      photo: "/people/menglin.png",
+      photo: "/people/menglin.jpg",
     },
   ],
 
