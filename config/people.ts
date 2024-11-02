@@ -97,5 +97,11 @@ export const peopleList = {
       homepage: null,
       photo: null,
     },
+    {
+      name: "Rishabh Anand",
+      intro: null,
+      homepage: https://rish-16.github.io/,
+      photo: null,
+    },
   ],
 };
