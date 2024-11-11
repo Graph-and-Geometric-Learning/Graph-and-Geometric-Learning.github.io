@@ -14,10 +14,10 @@ function Links({ paper, code, page }: { paper: string, code: string | null; page
   if (code !== null) {
     links.push(<Link href={code}>code</Link>)
   }
-  if (page !== null) {
-    let page_link = "projects/" + page;
-    links.push(<Link href={page_link}>page</Link>)
-  } 
+  // if (page !== null) {
+  //   let page_link = "projects/" + page;
+  //   links.push(<Link href={page_link}>page</Link>)
+  // } 
   return <>{links.reduce((prev, curr) => <>{prev} / {curr}</>)}</>
 }
 
@@ -44,7 +44,13 @@ export default function PublicationsPage() {
                   <PublicationTags tags={publication.tags} />
                 </div>
                 <div>
-                  <h2 className="font-bold text-xl">{publication.title}</h2>
+                    {publication.page ? (
+                      <Link href={`projects/${publication.page}`}>
+                        <h2 className="font-bold text-xl">{publication.title}</h2>
+                      </Link>
+                    ) : (
+                      <h2 className="font-bold text-xl">{publication.title}</h2>
+                    )}
                 </div>
               </div>
               <div className="flex flex-col mx-4 my-2">
