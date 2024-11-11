@@ -1,12 +1,12 @@
 import createMDX from '@next/mdx'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
-import rehypeMdxImportMedia from 'rehype-mdx-import-media'
+import remarkMdxImages from 'remark-mdx-images'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
     images: {
+        unoptimized: true,
         formats: ["image/avif", "image/webp"],
         remotePatterns: [
             {
@@ -24,7 +24,7 @@ const nextConfig = {
 const withMDX = createMDX({
     // Add markdown plugins here, as desired
     options: {
-        remarkPlugins: [remarkMath, rehypeMdxImportMedia],
+        remarkPlugins: [remarkMath, remarkMdxImages],
         rehypePlugins: [rehypeKatex],
     },
 })
