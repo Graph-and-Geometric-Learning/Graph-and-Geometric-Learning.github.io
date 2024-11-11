@@ -6,8 +6,8 @@ export default function ProjectsLayout({
     children: React.ReactNode;
 }) {
     return (
-        <section className="flex items-start justify-center gap-4">
-            <div className="inline-block max-w-full justify-items-center text-left justify-center space-y-4">
+        <section className="flex items-start gap-4">
+            <div className="inline-block max-w-full text-left justify-center space-y-4">
                 {children}
             </div>
         </section>

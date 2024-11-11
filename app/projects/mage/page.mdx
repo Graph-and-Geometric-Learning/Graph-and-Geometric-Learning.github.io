@@ -1,5 +1,5 @@
 import AuthorList from '@/components/author_list'
-import { GithubBadge, ArxivBadge } from '@/components/badges'
+import { BadgeContainer, GithubBadge, ArxivBadge } from '@/components/badges'
 
 # Explaining Graph Neural Networks via Structure-aware Interaction Index
 
@@ -12,8 +12,10 @@ import { GithubBadge, ArxivBadge } from '@/components/badges'
   ]}
 />
 
+<BadgeContainer>
 <GithubBadge link="https://github.com/ngocbh/MAGE" />
 <ArxivBadge link="https://arxiv.org/abs/2405.14352" />
+</BadgeContainer>
 
 In this project, we aim to explore graph-theoretic-based attribution scores for explaining graph neural networks (GNNs). Prior work (GStarX, SubgraphX, SAME) has successfully applied solutions such as Shapley values and HN values to explain GNNs. However, several limitations remain:
 

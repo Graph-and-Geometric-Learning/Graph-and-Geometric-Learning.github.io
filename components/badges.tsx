@@ -10,6 +10,7 @@ type BadgeProps = {
 
 export function Badge({ link, icon, label }: BadgeProps) {
     return (
+        <div className='items-center'>
         <a href={link}>
             <Chip
                 startContent={icon}
@@ -21,6 +22,7 @@ export function Badge({ link, icon, label }: BadgeProps) {
                 {label}
             </Chip>
         </a>
+        </div>
     );
 }
 
@@ -29,5 +31,15 @@ export function GithubBadge({ link }: { link: string }) {
 }
 
 export function ArxivBadge({ link }: { link: string }) {
-    return <Badge link={link} icon={<ArxivIcon />} label="arXiv" />;
+    return <Badge link={link} icon={<ArxivIcon />} label="ArXiv" />;
+}
+
+import { ReactNode } from 'react';
+
+export const BadgeContainer = ({ children }: { children: ReactNode }) => {
+    return (
+    <div className="flex flex-wrap gap-2 justify-center">
+        {children}
+    </div>
+    );
 }
