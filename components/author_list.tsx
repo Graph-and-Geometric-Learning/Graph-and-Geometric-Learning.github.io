@@ -11,7 +11,7 @@ export default function AuthorList({ authors }: { authors: Author[] }) {
         return acc;
     }, {} as { [key: string]: number });
   return (
-    <div className="pb-4">
+    <div className="pb-0">
           <div className="text-center text-xl">
               {authors.map((author, index) => (
                   <span key={index}>
