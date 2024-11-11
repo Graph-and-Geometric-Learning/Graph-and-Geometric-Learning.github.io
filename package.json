@@ -3,12 +3,15 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "next dev --turbo",
+		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@mdx-js/loader": "^3.1.0",
+		"@mdx-js/react": "^3.1.0",
+		"@next/mdx": "^15.0.2",
 		"@nextui-org/button": "2.0.34",
 		"@nextui-org/card": "^2.0.31",
 		"@nextui-org/chip": "^2.0.30",
@@ -27,6 +30,7 @@
 		"@nextui-org/theme": "2.2.5",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
+		"@types/mdx": "^2.0.13",
 		"clsx": "2.1.1",
 		"framer-motion": "~11.1.1",
 		"intl-messageformat": "^10.5.0",
@@ -34,7 +38,10 @@
 		"next-themes": "^0.2.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-icons": "^5.3.0"
+		"react-icons": "^5.3.0",
+		"rehype-katex": "^7.0.1",
+		"remark-math": "^6.0.0",
+		"remark-mdx-images": "^3.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "20.5.7",
@@ -42,7 +49,7 @@
 		"@types/react-dom": "18.3.0",
 		"@typescript-eslint/eslint-plugin": "7.2.0",
 		"@typescript-eslint/parser": "7.2.0",
-		"autoprefixer": "10.4.19",
+		"autoprefixer": "^10.4.20",
 		"eslint": "^8.57.0",
 		"eslint-config-next": "14.2.1",
 		"eslint-config-prettier": "^8.10.0",
@@ -53,9 +60,9 @@
 		"eslint-plugin-react": "^7.23.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-unused-imports": "^3.2.0",
-		"postcss": "8.4.38",
+		"postcss": "^8.4.47",
 		"tailwind-variants": "0.1.20",
-		"tailwindcss": "3.4.3",
+		"tailwindcss": "^3.4.14",
 		"typescript": "5.0.4"
 	}
 }

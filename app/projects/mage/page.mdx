@@ -1,0 +1,49 @@
+import AuthorList from '@/components/author_list'
+import { GithubBadge, ArxivBadge } from '@/components/badges'
+
+# Explaining Graph Neural Networks via Structure-aware Interaction Index
+
+<AuthorList 
+  authors={[
+    { name: "Ngoc Bui", affiliation: "Yale University" },
+    { name: "Hieu Trung Nguyen", affiliation: "VinAI Research" },
+    { name: "Viet Anh Nguyen", affiliation: "The Chinese University of HongKong" },
+    { name: "Rex Ying", affiliation: "Yale University" }
+  ]}
+/>
+
+<GithubBadge link="https://github.com/ngocbh/MAGE" />
+<ArxivBadge link="https://arxiv.org/abs/2405.14352" />
+
+In this project, we aim to explore graph-theoretic-based attribution scores for explaining graph neural networks (GNNs). Prior work (GStarX, SubgraphX, SAME) has successfully applied solutions such as Shapley values and HN values to explain GNNs. However, several limitations remain:
+
+1. Existing graph explainers based on game theory either use node-wise attribution scores (GraphSVX, GStarX) or subgraph-level attribution scores (SubgraphX, SAME). Node-level attribution scores are faster but ignore interactions among nodes during the motif search stage. Subgraph-level attribution scores can capture these interactions but are more computationally expensive to perform.
+2. Common Shapley-based values evaluate GNN models on pathologically perturbed graphs, which the models do not observe during training. These evaluations may introduce biases into the estimation of attribution scores.
+
+![The pipeline of MAGE.](./assets/mage.png)
+
+To address the first issue, we aim to leverage high-order interactions during the motif search phase in a way that is computationally efficient. We hypothesize that a second-order interaction index may provide a good approximation for subgraph-level attribution scores by summing pairwise interactions among nodes in a subgraph, leveraging the efficiency axiom. This approach could lead to a more tractable motif search problem, as finding a subgraph with the highest attribution scores can be formulated as a quadratic multiple knapsack problem. Although this remains NP-hard, we can leverage off-the-shelf solvers to solve it more efficiently.
+
+To address the second issue, we introduce the Myerson-Taylor interaction index, which internalizes the graph structure into node values and interaction values among nodes using a predefined connectivity criterion. This new interaction index generalizes the Shapley-Taylor interaction index and the Myerson value, preserving the theoretical advantages of both, particularly the component efficiency axiom, which ensures that the prediction score is fully and fairly distributed across interactions (up to order $k$) within a connected component. In special cases, the Myerson-Taylor interaction index encompasses both the Shapley-Taylor interaction index and the Myerson value.
+
+We therefore propose a new graph explainer, the Myerson-Taylor Structure-Aware Graph Explainer (MAGE), which uses the second-order Myerson-Taylor interaction index to identify the most influential motifs on model predictions, both positively and negatively. This approach balances the effectiveness and efficiency between node-level and subgraph-level attribution scores, leading to better explanations for GNNs across different modalities.
+
+The following is some examples of explanations provided by MAGE.
+
+
+![Explanations of competing methods on a molecular graph from Mutagenic dataset.](./assets/mutag0_2913.png)
+
+![Explanations of competing methods on a molecular graph from Benzene dataset.](./assets/benzene_5898.png)
+
+![Model prediction: Negative sentiment. MAGE highlights the main negative verb phrase 'breaks neck,' which contributes to the overall negative sentiment, and the phrase 'entertaining tricks,' which shows a slightly positive sentiment.](./assets/graphsst2_neg_flatten.png)
+
+![Model prediction: Positive sentiment. MAGE highlights the main adjective 'heart-warming,' which contributes to the overall positive sentiment, and two minor adjectives 'corny' and 'schmaltzy,' which display some negative sentiment.](./assets/graphsst2_neg_flatten.png)
+
+![This example visualizes the explanation for the GCN model of MAGE against competing baselines on MNIST75SP. Despite achieving high fidelity ($\mathrm{Fid}^+$) scores, the explanations of baselines are not meaningful. Meanwhile, only MAGE can generate an explanation that aligns with pixels that describe number '8'.](./assets/mnist75sp_11453_class_8.png)
+
+![Explanations of competing methods on a synthetic graph from BA-2Motifs dataset.](./assets/ba_2motifs_495_class_0.png)
+
+![Explanations of competing methods on a synthetic graph from BA-HouseOrGrid dataset.](./assets/ba_house_or_grid_5120_class_1.png)
+
+![Explanations of competing methods on a synthetic graph from SPMotif dataset.](./assets/spmotif_13748_class_0.png)
+
