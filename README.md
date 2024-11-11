@@ -27,3 +27,15 @@ News should be inserted here
 https://github.com/Graph-and-Geometric-Learning/Graph-and-Geometric-Learning.github.io/blob/d294a5bb559925e109aa7117faa575f9543da622/app/page.tsx#L44-L46
 
 The news item should be wrapped by `<li>...</li>`. Wrap the text with `<Link href="link.com">...</Link>` if you want to add a link to your text. Check examples in the same file for reference.
+
+
+## Project Page
+To set up a project page, we support [MDX](https://mdxjs.com/), which is a superset of markdown that lets you write  [JSX](https://react.dev/learn/writing-markup-with-jsx) directly in your markdown files. That is to say, you can write your project page in markdown and include any html elements. We also pre-defined some convenient element for you to use. (e.g. AuthorList).
+
+**Step**
+1. Create a folder of your project under `app/projects`.
+2. Create a `page.mdx` file under the created folder. This is the main file that contains your page content. Assets (e.g. images) should be uploaded to your project folder as well.
+3. Update the `page`key of your publication in `config/publications.ts` with the name of your folder.
+
+
+Find an example in `app/projects/mage`.

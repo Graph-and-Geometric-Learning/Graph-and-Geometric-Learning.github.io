@@ -107,7 +107,7 @@ export const publications = [
     title: "Explaining Graph Neural Networks via Structure-aware Interaction Index",
     authors: "Ngoc Bui, Hieu Trung Nguyen, Viet Anh Nguyen, Rex Ying",
     venue: "ICML 2024",
-    page: null,
+    page: "mage",
     code: "https://github.com/ngocbh/MAGE",
     paper: "https://arxiv.org/abs/2405.14352",
     abstract: "We introduces a novel interaction index, namely the Myerson-Taylor interaction index, that internalizes the graph structure into attributing the node values of Shapley value and the interaction values among nodes. We prove that that the Myerson-Taylor index is the unique one that satisfies a system of five natural axioms accounting for graph structure and high-order interaction among nodes. We propose MAGE, a new graph explainer that uses the second-order Myerson-Taylor index to identify the most important motifs influencing the model prediction.",

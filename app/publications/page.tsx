@@ -7,11 +7,18 @@ import { publications } from "@/config/publications";
 import { PublicationTags } from "@/components/tag";
 
 function Links({ paper, code, page }: { paper: string, code: string | null; page: string | null }) {
-  if (code === null) {
-    return <Link href={paper}>paper</Link>;
-  } else {
-    return <> <Link href={paper}>paper</Link> / <Link href={code}>code</Link> </>
+  let links = [];
+  if (paper !== null) {
+    links.push(<Link href={paper}>paper</Link>);
   }
+  if (code !== null) {
+    links.push(<Link href={code}>code</Link>)
+  }
+  if (page !== null) {
+    let page_link = "projects/" + page;
+    links.push(<Link href={page_link}>page</Link>)
+  } 
+  return <>{links.reduce((prev, curr) => <>{prev} / {curr}</>)}</>
 }
 
 export default function PublicationsPage() {
