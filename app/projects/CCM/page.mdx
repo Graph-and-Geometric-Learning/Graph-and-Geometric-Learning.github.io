@@ -1,0 +1,28 @@
+import AuthorList from '@/components/author_list'
+import { BadgeContainer, GithubBadge, ArxivBadge } from '@/components/badges'
+
+# From Similarity to Superiority: Channel Clustering for Time Series Forecasting
+
+
+<AuthorList 
+  authors={[
+    { name: "Jialin Chen", affiliation: "Yale University" },
+    { name: "Jan Eric Lenssen", affiliation: "Kumo.AI, Max Planck Institute for Informatics" },
+    { name: "Aosong Feng", affiliation: "Yale University" },
+    { name: "Weihua Hu", affiliation: "Kumo.AI" },
+    { name: "Matthias Fey", affiliation: "Kumo.AI" },
+    { name: "Leandros Tassiulas", affiliation: "Yale University" },
+    { name: "Jure Leskovec", affiliation: "Kumo.AI, Stanford University" },
+    { name: "Rex Ying", affiliation: "Yale University" },
+  ]}
+/>
+
+
+<BadgeContainer>
+<GithubBadge link="https://github.com/Graph-and-Geometric-Learning/TimeSeriesCCM" />
+<ArxivBadge link="https://arxiv.org/pdf/2404.01340" />
+</BadgeContainer>
+
+
+
+The word “independence” has been thrown around a lot recently in the time series literature. One of the most popular forecasting models, PatchTST, popularized not only patching for time series, but also challenged the notion of channel dependence (CD), by introducing channel independence (CI). In the CD framework, we believe that separate channels or variables, are related to one another and thus should be modeled together. But within the CI framework, the time series model is applied independently to each channel, where relations between channels are ignored. So the question is, what’s the best framework? CD? CI? Patch independence? We publish From Similarity to Superiority: Channel Clustering for Time Series Forecasting, which is accepted at NeurIPS 2024. In this work, we propose Channel Clustering Module (CCM), which clusters similar channels together, and then adaptively weights their output according to their cluster identity, attempting to blend the best of both worlds (CD and CI). Below, we’ll break down the math of everything and briefly go over the main experiments near the end.
