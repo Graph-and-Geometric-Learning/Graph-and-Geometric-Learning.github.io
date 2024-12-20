@@ -1,3 +1,14 @@
+# Build and Preview
+First, make sure you have `node` and `npm` installed on your computer. Enter the root directory of this repository,
+```
+npm install
+```
+to install the dependencies.
+```
+npm run preview
+```
+Look at the message in your console, find out the url and open it in your browser (it might be `localhost:3000`).
+
 # Update Guide
 
 Lab members can update their bios, publications, and news on the website. The update is made through a pull request submitted by the member and approved by the website admin. Make sure your updates are accurate and properly formatted.
