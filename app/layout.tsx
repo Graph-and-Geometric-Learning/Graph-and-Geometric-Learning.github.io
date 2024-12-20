@@ -27,6 +27,21 @@ export const viewport: Viewport = {
   ],
 };
 
+
+function Sponsor({ src, title }: { src: string; title: string }) {
+  return (
+    <div>
+      <Image
+        alt={title}
+        height={60}
+        src={src}
+        width={60}
+      />
+      <span className="block mx-auto">{title}</span>
+    </div>
+    )
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -52,33 +67,9 @@ export default function RootLayout({
                 <p className="text-gray-600">Sponsored by</p>
               </div>
               <div className="flex items-end gap-6">
-                <div>
-                  <Image
-                    alt="nsf"
-                    height={60}
-                    src="/sponsors/nsf.png"
-                    width={60}
-                  />
-                  NSF
-                </div>
-                <div>
-                  <Image
-                    alt="snap"
-                    height={60}
-                    src="/sponsors/snap.png"
-                    width={60}
-                  />
-                  Snap Inc
-                </div>
-                <div>
-                  <Image
-                    alt="aws"
-                    height={60}
-                    src="/sponsors/aws.png"
-                    width={60}
-                  />
-                  AWS
-                </div>
+                <Sponsor src="/sponsors/nsf.png" title="NSF" />
+                <Sponsor src="/sponsors/snap.png" title="Snap Inc" />
+                <Sponsor src="/sponsors/aws.png" title="AWS" />
               </div>
             </footer>
           </div>

@@ -43,7 +43,7 @@ export const publications = [
     authors:
       "Weikang Qiu, Huangrui Chu, Selena Wang, Xiaoxiao Li, Yize Zhao, Rex Ying",
     venue: "ICML 2024",
-    page: null,
+    page: "hybrid",
     paper: "https://arxiv.org/abs/2312.02203",
     code: "https://github.com/Graph-and-Geometric-Learning/HyBRiD",
     tags: [Tag.Applications, Tag.GraphRepresentationLearning],
