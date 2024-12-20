@@ -1,5 +1,5 @@
 export enum Tag {
-  GraphRepresentationLearning = "Graph Representation Learning",
+  GeometricAndGraphLearning = "Geometric and Graph Learning",
   MultiModalFoundationModel = "Multi-Modal Foundation Model",
   TrustworthyAI = "Trustworthy AI",
   Applications = "Applications",
@@ -46,7 +46,7 @@ export const publications = [
     page: "hybrid",
     paper: "https://arxiv.org/abs/2312.02203",
     code: "https://github.com/Graph-and-Geometric-Learning/HyBRiD",
-    tags: [Tag.Applications, Tag.GraphRepresentationLearning],
+    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
     abstract:
       "Traditional methods only focus on pariwise connectivity of brain regions. We proposed a new framework based on information bottleneck that learns high-order relationships of brain regions.",
     impact:
@@ -72,7 +72,7 @@ export const publications = [
     paper: "https://arxiv.org/abs/2408.00872",
     abstract: "we introduce AnoT, an efficient TKG summarization method tailored for interpretable online anomaly detection in TKGs. AnoT begins by summarizing a TKG into a novel rule graph, enabling flexible inference of complex patterns in TKGs.",
     impact: "The first attempt at strategies to summarize a temporal knowledge graph and first explore how to inductively detect anomalies in TKG.",
-    tags: [Tag.GraphRepresentationLearning],
+    tags: [Tag.GeometricAndGraphLearning],
   },
   {
     title: "DTGB: A Comprehensive Benchmark for Dynamic Text-Attributed Graphs",
@@ -86,7 +86,7 @@ export const publications = [
       "we introduce Dynamic Text-attributed Graph Benchmark (DTGB), a collection of large-scale, time-evolving graphs from diverse domains, with nodes and edges enriched by dynamically changing text attributes and categories.",
     impact:
       "he proposed DTGB fosters research on DyTAGs and their broad applications. It offers a comprehensive benchmark for evaluating and advancing models to handle the interplay between dynamic graph structures and natural language.",
-    tags: [Tag.GraphRepresentationLearning],
+    tags: [Tag.GeometricAndGraphLearning],
   },
   {
     title:
