@@ -35,7 +35,16 @@ To set up a project page, we support [MDX](https://mdxjs.com/), which is a super
 **Step**
 1. Create a folder of your project under `app/projects`.
 2. Create a `page.mdx` file under the created folder. This is the main file that contains your page content. Assets (e.g. images) should be uploaded to your project folder as well.
-3. Update the `page`key of your publication in `config/publications.ts` with the name of your folder.
+3. Update the `page` key of your publication in `config/publications.ts` with the name of your folder.
 
 
 Find an example in `app/projects/mage`.
+
+### GGLab-flavored Markdown
+We extend the markdown syntax to better styling our website. Here are some special usages,
+#### Scaling images
+Add the `scale=x` option after your title, separated by `|`.
+```
+![title|scale=0.5](./path/to/your/image)
+```
+
