@@ -1,5 +1,5 @@
 import { Chip } from '@nextui-org/chip';
-import { GithubIcon, ArxivIcon } from './icons';
+import { GithubIcon, ArxivIcon, PaperIcon } from './icons';
 
 
 type BadgeProps = {
@@ -32,6 +32,15 @@ export function GithubBadge({ link }: { link: string }) {
 
 export function ArxivBadge({ link }: { link: string }) {
     return <Badge link={link} icon={<ArxivIcon />} label="ArXiv" />;
+}
+
+export function PdfBadge({ link }: { link: string }) {
+    return <Badge link={link} icon={<PaperIcon />} label="Paper" />;
+}
+
+// The VenueBadge component is used to display the venue of a paper.
+export function VenueBadge ({ venue }: { venue: string }) {
+    return <Badge link="#" icon={null} label={venue} />;
 }
 
 import { ReactNode } from 'react';
