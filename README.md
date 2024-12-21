@@ -1,5 +1,5 @@
 # Build and Preview
-First, make sure you have `node` and `npm` installed on your computer. Enter the root directory of this repository,
+First, make sure you have [Node.js](https://nodejs.org/en/download/package-manager) installed on your computer. Enter the root directory of this repository,
 ```
 npm install
 ```
