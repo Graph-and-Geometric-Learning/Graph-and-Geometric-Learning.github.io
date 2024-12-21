@@ -1,6 +1,7 @@
+import clsx from "clsx";
+import { fontMono } from "@/config/fonts";
 import type { MDXComponents } from 'mdx/types'
 import Image, { ImageProps } from 'next/image'
-
 interface ImageOption {
     scale: number
 }
@@ -46,6 +47,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             />
         ),
         p: ({ children }) => <p>{children}</p>,
+        code: ({ children }) => <code className={clsx('font-mono p-4 block', fontMono.variable)}>{children}</code>,
+        pre: ({ children, ...props }) => (
+            <pre
+                className={clsx(
+                    'rounded-md shadow-lg overflow-auto',
+                    props.className // Preserve any existing className
+                )}
+                {...props}
+            >
+                {children}
+            </pre>
+        ),
         ...components,
     }
 }
