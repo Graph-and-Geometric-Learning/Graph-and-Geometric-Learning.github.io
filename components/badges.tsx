@@ -52,3 +52,24 @@ export const BadgeContainer = ({ children }: { children: ReactNode }) => {
     </div>
     );
 }
+
+export function Badges({
+    github,
+    arxiv,
+    pdf,
+    venue,
+}: {
+    venue?: string;
+    github?: string;
+    arxiv?: string;
+    pdf?: string;
+}) {
+    return (
+        <BadgeContainer>
+            {venue && <VenueBadge venue={venue} />}
+            {github && <GithubBadge link={github} />}
+            {arxiv && <ArxivBadge link={arxiv} />}
+            {pdf && <PdfBadge link={pdf} />}
+        </BadgeContainer>
+    );
+}

@@ -1,25 +1,19 @@
-import { AuthorList } from '@/components/utils'
-import { BadgeContainer, GithubBadge, ArxivBadge, PdfBadge, VenueBadge } from '@/components/badges'
+import { Authors } from '@/components/utils'
+import { Badges } from '@/components/badges'
 
 # Learning High-Order Relationships of Brain Regions
 
-<AuthorList 
-  authors={[
-    { name: "Weikang Qiu", affiliation: "Yale University" },
-    { name: "Huangrui Chu", affiliation: "Yale University" },
-    { name: "Selena Wang", affiliation: "Yale University" },
-    { name: "Haolan Zuo", affiliation: "Yale University" },
-    { name: "Xiaoxiao Li", affiliation: "University of British Columbia" },
-    { name: "Rex Ying", affiliation: "Yale University" }
-  ]}
+<Authors
+  authors="Weikang Qiu, Yale University; Huangrui Chu, Yale University; Selena Wang, Yale University; Haolan Zuo, Yale University; Xiaoxiao Li, University of British Columbia; Rex Ying, Yale University"
 />
 
-<BadgeContainer>
-<VenueBadge venue="ICML 2024" />
-<GithubBadge link="https://github.com/Graph-and-Geometric-Learning/HyBRiD" />
-<ArxivBadge link="https://arxiv.org/abs/2312.02203" />
-<PdfBadge link="https://arxiv.org/pdf/2312.02203" />
-</BadgeContainer>
+<Badges
+  venue="ICML 2024"
+  github="https://github.com/Graph-and-Geometric-Learning/HyBRiD"
+  arxiv="https://arxiv.org/abs/2312.02203"
+  pdf="https://arxiv.org/pdf/2312.02203"
+/>
+
 
 ## Introduction
 Discovering reliable and informative relationships among brain regions from functional magnetic resonance imaging (fMRI) signals is essential in phenotypic predictions. Most of the current methods fail to accurately characterize those interactions because they only focus on pairwise connections and overlook the high-order relationships of brain regions. We propose that these high-order relationships should be maximally informative and minimally redundant (MIMR). However, identifying such high-order relationships is challenging and under-explored due to the exponential search space and the absence of a tractable objective. In response to this gap, we propose a novel method named **HyBRiD** which aims to extract MIMR high-order relationships from fMRI data. **HyBRiD** employs a **CONSTRUCTOR** to identify hyperedge structures, and a **WEIGHTER** to compute a weight for each hyperedge, which avoids searching in exponential space. **HyBRiD** achieves the MIMR objective through an innovative information bottleneck framework named multi-head drop-bottleneck with theoretical guarantees. Our comprehensive experiments demonstrate the effectiveness of our model. Our model outperforms the state-of-the-art predictive model by an average of $11.2\%$, regarding the quality of hyperedges measured by CPM, a standard protocol for studying brain connections. 

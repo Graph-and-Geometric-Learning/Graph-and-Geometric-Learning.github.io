@@ -33,3 +33,13 @@ export function AuthorList({ authors }: { authors: Author[] }) {
     </div>
   );
 }
+
+
+export function Authors({ authors }: { authors: string }) {
+    // authors in the format: author1, affliation1; author2, affiliation2; ...
+    const authorList = authors.split(';').map(author => {
+        const [name, affiliation] = author.split(',');
+        return { name: name.trim(), affiliation: affiliation.trim() };
+    });
+    return <AuthorList authors={authorList} />;
+}
