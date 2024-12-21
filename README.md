@@ -5,7 +5,7 @@ npm install
 ```
 to install the dependencies.
 ```
-npm run preview
+npm run dev
 ```
 Look at the message in your console, find out the url and open it in your browser (it might be `localhost:3000`).
 
