@@ -94,7 +94,7 @@ export const publications = [
     authors:
       "Menglin Yang, Harshit Verma, Delvin Ce Zhang, Jiahong Liu, Irwin King, Rex Ying",
     venue: "KDD 2024",
-    page: null,
+    page: "hypformer",
     paper: "https://arxiv.org/abs/2407.01290",
     code: "https://github.com/Graph-and-Geometric-Learning/hyperbolic-transformer/",
     tags: [Tag.MultiModalFoundationModel],
