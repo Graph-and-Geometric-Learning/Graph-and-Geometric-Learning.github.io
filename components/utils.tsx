@@ -1,3 +1,4 @@
+export { Badges } from './badges';
 export interface Author {
   name: string;
   affiliation: string;
