@@ -49,7 +49,7 @@ To set up a project page, we support [MDX](https://mdxjs.com/), which is a super
 3. Update the `page` key of your publication in `config/publications.ts` with the name of your folder.
 
 
-Find an example in `app/projects/mage`.
+Find an example in `app/projects/hybrid`.
 
 ### GGLab-flavored Markdown
 We extend the markdown syntax to better styling our website. Here are some special usages,
