@@ -114,7 +114,7 @@ By defining these operations through HRC (and HTC for linear transformations), w
 
 ---
 
-### 2.4Framework
+### 2.4 Framework
 
 Framework of Hypformer. Input data (text, images, graphs) are projected onto the Lorentz model, then transformed via HTC. The result passes through the hyperbolic linear attention block with positional encoding, followed by a Feedforward layer (built by HTC) and LayerNorm (built by HRC). This serves as an encoder which can optionally incorporate a GNN.
 For classification tasks in this study, the decoder is the fully connected layer. Dropout, activation, and residual connections are omitted for brevity.
@@ -123,7 +123,7 @@ For classification tasks in this study, the decoder is the fully connected layer
 
 
 
-## 3.Experiments
+## 3. Experiments
 ### 3.1 Experiments on Large-scale Graphs
 
 We first evaluate Hypformer on diverse large-scale graphs for node classification, with node counts ranging from millions to billions, including ogbn-arxiv, ogbn-protein, and Papers100M.
@@ -155,7 +155,7 @@ We conducted additional tests on the model’s scalability regarding the number 
 ![Scalability|scale=0.5](./assets/gpucost.png)
 
 
-## 4.Conclusion
+## 4. Conclusion
 
 In this work, we introduce a efficient hyperbolic Transformer, Hypformer. This method operates directly and fully on hyperbolic representations and employs a linear attention mechanism, enabling it to be both scalable and effective. 
 Furthermore, this study introduces two basic blocks, HTC and HRC, which are foundational in constructing hyperbolic models. Nonetheless, the research presented is an initial exploration and numerous challenges warrant further investigation. These include the initial determination of a curvature that better reflects the data geometry, the setting of curvature at different levels for Hypformer, and the design of effective decoders for different downstream tasks. We plan to address these issues in our future work.
