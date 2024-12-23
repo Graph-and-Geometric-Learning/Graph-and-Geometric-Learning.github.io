@@ -19,13 +19,13 @@ export const publications = [
   {
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
     authors: "Tinglin Huang, Zhenqiao Song, Rex Ying, Wengong Jin",
-    venue: "MLSB Workshop, NeurIPS, 2023",
+    venue: "NeurIPS, 2024",
     page: null,
     code: "https://github.com/Graph-and-Geometric-Learning/Frame-Averaging-Transformer",
     paper: "https://arxiv.org/abs/2406.09586",
     abstract: "Propose a novel unsupervised aptamer screening paradigm and FAFormer, a frame averaging-based equivariant transformer architecture.",
     impact: "We explore a new angle to conduct aptamer screening in an unsupervised manner by leveraging the strong correlation with the contact map prediction task. Besides, we propose to  integrate Frame Averaging (FA) within each transformer module and develop FAFormer, highlighting a new possibility for geometric encoder design in this domain.",
-    tags: [Tag.Applications],
+    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
   },
   {
     title: "From Similarity to Superiority: Channel Clustering for Time Series Forecasting",
@@ -54,8 +54,8 @@ export const publications = [
   },
   {
     title: "HEART: Learning Better Representation of EHR Data with a Heterogeneous Relation-Aware Transformer",
-    authors: "T Huang, SA Rizvi, R Krishna Thakur, V Socrates, M Gupta, D Dijk, RA Taylor, R Ying",
-    venue: "Preprint",
+    authors: "Tinglin Huang, Syed Asad Rizvi, Rohan Krishna Thakur, Vimig Socrates, Meili Gupta, David van Dijk, R. Andrew Taylor, Rex Ying",
+    venue: "Journal of Biomedical Informatics 159 (2024): 104741",
     page: null,
     code: null,
     paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4904741",
