@@ -78,8 +78,8 @@ export const publications = [
     title: "DTGB: A Comprehensive Benchmark for Dynamic Text-Attributed Graphs",
     authors:
       "Jiasheng Zhang, Jialin Chen, Menglin Yang, Aosong Feng, Shuang Liang, Jie Shao, Rex Ying",
-    venue: "Arxiv Preprint",
-    page: null,
+    venue: "NeurIPS 2024",
+    page: "dtgb",
     paper: "https://arxiv.org/abs/2406.12072",
     code: "https://github.com/zjs123/DTGB",
     abstract:
