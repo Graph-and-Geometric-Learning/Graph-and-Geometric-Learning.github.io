@@ -20,7 +20,7 @@ export const publications = [
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
     authors: "Tinglin Huang, Zhenqiao Song, Rex Ying, Wengong Jin",
     venue: "NeurIPS, 2024",
-    page: null,
+    page: "faformer",
     code: "https://github.com/Graph-and-Geometric-Learning/Frame-Averaging-Transformer",
     paper: "https://arxiv.org/abs/2406.09586",
     abstract: "Propose a novel unsupervised aptamer screening paradigm and FAFormer, a frame averaging-based equivariant transformer architecture.",
