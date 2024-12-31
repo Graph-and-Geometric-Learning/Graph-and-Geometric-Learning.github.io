@@ -17,6 +17,17 @@ export interface Publication {
 
 export const publications = [
   {
+    title: "Lorentzian Residual Neural Networks",
+    authors: "Neil He, Menglin Yang, Rex Ying",
+    venue: "KDD, 2025",
+    page: "lresnet",
+    code: "https://github.com/Graph-and-Geometric-Learning/LResNet",
+    paper: "https://arxiv.org/abs/2412.14695",
+    abstract: "We propose LResNet, a new residual connection in the Lorentz formulation of hyperbolic spaces. With provable properties including guaranteed numerical stability and generalizing previous methods, LresNet addresses previous limitations such as runtime inefficiencies, numerical instability, mapping errors, and lack of geometric meaning on the manifolds.",
+    impact: "Beyond theoretical guarantees, we demonstrate the improvement achieved by LResNet in building hyperbolic deep learning models, conducting extensive experiments to show its superior performance in graph and image modalities across CNNs, GCNs, and graph Transformers.",
+    tags: [Tag.MultiModalFoundationModel],
+  },
+  {
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
     authors: "Tinglin Huang, Zhenqiao Song, Rex Ying, Wengong Jin",
     venue: "NeurIPS, 2024",
