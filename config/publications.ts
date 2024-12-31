@@ -12,10 +12,12 @@ export interface Publication {
   page: string | null;
   paper: string;
   code: string | null;
+  abstract: string;
+  impact: string;
   tags: Tag[];
 }
 
-export const publications = [
+export const publications: Publication[] = [
   {
     title: "Lorentzian Residual Neural Networks",
     authors: "Neil He, Menglin Yang, Rex Ying",

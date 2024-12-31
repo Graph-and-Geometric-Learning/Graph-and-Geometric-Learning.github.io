@@ -3,7 +3,7 @@
 import { Link } from "@nextui-org/link";
 import { useSearchParams } from "next/navigation";
 
-import { publications } from "@/config/publications";
+import { publications, Tag } from "@/config/publications";
 import { PublicationTags } from "@/components/tag";
 
 function Links({ paper, code, page }: { paper: string, code: string | null; page: string | null }) {
@@ -21,11 +21,12 @@ export default function PublicationsPage() {
   const searchParams = useSearchParams();
 
   const direction = searchParams.get("tag");
+  const direction_tag = Tag[direction as keyof typeof Tag];
   let publications_filtered = publications;
 
   if (direction !== null) {
     publications_filtered = publications.filter((publication) =>
-      publication.tags.includes(direction as any),
+      publication.tags.includes(direction_tag),
     );
   }
 
