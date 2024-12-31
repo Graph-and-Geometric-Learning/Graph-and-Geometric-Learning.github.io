@@ -32,8 +32,8 @@ function PublicationTag({ tag }: { tag: Tag }) {
       name = "Multi-Modal Foundation Model";
       color = "success";
       break;
-    case Tag.GraphRepresentationLearning:
-      name = "Graph Representation Learning";
+    case Tag.GeometricAndGraphLearning:
+      name = "Geometric and Graph Learning";
       color = "warning";
       break;
   }

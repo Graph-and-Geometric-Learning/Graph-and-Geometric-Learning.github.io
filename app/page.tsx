@@ -126,7 +126,7 @@ export default function Home() {
       <div className="grid grid-cols-4 gap-4 p-8">
         <ResearchDirection
           image="/graph_learning.webp"
-          title="Graph Representation Learning"
+          title="Geometric and Graph Learning"
         />
         <ResearchDirection
           image="/multimodal.webp"

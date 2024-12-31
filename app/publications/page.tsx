@@ -3,7 +3,7 @@
 import { Link } from "@nextui-org/link";
 import { useSearchParams } from "next/navigation";
 
-import { publications } from "@/config/publications";
+import { publications, Tag } from "@/config/publications";
 import { PublicationTags } from "@/components/tag";
 
 function Links({ paper, code, page }: { paper: string, code: string | null; page: string | null }) {
@@ -14,10 +14,6 @@ function Links({ paper, code, page }: { paper: string, code: string | null; page
   if (code !== null) {
     links.push(<Link href={code}>code</Link>)
   }
-  // if (page !== null) {
-  //   let page_link = "projects/" + page;
-  //   links.push(<Link href={page_link}>page</Link>)
-  // } 
   return <>{links.reduce((prev, curr) => <>{prev} / {curr}</>)}</>
 }
 
@@ -25,11 +21,12 @@ export default function PublicationsPage() {
   const searchParams = useSearchParams();
 
   const direction = searchParams.get("tag");
+  const direction_tag = Tag[direction as keyof typeof Tag];
   let publications_filtered = publications;
 
   if (direction !== null) {
     publications_filtered = publications.filter((publication) =>
-      publication.tags.includes(direction as any),
+      publication.tags.includes(direction_tag),
     );
   }
 
@@ -55,7 +52,7 @@ export default function PublicationsPage() {
               </div>
               <div className="flex flex-col mx-4 my-2">
                 <p className="pb-1 text-sm font-bold">
-                  {publication.venue}, <Links paper={publication.paper} code={publication.code} page={publication.page} />
+                  {publication.venue} &nbsp;&nbsp;&nbsp;  <Links paper={publication.paper} code={publication.code} page={publication.page} />
                 </p>
                 <p className="pb-1 text-sm">{publication.authors}</p>
                 <p className="pb-1">{publication.abstract}</p>

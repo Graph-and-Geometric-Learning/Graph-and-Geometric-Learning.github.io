@@ -1,5 +1,5 @@
 export enum Tag {
-  GraphRepresentationLearning = "Graph Representation Learning",
+  GeometricAndGraphLearning = "Geometric and Graph Learning",
   MultiModalFoundationModel = "Multi-Modal Foundation Model",
   TrustworthyAI = "Trustworthy AI",
   Applications = "Applications",
@@ -12,20 +12,33 @@ export interface Publication {
   page: string | null;
   paper: string;
   code: string | null;
+  abstract: string;
+  impact: string;
   tags: Tag[];
 }
 
-export const publications = [
+export const publications: Publication[] = [
+  {
+    title: "Lorentzian Residual Neural Networks",
+    authors: "Neil He, Menglin Yang, Rex Ying",
+    venue: "KDD, 2025",
+    page: "lresnet",
+    code: "https://github.com/Graph-and-Geometric-Learning/LResNet",
+    paper: "https://arxiv.org/abs/2412.14695",
+    abstract: "We propose LResNet, a new residual connection in the Lorentz formulation of hyperbolic spaces. With provable properties including guaranteed numerical stability and generalizing previous methods, LresNet addresses previous limitations such as runtime inefficiencies, numerical instability, mapping errors, and lack of geometric meaning on the manifolds.",
+    impact: "Beyond theoretical guarantees, we demonstrate the improvements achieved by LResNet in building hyperbolic deep learning models, where we conduct extensive experiments to show its superior performance in graph and image modalities across CNNs, GNNs, and graph Transformers.",
+    tags: [Tag.MultiModalFoundationModel],
+  },
   {
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
     authors: "Tinglin Huang, Zhenqiao Song, Rex Ying, Wengong Jin",
-    venue: "MLSB Workshop, NeurIPS, 2023",
-    page: null,
+    venue: "NeurIPS, 2024",
+    page: "faformer",
     code: "https://github.com/Graph-and-Geometric-Learning/Frame-Averaging-Transformer",
     paper: "https://arxiv.org/abs/2406.09586",
     abstract: "Propose a novel unsupervised aptamer screening paradigm and FAFormer, a frame averaging-based equivariant transformer architecture.",
     impact: "We explore a new angle to conduct aptamer screening in an unsupervised manner by leveraging the strong correlation with the contact map prediction task. Besides, we propose to  integrate Frame Averaging (FA) within each transformer module and develop FAFormer, highlighting a new possibility for geometric encoder design in this domain.",
-    tags: [Tag.Applications],
+    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
   },
   {
     title: "From Similarity to Superiority: Channel Clustering for Time Series Forecasting",
@@ -43,10 +56,10 @@ export const publications = [
     authors:
       "Weikang Qiu, Huangrui Chu, Selena Wang, Xiaoxiao Li, Yize Zhao, Rex Ying",
     venue: "ICML 2024",
-    page: null,
+    page: "hybrid",
     paper: "https://arxiv.org/abs/2312.02203",
     code: "https://github.com/Graph-and-Geometric-Learning/HyBRiD",
-    tags: [Tag.Applications, Tag.GraphRepresentationLearning],
+    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
     abstract:
       "Traditional methods only focus on pariwise connectivity of brain regions. We proposed a new framework based on information bottleneck that learns high-order relationships of brain regions.",
     impact:
@@ -54,11 +67,11 @@ export const publications = [
   },
   {
     title: "HEART: Learning Better Representation of EHR Data with a Heterogeneous Relation-Aware Transformer",
-    authors: "T Huang, SA Rizvi, R Krishna Thakur, V Socrates, M Gupta, D Dijk, RA Taylor, R Ying",
-    venue: "Preprint",
-    page: null,
-    code: null,
-    paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4904741",
+    authors: "Tinglin Huang, Syed Asad Rizvi, Rohan Krishna Thakur, Vimig Socrates, Meili Gupta, David van Dijk, R. Andrew Taylor, Rex Ying",
+    venue: "Journal of Biomedical Informatics 159 (2024): 104741",
+    page: "heart",
+    code: "https://github.com/Graph-and-Geometric-Learning/HEART",
+    paper: "https://www.sciencedirect.com/science/article/abs/pii/S153204642400159X",
     abstract: "We propose HEART, a pretrained language model for structured EHR data. HEART seamlessly encodes heterogeneous medical entity information through a novel relation embedding module and a multi-level attention scheme.",
     impact: "This novel pretrained framework, featuring a new architecture and dedicated objectives, can inspire future research on foundation models in EHR.",
     tags: [Tag.Applications],
@@ -72,21 +85,21 @@ export const publications = [
     paper: "https://arxiv.org/abs/2408.00872",
     abstract: "we introduce AnoT, an efficient TKG summarization method tailored for interpretable online anomaly detection in TKGs. AnoT begins by summarizing a TKG into a novel rule graph, enabling flexible inference of complex patterns in TKGs.",
     impact: "The first attempt at strategies to summarize a temporal knowledge graph and first explore how to inductively detect anomalies in TKG.",
-    tags: [Tag.GraphRepresentationLearning],
+    tags: [Tag.GeometricAndGraphLearning],
   },
   {
     title: "DTGB: A Comprehensive Benchmark for Dynamic Text-Attributed Graphs",
     authors:
       "Jiasheng Zhang, Jialin Chen, Menglin Yang, Aosong Feng, Shuang Liang, Jie Shao, Rex Ying",
-    venue: "Arxiv Preprint",
-    page: null,
+    venue: "NeurIPS 2024",
+    page: "dtgb",
     paper: "https://arxiv.org/abs/2406.12072",
     code: "https://github.com/zjs123/DTGB",
     abstract:
       "we introduce Dynamic Text-attributed Graph Benchmark (DTGB), a collection of large-scale, time-evolving graphs from diverse domains, with nodes and edges enriched by dynamically changing text attributes and categories.",
     impact:
       "he proposed DTGB fosters research on DyTAGs and their broad applications. It offers a comprehensive benchmark for evaluating and advancing models to handle the interplay between dynamic graph structures and natural language.",
-    tags: [Tag.GraphRepresentationLearning],
+    tags: [Tag.GeometricAndGraphLearning],
   },
   {
     title:
@@ -94,7 +107,7 @@ export const publications = [
     authors:
       "Menglin Yang, Harshit Verma, Delvin Ce Zhang, Jiahong Liu, Irwin King, Rex Ying",
     venue: "KDD 2024",
-    page: null,
+    page: "hypformer",
     paper: "https://arxiv.org/abs/2407.01290",
     code: "https://github.com/Graph-and-Geometric-Learning/hyperbolic-transformer/",
     tags: [Tag.MultiModalFoundationModel],
@@ -113,6 +126,17 @@ export const publications = [
     abstract: "We introduces a novel interaction index, namely the Myerson-Taylor interaction index, that internalizes the graph structure into attributing the node values of Shapley value and the interaction values among nodes. We prove that that the Myerson-Taylor index is the unique one that satisfies a system of five natural axioms accounting for graph structure and high-order interaction among nodes. We propose MAGE, a new graph explainer that uses the second-order Myerson-Taylor index to identify the most important motifs influencing the model prediction.",
     impact: "Myerson-Taylor interaction index is the unique generalization of the Shapley and Myerson values to account for both graph structure and high-order interaction among nodes. MAGE is also the first graph explainer that leverages (high-) second-order interaction index to identify multiple explainatory motifs for GNNs.",
     tags: [Tag.TrustworthyAI],
+  },
+  {
+    title: "Thought Propagation: An Analogical Approach to Complex Reasoning with Large Language Models",
+    authors: "Junchi Yu, Ran He, Rex Ying",
+    venue: "ICLR 2024",
+    page: "thought-propagation",
+    code: "https://github.com/Samyu0304/thought-propagation",
+    paper: "https://arxiv.org/pdf/2310.03965",
+    abstract: "Existing prompting approaches for LLM reasoning cannot leverage the insights of solving similar problems and suffer from accumulated errors in multi- step reasoning, due to reasoning from scratch. To address these issues, we propose Thought Propagation (TP), which explores the analogous problems and leverages their solutions to enhance the complex reasoning ability of LLMs",
+    impact: "TP is compatible with existing prompting methods, showing plug-and-play generalization and substantial improvements on a wide range of tasks such as Shortest- path Planning, Creative Writing, and LLM - Agent Planning.",
+    tags: [],
   },
   {
     title: "TempMe: Towards the explainability of temporal graph neural networks via motif discovery",
@@ -144,7 +168,7 @@ export const publications = [
     title: "Learning to Group Auxiliary Datasets for Molecule",
     authors: "Tinglin Huang, Ziniu Hu, Rex Ying",
     venue: "NeurIPS 2023",
-    page: null,
+    page: "molgroup",
     code: "https://github.com/Graph-and-Geometric-Learning/MolGroup",
     paper: "https://arxiv.org/abs/2307.04052",
     abstract: "Propose a routing-based auxiliary dataset grouping method to enhance model performance on molecule datasets with limited labels.",

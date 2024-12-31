@@ -52,7 +52,7 @@ export const peopleList = {
     {
       name: "Weikang Qiu",
       intro:
-        "Weikang Qiu is a third-year computer science Ph.D. student at Yale University, advised by Prof. Rex Ying. He previously obtained his B.S. degree in Zhejiang University, advised by Prof. Jake Zhao. He is interested in the intersection of machine learning and neuroscience. The ultimate goal of his research is to transform humans - or at least himself - to AIs. This represents a pathway for humanity to transcend its biological limitations (e.g. immortality) and is the only way for modern humans to evolve. In addition to his academic pursuits, Weikang actively contributes to several open-source projects, such as Blender.",
+        "My research focuses on the intersection of machine learning and neuroscience. The ultimate goal of my research is to transform humans - or at least himself - to AIs. This represents a pathway for humanity to transcend its biological limitations (e.g. immortality) and is the only way for modern humans to evolve. In addition to my academic pursuits, Weikang actively contributes to several open-source projects, such as Blender.",
       homepage: "https://github.com/Boltzmachine",
       photo: "/people/weikang.png",
     },

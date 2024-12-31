@@ -1,10 +1,11 @@
+export { Badges } from './badges';
 export interface Author {
   name: string;
   affiliation: string;
 }
 
 
-export default function AuthorList({ authors }: { authors: Author[] }) {
+export function AuthorList({ authors }: { authors: Author[] }) {
     let uniqueAffiliations = authors.map(author => author.affiliation).filter((value, index, self) => self.indexOf(value) === index);
     const affiliationIndices = uniqueAffiliations.reduce((acc, affiliation, index) => {
         acc[affiliation] = index + 1; // Start indexing from 1 for superscripts
@@ -32,4 +33,14 @@ export default function AuthorList({ authors }: { authors: Author[] }) {
           </div>
     </div>
   );
+}
+
+
+export function Authors({ authors }: { authors: string }) {
+    // authors in the format: author1, affliation1; author2, affiliation2; ...
+    const authorList = authors.split(';').map(author => {
+        const [name, affiliation] = author.split(',');
+        return { name: name.trim(), affiliation: affiliation.trim() };
+    });
+    return <AuthorList authors={authorList} />;
 }
