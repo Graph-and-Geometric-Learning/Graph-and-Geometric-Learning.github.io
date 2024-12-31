@@ -126,6 +126,17 @@ export const publications = [
     tags: [Tag.TrustworthyAI],
   },
   {
+    title: "Thought Propagation: An Analogical Approach to Complex Reasoning with Large Language Models",
+    authors: "Junchi Yu, Ran He, Rex Ying",
+    venue: "ICLR 2024",
+    page: "thought-propagation",
+    code: "https://github.com/Samyu0304/thought-propagation",
+    paper: "https://arxiv.org/pdf/2310.03965",
+    abstract: "Existing prompting approaches for LLM reasoning cannot leverage the insights of solving similar problems and suffer from accumulated errors in multi- step reasoning, due to reasoning from scratch. To address these issues, we propose Thought Propagation (TP), which explores the analogous problems and leverages their solutions to enhance the complex reasoning ability of LLMs",
+    impact: "TP is compatible with existing prompting methods, showing plug-and-play generalization and substantial improvements on a wide range of tasks such as Shortest- path Planning, Creative Writing, and LLM - Agent Planning.",
+    tags: [],
+  },
+  {
     title: "TempMe: Towards the explainability of temporal graph neural networks via motif discovery",
     authors: "Jialin Chen, Rex Ying",
     venue: "NeurIPS 2023",
