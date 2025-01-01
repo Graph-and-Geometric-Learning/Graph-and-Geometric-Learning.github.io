@@ -44,7 +44,7 @@ export const publications: Publication[] = [
     title: "From Similarity to Superiority: Channel Clustering for Time Series Forecasting",
     authors: "Jialin Chen, Jan Eric Lenssen, Aosong Feng, Weihua Hu, Matthias Fey, Leandros Tassiulas, Jure Leskovec, Rex Ying",
     venue: "Arxiv Preprint",
-    page: "ccm",
+    page: "CCM",
     code: "https://github.com/Graph-and-Geometric-Learning/TimeSeriesCCM",
     paper: "https://arxiv.org/pdf/2404.01340",
     abstract: "We developed a novel and adaptable Channel Clustering Module (CCM), which dynamically groups channels characterized by intrinsic similarities and leverages cluster identity, instead of channel identity, to improve time series forecasting performance.",
