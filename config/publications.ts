@@ -30,6 +30,20 @@ export const publications: Publication[] = [
     tags: [Tag.MultiModalFoundationModel],
   },
   {
+    title: "D-Edit: An Item is Worth a Prompt: Versatile Image Editing with Disentangled Control",
+    authors:
+      "Aosong Feng, Weikang Qiu, Jinbin Bai,Xiao Zhang, Zhen Dong, Kaicheng Zhou, Rex Ying, and Leandros Tassiulas",
+    venue: "AAAI 2025",
+    page: "dedit",
+    paper: "https://arxiv.org/abs/2403.04880",
+    code: "https://github.com/collovlabs/d-edit",
+    tags: [Tag.Applications],
+    abstract:
+      "D-Edit is a novel framework for diffusion-based image editing framework that disentangles image-prompt into item-prompt associations, enabling precise and harmonious edits across image, achieving state-of-the-art results in a unified, versatile approach.",
+    impact:
+      "The proposed method is a unified editing framework that supports image-based, text-based, mask-based editing, and item removal within a single cohesive system.",
+  },
+  {
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
     authors: "Tinglin Huang, Zhenqiao Song, Rex Ying, Wengong Jin",
     venue: "NeurIPS, 2024",
