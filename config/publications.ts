@@ -94,7 +94,7 @@ export const publications: Publication[] = [
     title: "Online Detection of Anomalies in Temporal Knowledge Graphs with Interpretability",
     authors: "Jiasheng Zhang, Rex Ying, Jie Shao",
     venue: "SIGMOD 2025",
-    page: null,
+    page: "anot",
     code: "https://github.com/zjs123/ANoT",
     paper: "https://arxiv.org/abs/2408.00872",
     abstract: "we introduce AnoT, an efficient TKG summarization method tailored for interpretable online anomaly detection in TKGs. AnoT begins by summarizing a TKG into a novel rule graph, enabling flexible inference of complex patterns in TKGs.",
