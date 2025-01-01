@@ -1,0 +1,95 @@
+import { Authors, Badges } from '@/components/utils'
+
+# An Item is Worth a Prompt: Versatile Image Editing with Disentangled Control
+
+<Authors
+  authors="Aosong Feng, Yale University; Weikang Qiu, Yale University; Jinbin Bai, Collov AI; Xiao Zhang, Collov AI; Zhen Dong, Collov AI; Kaicheng Zhou, Collov AI; Rex Ying, Yale University; Leandros Tassiulas, Yale University"
+/>
+
+<Badges
+  venue="AAAI 2025"
+  github="https://github.com/Graph-and-Geometric-Learning/HyBRiD"
+  arxiv="https://arxiv.org/abs/2312.02203"
+  pdf="https://arxiv.org/pdf/2312.02203"
+/>
+
+
+## Introduction
+Recent advancements in text-to-image diffusion models have revolutionized image editing by enabling sophisticated control over tasks like inpainting, text-guided editing, and item removal. Despite progress, challenges remain in preserving original image integrity and achieving precise semantic alignment with modifications. To address these, we introduce D-Edit, a versatile framework that disentangles item-prompt interactions using grouped cross-attention and unique item prompts. D-Edit supports text-based, image-based, mask-based editing, and item removal within a unified system, offering unprecedented flexibility and precision for creative and practical editing applications.
+
+
+
+## Method
+
+#### Item-Prompt Association
+
+The original LDM performs text-image interaction between every token in $c$ and every pixel in $z_t$ through cross-attention matrix $A$.
+In fact, such token-pixel interactions have been shown disentangled in nature, and the attention matrix $A\in\mathbb{R}^{Z\times W}$ is usually sparse in the sense that each column (token) only attend to several non-zero rows (pixels).
+For example, during image generation, the word "bear" has higher attention scores with pixels related to the bear region compared to the remaining region.
+
+
+Inspired by the natural disentanglement, we propose to segment the given image $I$ into $N$ non-overlapped items $\{I_i \}_{i=1}^{N}$ using segmentation model (same segmentation applied to $z^t$ because of emergent correspondence).
+A set of prompts $\{ P_i\}_{i=1}^{N}$ is adopted to replace the original text prompt $P$.
+we force different items $I_i$ to be controlled by distinct prompt $P_i$ by masking our other items, and therefore any prompt changes in $P_i$ will not influence the remaining item during the cross-attention controlling flow, which is the desired property for image editing.
+This results in a group of disentangled cross-attentions. For each item-prompt pair  ($I_i$, $P_i$), the cross-attention can be written as
+$$
+q_i=w_q z^t_i \in \mathbb{R}^{Z_i\times D}  \quad
+k_i = w_k c_i  \in \mathbb{R}^{W_i\times D} \quad
+v_i = w_v c_i \in \mathbb{R}^{W_i\times D}\\
+\quad
+
+\text{out}(\{ c_i\}, \{z^t_i\}) = \Sigma_{i=1}^{N} \text{out}_i(c_i, z^t_i) \quad
+    A_i = \text{softmax}(q_ik_i^T) \in \mathbb{R}^{Z_i\times W_i}  \quad
+     \text{out}(c_i, z^t_i) = A_i\cdot v_i
+$$
+It should be noted that such disentangled cross-attention cannot be directly used for pretrained LDMs, and therefore further finetuning is necessary to enable the model to comprehend item prompts and grouped cross-attention. 
+
+![Comparison of conventional full cross-attention and grouped cross-attention. Query, key, and value are shown as one-dimensional vectors. For grouped cross-attention, each item (corresponding to certain pixels/patches) only attends to the text prompt (two tokens) assigned to it.|scale=0.7](./assets/arch.png)
+
+
+#### Linking Prompt to Item
+
+We link prompts to items with two sequential steps. We first introduce the item prompt, consisting of several special tokens with randomly initialized embeddings.
+Then we finetune the model to build the item-prompt association.
+
+
+
+##### Prompt Injection
+We propose to represent each item in an image with several new tokens which are inserted into the existing vocabulary of text encoder(s).
+Specifically, we use 2 tokens to represent each item and initialize the newly added embedding entries using Gaussian distribution with mean and standard deviation derived from the existing vocabulary.
+For comparisons, Dreambooth represents the image using rare tokens and
+perfect rare tokens should have no interference with existing vocabulary, which is hard to find.
+Textual inversion and Imagic insert new tokens into vocabulary where the corresponding embedding is semantically initialized by given word embeddings which describe the image. This adds additional burdens of captioning the original image. 
+We found that it is sufficient to use randomly initialized new tokens as item prompts and such randomly initialized tokens have minimal impact on the existing vocabularies.
+
+
+To associate items with prompts, the inserted embedding entries are then optimized to reconstruct the corresponding image to be edited using
+$$
+\text{min}_e \mathbb{E}_{t,\epsilon}\left[|| \epsilon - f_\theta (z_t, t, g_\Phi(P) )||^2  \right],
+$$    
+where $e\in\mathbb{R}^{NM\times D_{\text{emb}}}$ 
+represents the embedding rows corresponding to $N$ items each with $M$ tokens. 
+
+
+##### Model Finetuning
+Optimization in the first stage injects the image concept into text-encoder(s), but cannot achieve perfect reconstruction of the original item given the corresponding prompt. 
+Therefore, in the second stage of optimization, we optimize the UNet parameters by running optimization with the same objective function as in Equation.
+We found that updating parameters solely within cross-attention layers is adequate, as we only disentangle the forward process of these layers rather than the entire model.
+It should be noted that the optimizations above are running against only one image or two images (target and reference images) if image-based editing is needed.
+
+Editing with Item-Prompt Freestyle.
+After the two-step optimization, the model can exactly reconstruct the original image given the set of prompts corresponding to each item, with an appropriate classifier-free guidance scale.
+We then achieve various disentangled image editing by changing the prompt associated with an item, the mask of an item-prompt pair, and the mapping between items and prompts.
+
+
+
+## Experiments
+#### Text-based Editing
+![The learned prompt (denoted as [v]) can be combined with words to achieve refinement/editing of the target item. (a) Augment an item prompt with words while keeping other prompts unchanged for editing. (b) Generate the entire image with certain item prompt(s) augmented with text words for personalization.|scale=0.7](./assets/img3_text2.jpg)
+
+#### Image-based Editing
+![Qualitative comparison of image-guided editing. D-Edit is compared with Anydoor, Paint-by-Example, and TF-ICON, on item replacement and face swapping.|scale=0.7](./assets/img4_image2.jpg)
+#### Mask-based Editing
+![Different types of mask-based editing: (a) Moving/swapping items; (b) reshaping an item; (c) Resizing an item.|scale=0.7](./assets/img5_mask.jpg)
+#### Item Removal
+![Removing items one by one from the image |scale=0.7](./assets/img7_remove.jpg)
