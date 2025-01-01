@@ -27,7 +27,7 @@ export const publications: Publication[] = [
     paper: "https://arxiv.org/abs/2412.14695",
     abstract: "We propose LResNet, a new residual connection in the Lorentz formulation of hyperbolic spaces. With provable properties including guaranteed numerical stability and generalizing previous methods, LresNet addresses previous limitations such as runtime inefficiencies, numerical instability, mapping errors, and lack of geometric meaning on the manifolds.",
     impact: "Beyond theoretical guarantees, we demonstrate the improvements achieved by LResNet in building hyperbolic deep learning models, where we conduct extensive experiments to show its superior performance in graph and image modalities across CNNs, GNNs, and graph Transformers.",
-    tags: [Tag.MultiModalFoundationModel],
+    tags: [Tag.GeometricAndGraphLearning, Tag.MultiModalFoundationModel],
   },
   {
     title: "D-Edit: An Item is Worth a Prompt: Versatile Image Editing with Disentangled Control",
@@ -63,7 +63,7 @@ export const publications: Publication[] = [
     paper: "https://arxiv.org/pdf/2404.01340",
     abstract: "We developed a novel and adaptable Channel Clustering Module (CCM), which dynamically groups channels characterized by intrinsic similarities and leverages cluster identity, instead of channel identity, to improve time series forecasting performance.",
     impact: "Extensive experiments demonstrate that CCM with mainstream time series forecasting models can (1) boost the performance of time series forecasting by an average margin of 2.4% and 7.2% on long-term and short-term forecasting; (2) enable more accurate zero-shot forecasting; (3) uncover intrinsic time series patterns among channels and improve interpretability of complex time series models.",
-    tags: [],
+    tags: [Tag.Applications],
   },
   {
     title: "Learning High-Order Relationships of Brain Regions",
