@@ -21,7 +21,7 @@ export default function PublicationsPage() {
   const searchParams = useSearchParams();
 
   const direction = searchParams.get("tag");
-  const direction_tag = Tag[direction as keyof typeof Tag];
+  const direction_tag = direction as Tag;
   let publications_filtered = publications;
 
   if (direction !== null) {
