@@ -57,7 +57,7 @@ export const publications: Publication[] = [
   {
     title: "From Similarity to Superiority: Channel Clustering for Time Series Forecasting",
     authors: "Jialin Chen, Jan Eric Lenssen, Aosong Feng, Weihua Hu, Matthias Fey, Leandros Tassiulas, Jure Leskovec, Rex Ying",
-    venue: "Arxiv Preprint",
+    venue: "NeurIPS, 2024",
     page: "CCM",
     code: "https://github.com/Graph-and-Geometric-Learning/TimeSeriesCCM",
     paper: "https://arxiv.org/pdf/2404.01340",
