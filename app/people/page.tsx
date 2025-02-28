@@ -59,6 +59,13 @@ function ExpandOtherPeople({
 }
 
 function ExpandOtherPerson(person: Person) {
+  if (person.homepage) {
+    return (
+      <li key={person.name}>
+        <Link href={person.homepage}>{person.name}</Link>
+      </li>
+    );
+  }
   return <li key={person.name}>{person.name}</li>;
 }
 
