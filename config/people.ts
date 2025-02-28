@@ -100,7 +100,7 @@ export const peopleList = {
     {
       name: "Rishabh Anand",
       intro: null,
-      homepage: https://rish-16.github.io/,
+      homepage: "https://rish-16.github.io/",
       photo: null,
     },
   ],
