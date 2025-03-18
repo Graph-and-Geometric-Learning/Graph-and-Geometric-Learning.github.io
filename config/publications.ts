@@ -3,6 +3,7 @@ export enum Tag {
   MultiModalFoundationModel = "Multi-Modal Foundation Model",
   TrustworthyAI = "Trustworthy AI",
   Applications = "Applications",
+  Benchmark = "Benchmark",
 }
 
 export interface Publication {
@@ -18,6 +19,17 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
+  {
+    title: "MTBench: A Multimodal Time Series Benchmark for Temporal Reasoning and Question Answering",
+    authors: "Jialin Chen, Aosong Feng, Ziyu Zhao, Juan Garza, Gaukhar Nurbek, Ali Maatouk, Leandros Tassiulas, Yifeng Gao3, Rex Ying",
+    venue: "KDD, 2025",
+    page: "mtbench",
+    code: "https://github.com/Graph-and-Geometric-Learning/MTBencht",
+    paper: "",
+    abstract: "We introduce MTBench, a large-scale benchmark designed to evaluate large language models (LLMs) on time series and text understanding across financial and weather domains. MTBench comprises of paired time-series and textual data, including financial news with corresponding stock price movements and weather reports aligned with historical temperature records.", 
+    impact: "We evaluate state-of-the-art LLMs on MTBench, analyzing their effectiveness in modeling the complex relationships between news narratives and temporal patterns. Our findings reveal significant challenges in current models, including difficulties in capturing long-term dependencies, interpreting causality in financial and weather trends, and effectively fusing multimodal information.",
+    tags: [Tag.Benchmark, Tag.MultiModalFoundationModel],
+  },
   {
     title: "Lorentzian Residual Neural Networks",
     authors: "Neil He, Menglin Yang, Rex Ying",

@@ -36,6 +36,10 @@ function PublicationTag({ tag }: { tag: Tag }) {
       name = "Geometric and Graph Learning";
       color = "warning";
       break;
+    case Tag.Benchmark:
+      name = "Benchmark";
+      color = "primary";
+      break;
   }
 
   return (
