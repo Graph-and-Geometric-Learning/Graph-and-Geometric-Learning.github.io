@@ -18,37 +18,14 @@ import Table from '@/components/table'
 
 ## Introduction
 
+News influences the world around us—from stock markets reacting to financial reports to temperature trends following extreme weather events. However, understanding this impact is not straightforward. While AI models are improving at handling both text and numbers, most datasets fail to test how well they connect these different types of data.
 
-Figuring out how news articles influence changes in time-series data (like stock prices or weather trends) is an important but still under-explored area in applied data science. While AI models that handle multiple types of data (like text and numbers) are becoming more popular, most existing datasets don’t do a great job of testing how well these models can connect information across different formats. 
+To address this, we introduce  **MTBench** (**M**ultimodal **T**ime Series **Bench**mark), a dataset designed to evaluate how well AI models understand the relationship between text and time-series data. MTBench pairs financial news with stock market movements and weather reports with historical temperature changes. Unlike existing benchmarks that focus on text or numbers separately, MTBench challenges models to analyze both together, helping to assess their ability to detect trends, interpret news, and make predictions.
 
-To address this challenge, we introduce **MTBench** (**M**ultimodal **T**ime Series **Bench**mark), a large-scale dataset designed to test how well large language models (LLMs) understand both time-series data and text in financial and weather-related contexts. MTBench pairs numerical data with relevant text—for example, financial news linked to stock price changes and weather reports aligned with historical temperature trends. Unlike existing benchmarks that focus on either text or numbers separately, MTBench challenges models to analyze both together, helping assess their ability to recognize patterns, make predictions, and answer questions based on cross-modal reasoning. This enables a wide range of tasks, such as forecasting trends, interpreting news impact on data, and extracting meaningful insights from both structured (numerical) and unstructured (textual) information.
+- **Finance**: 200K+ news articles with stock movements from 2021–2023.
+- **Weather**: Historical temperature trends covering nearly two decades with reports of extreme events.
 
-We test the latest large language models (LLMs) on MTBench to see how well they understand the connection between news stories and time-based trends. Our results highlight major challenges—these models struggle to recognize long-term patterns, understand cause-and-effect relationships in financial and weather data, and seamlessly combine insights from both text and numerical information.
-
-## Dataset Collection
-
-### Finance Dataset 
-![Figure 1. The pipeline of finance dataset collection.|scale=0.5](./assets/fin_data_collection_pipeline.png)
-
-The process of collecting the finance dataset is illustrated in Figure 1. To build a diverse dataset linking stock market news with time-series data, we gathered over 200,000 financial news article URLs from reputable sources such as GlobeNews, MarketWatch, SeekingAlpha, Zacks, Invezz, Quartz (QZ), PennyStocks, and Benzinga, spanning May 2021 to September 2023. We then scraped key details from these articles, including text content, titles, stock names, and publication dates. From this collection, we selected a subset of 20,000 news articles, ensuring a balanced distribution of article lengths.
-
-To enhance the dataset with structured metadata, we used GPT-4o to annotate each article with its content type, the time range of its impact, and sentiment analysis.
-
-**Stock Time-Series Collection.** 
-
-For each financial news article, we identified relevant stock time-series data based on the extracted sentiment and stock name. We retrieved historical stock prices with opening values sampled at different time scales. To maintain high data quality, we excluded cases where stock price data was missing for more than 70% of the timeframe, often due to market closures (e.g., weekends, holidays).
-
-To align news articles with stock trends, we assumed that each article corresponds to the 90th percentile of its input time-series window. We created two forecasting scenarios:
-**Short-Term Prediction**: Using 7 days of stock price data at a 5-minute resolution to predict price movements for the next day.
-**Long-Term Prediction**: Using 30 days of stock price data at a 1-hour resolution to forecast stock movements for the following 7 days.
-
-### Weather Dataset
-
-We selected 50 airports across the United States as data sources, using the Global Historical Climatology Network Hourly (GHCN-H) dataset. The data, which spans from 2003 to 2020, is collected hourly. Each weather station records various attributes, including geographic location, temperature, humidity, wind speed, wind direction, visibility, pressure, and precipitation. Airports were chosen because their weather data is generally more reliable and accurate than data from other stations. In this study, we focus on temperature as the primary parameter, since it is a key factor in weather forecasting. However, our raw data pipeline includes additional channels, allowing for future expansion into multi-channel weather analysis.
-
-Unlike stock price data, systematically collecting weather-related news is challenging, as routine reports often lack the context needed for complex analysis. To overcome this, we use the Storm Events Database, which records storm occurrences in the United States from 1950 to 2020. This dataset includes details such as storm type, location, fatalities, and injuries, covering various severe weather conditions, including hail, tornadoes, thunderstorms, floods, hurricanes, and typhoons.
-
-Each entry in the database contains an <em>event ID</em>, which uniquely identifies an occurrence, and an <em>episode ID</em>, which links related events. For example, a hurricane might trigger multiple tornadoes, hailstorms, and thunderstorms, all grouped under the same episode ID. Each event also includes a textual description, offering valuable contextual information.
+We evaluate state-of-the-art large language models (LLMs) on MTBench to measure their ability to link news with data trends (see our **Leaderboard**). The results reveal key challenges—models struggle with long-term pattern recognition, cause-and-effect relationships, and seamlessly combining insights from text and numbers.
 
 ## Leaderboard
 

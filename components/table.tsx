@@ -5,7 +5,7 @@ import "../styles/table.css";
 
 function Table() {
   return (
-    <div className="Table">
+    <div className="table-wrapper">
       <SortableTable data={data} />
     </div>
   );

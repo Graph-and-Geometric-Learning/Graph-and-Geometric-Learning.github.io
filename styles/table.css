@@ -1,9 +1,10 @@
 table {
     width: 100%;
-    table-layout: fixed;
     border: 1px solid;
-    overflow-x: auto;
-    max-width: fit-content;
+    border-spacing: 0px;
+    border-collapse: separate;
+    min-width: max-content;
+    table-layout: fixed;
   }
   
   tbody {
@@ -11,21 +12,28 @@ table {
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
   
+  th {
+    position: sticky;
+  }
+
   tr {
     width: 100%;
   }
   
+  tr:hover {
+    background-color: rgba(84, 83, 83, 0.7);
+  }
+
   th,
   td {
     border-bottom: 1px solid #ddd;
-    /* padding: 10px 8px; */
     text-align: left;
     font-weight: 500;
     font-size: 12px;
-    /* border: 1px solid; */
-    /* color: black; */
+    width: 100px;
+    overflow: hidden;
   }
-  tr:hover {background-color: rgba(84, 83, 83, 0.7);}
+  
   .sort-button {
     background-color: transparent;
     border: none;
@@ -33,8 +41,7 @@ table {
     padding: 5px 10px;
     margin: 0;
     line-height: 1;
-    font-size: 15px;
-    /* color: black; */
+    font-size: 12px;
     cursor: pointer;
   
     transition: transform 0.05s ease-out;
@@ -42,4 +49,16 @@ table {
   
   .sort-reverse {
     transform: rotate(180deg);
+  }
+
+  .table-wrapper {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: fit-content;
+    margin: 20px;
+    max-height: 300px;
+  }
+
+  .headcol {
+    position: absolute;
   }
