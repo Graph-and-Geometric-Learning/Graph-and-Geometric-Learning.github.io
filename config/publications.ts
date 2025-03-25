@@ -21,8 +21,8 @@ export interface Publication {
 export const publications: Publication[] = [
   {
     title: "MTBench: A Multimodal Time Series Benchmark for Temporal Reasoning and Question Answering",
-    authors: "Jialin Chen, Aosong Feng, Ziyu Zhao, Juan Garza, Gaukhar Nurbek, Ali Maatouk, Leandros Tassiulas, Yifeng Gao3, Rex Ying",
-    venue: "KDD, 2025",
+    authors: "Jialin Chen, Aosong Feng, Ziyu Zhao, Juan Garza, Gaukhar Nurbek, Ali Maatouk, Leandros Tassiulas, Yifeng Gao, Rex Ying",
+    venue: "",
     page: "mtbench",
     code: "https://github.com/Graph-and-Geometric-Learning/MTBencht",
     paper: "",
