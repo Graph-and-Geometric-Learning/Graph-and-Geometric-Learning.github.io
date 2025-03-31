@@ -1,6 +1,6 @@
 
 import { Authors, Badges} from '@/components/utils'
-import Table from '@/components/table'
+import { Table, Table1, Table2, Table3, Table4}from '@/components/table'
 
 # MTBench: A Multimodal Time Series Benchmark for Temporal Reasoning and Question Answering
 
@@ -11,8 +11,8 @@ import Table from '@/components/table'
 <Badges
   venue=""
   github="https://github.com/Graph-and-Geometric-Learning/MTBench"
-  arxiv=""
-  pdf=""
+  arxiv="https://arxiv.org/abs/2503.16858"
+  pdf="https://arxiv.org/pdf/2503.16858"
 />
 
 
@@ -22,11 +22,41 @@ News influences the world around us—from stock markets reacting to financial r
 
 To address this, we introduce  **MTBench** (**M**ultimodal **T**ime Series **Bench**mark), a dataset designed to evaluate how well AI models understand the relationship between text and time-series data. MTBench pairs financial news with stock market movements and weather reports with historical temperature changes. Unlike existing benchmarks that focus on text or numbers separately, MTBench challenges models to analyze both together, helping to assess their ability to detect trends, interpret news, and make predictions.
 
-- **Finance**: 200K+ news articles with stock movements from 2021–2023.
-- **Weather**: Historical temperature trends covering nearly two decades with reports of extreme events.
+- **Finance**: Two datasets, each with 20K news articles paired with stock time-series data.
+- **Weather**: 2K news and time-series pairs from 50 weather stations across the U.S. (see Figure 1).
 
-We evaluate state-of-the-art large language models (LLMs) on MTBench to measure their ability to link news with data trends (see our **Leaderboard**). The results reveal key challenges—models struggle with long-term pattern recognition, cause-and-effect relationships, and seamlessly combining insights from text and numbers.
+![Figure 1. Geographical distribution of weather stations |scale=0.4](./assets/map.png)
+
+As shown in Figure 2, MTBench enables a range of complex reasoning tasks beyond simple forecasting, including semantic trend analysis, technical indicator prediction, and news-driven Q&A. These tasks challenge LLMs to integrate numerical patterns with contextual information.
+
+![Figure 2. An overview of tasks in MTBench |scale=0.4](./assets/diagram.png)
+
+The news-driven QA task includes two sub-tasks: correlation prediction and multi-choice QA. As shown in Figure 3, this task requires models to analyze both text and time-series data, understanding the news content while predicting its potential impact on future trends based on historical time-series.
+
+![Figure 3. An Example of Multi-choice QA and Correlation Prediction on Finance Dataset |scale=0.8](./assets/QA_sample.png)
+
+Various state-of-the-art large language models (LLMs) were evaluated on MTBench to measure their ability to link news with time-series trends (see **Leaderboard**). The results reveal key challenges—models struggle with long-term pattern recognition, cause-and-effect relationships, and seamlessly combining insights from text and numbers.
 
 ## Leaderboard
 
 <Table/>
+
+<details>
+<summary>Leaderboard for Time-Series Forecasting</summary>
+<Table1/>
+</details>
+
+<details>
+<summary>Leaderboard Trend Prediction</summary>
+<Table2/>
+</details>
+
+<details>
+<summary>Leaderboard for Technical Indicator Calculation</summary>
+<Table3/>
+</details>
+
+<details>
+<summary>Leaderboard for News-driven Question Answering</summary>
+<Table4/>
+</details>
