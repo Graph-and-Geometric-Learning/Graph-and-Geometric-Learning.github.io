@@ -31,9 +31,25 @@ As shown in Figure 2, MTBench enables a range of complex reasoning tasks beyond 
 
 ![Figure 2. An overview of tasks in MTBench |scale=0.4](./assets/diagram.png)
 
-The news-driven QA task includes two sub-tasks: correlation prediction and multi-choice QA. As shown in Figure 3, this task requires models to analyze both text and time-series data, understanding the news content while predicting its potential impact on future trends based on historical time-series.
+### Time-Series Forecasting
 
-![Figure 3. An Example of Multi-choice QA and Correlation Prediction on Finance Dataset |scale=0.8](./assets/QA_sample.png)
+This task aims to forecast time-series values from historical data, optionally incorporating news articles. We assess short- and long-term forecasting: finance uses 30 days of historical data, while weather forecasting relies on 14 days to predict the next 3, reflecting shorter memory dynamics.
+
+### Semantic Trend Analysis
+
+For this task we analyze time-series trends by computing the percentage change between input and output data, categorizing results into discrete trend labels (see example in Figure 3). This helps evaluate directional movement and model accuracy.
+
+![Figure 3. An Example of Stock Trend Prediction |scale=0.6](./assets/trend_prediction.png)
+
+### Technical Indicator Prediction
+
+This task evaluates the model’s ability to predict financial and weather metrics by forecasting key indicators from the output time-series, providing deeper insights beyond basic price or temperature predictions.
+
+### News-driven Question Answering
+
+The news-driven QA task includes two sub-tasks: correlation prediction and multi-choice QA. As shown in Figure 4, this task requires models to analyze both text and time-series data, understanding the news content while predicting its potential impact on future trends based on historical time-series.
+
+![Figure 4. An Example of Multi-choice QA and Correlation Prediction on Finance Dataset |scale=0.8](./assets/QA_sample.png)
 
 Various state-of-the-art large language models (LLMs) were evaluated on MTBench to measure their ability to link news with time-series trends (see **Leaderboard**). The results reveal key challenges—models struggle with long-term pattern recognition, cause-and-effect relationships, and seamlessly combining insights from text and numbers.
 

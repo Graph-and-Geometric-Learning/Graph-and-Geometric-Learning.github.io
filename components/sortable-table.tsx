@@ -351,4 +351,4 @@ const SortableTable4 = createSortableTable(headers4);
 
 // export default SortableTable;
 // Export all tables
-export { SortableTable ,SortableTable1, SortableTable2, SortableTable3, SortableTable4 };
+export { SortableTable, SortableTable1, SortableTable2, SortableTable3, SortableTable4 };
