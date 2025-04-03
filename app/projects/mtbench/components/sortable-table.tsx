@@ -1,6 +1,6 @@
 'use client' 
 import { MouseEventHandler, useCallback, useState } from "react";
-import data from "../app/projects/mtbench/data/data_leaderboard.json";
+import data from "../data/data_leaderboard.json";
 
 type Data = typeof data;
 

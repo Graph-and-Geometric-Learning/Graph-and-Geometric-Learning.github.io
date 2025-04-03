@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {SortableTable, SortableTable1, SortableTable2, SortableTable3, SortableTable4} from "./sortable-table";
-import data from "../app/projects/mtbench/data/data_leaderboard.json";
+import data from "../data/data_leaderboard.json";
 import "../styles/table.css";
 
 function Table() {
