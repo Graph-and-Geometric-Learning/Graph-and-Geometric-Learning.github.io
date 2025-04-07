@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/link";
 import { useSearchParams } from "next/navigation";
 
 import { publications, Tag } from "@/config/publications";
