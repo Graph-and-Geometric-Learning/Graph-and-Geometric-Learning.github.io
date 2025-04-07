@@ -1,10 +1,10 @@
 "use client";
 
-import { Link } from "@nextui-org/link";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { ScrollShadow } from "@nextui-org/scroll-shadow";
+import { Link } from "@heroui/link";
+import { Card, CardBody, CardFooter } from "@heroui/card";
+import { ScrollShadow } from "@heroui/scroll-shadow";
 import Image from "next/image";
-// import { Image } from "@nextui-org/image";
+// import { Image } from "@heroui/image";
 
 import { title, subtitle } from "@/components/primitives";
 

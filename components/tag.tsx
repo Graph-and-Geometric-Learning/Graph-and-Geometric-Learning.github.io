@@ -1,6 +1,6 @@
 "use client";
 
-import { Chip } from "@nextui-org/chip";
+import { Chip } from "@heroui/chip";
 import React from "react";
 
 import { Tag } from "@/config/publications";

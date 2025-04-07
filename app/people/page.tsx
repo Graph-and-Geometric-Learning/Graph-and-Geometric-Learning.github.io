@@ -1,10 +1,10 @@
-import { Link } from "@nextui-org/link";
-import { Divider } from "@nextui-org/divider";
+import { Link } from "@heroui/link";
+import { Divider } from "@heroui/divider";
 import Image from "next/image";
 
 import { peopleList, Person } from "@/config/people";
 
-// import { Image } from "@nextui-org/image";
+// import { Image } from "@heroui/image";
 
 export default function PeoplePage() {
   return (
