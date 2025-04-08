@@ -1,12 +1,10 @@
 import { useState } from "react";
-import {SortableTable, SortableTable1, SortableTable2, SortableTable3, SortableTable4} from "./sortable-table";
-import data from "../data/data_leaderboard.json";
-import "../styles/table.css";
+import { SortableTable, SortableTableTask1, SortableTableTask2, SortableTableTask3, SortableTableTask4 } from "./sortable-tables";
 
 function Table() {
   return (
     <div className="table-wrapper">
-      <SortableTable data={data} />
+      <SortableTable />
     </div>
   );
 }
@@ -14,7 +12,7 @@ function Table() {
 function Table1() {
   return (
     <div className="table-wrapper">
-      <SortableTable1 data={data} />
+      <SortableTableTask1 />
     </div>
   );
 }
@@ -22,7 +20,7 @@ function Table1() {
 function Table2() {
   return (
     <div className="table-wrapper">
-      <SortableTable2 data={data} />
+      <SortableTableTask2 />
     </div>
   );
 }
@@ -30,7 +28,7 @@ function Table2() {
 function Table3() {
   return (
     <div className="table-wrapper">
-      <SortableTable3 data={data} />
+      <SortableTableTask3 />
     </div>
   );
 }
@@ -38,13 +36,10 @@ function Table3() {
 function Table4() {
   return (
     <div className="table-wrapper">
-      <SortableTable4 data={data} />
+      <SortableTableTask4 />
     </div>
   );
 }
 
 // Exporting all four tables
 export { Table, Table1, Table2, Table3, Table4 };
-
-// export default Table;
-
