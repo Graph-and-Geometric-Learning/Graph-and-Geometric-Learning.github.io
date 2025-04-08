@@ -24,7 +24,7 @@ export const publications: Publication[] = [
     authors: "Jialin Chen, Aosong Feng, Ziyu Zhao, Juan Garza, Gaukhar Nurbek, Ali Maatouk, Leandros Tassiulas, Yifeng Gao, Rex Ying",
     venue: "",
     page: "mtbench",
-    code: "https://github.com/Graph-and-Geometric-Learning/MTBencht",
+    code: "https://github.com/Graph-and-Geometric-Learning/MTBench",
     paper: "https://arxiv.org/abs/2503.16858",
     abstract: "We introduce MTBench, a large-scale benchmark designed to evaluate large language models (LLMs) on time series and text understanding across financial and weather domains. MTBench comprises of paired time-series and textual data, including financial news with corresponding stock price movements and weather reports aligned with historical temperature records.", 
     impact: "We evaluate state-of-the-art LLMs on MTBench, analyzing their effectiveness in modeling the complex relationships between news narratives and temporal patterns. Our findings reveal significant challenges in current models, including difficulties in capturing long-term dependencies, interpreting causality in financial and weather trends, and effectively fusing multimodal information.",
