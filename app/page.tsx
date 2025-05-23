@@ -7,6 +7,7 @@ import Image from "next/image";
 // import { Image } from "@heroui/image";
 
 import { title, subtitle } from "@/components/primitives";
+import { newsList, News } from "@/config/news.ts"
 
 function ResearchDirection({ title, image }: { title: string; image: string }) {
   return (
@@ -34,6 +35,54 @@ function ResearchDirection({ title, image }: { title: string; image: string }) {
   );
 }
 
+
+function replaceMarkdownLinks(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    const [fullMatch, title, url] = match;
+    const matchStart = match.index;
+
+    // Add text before the link
+    if (lastIndex < matchStart) {
+      parts.push(text.slice(lastIndex, matchStart));
+    }
+
+    // Add JSX Link component
+    parts.push(
+      <Link key={parts.length} href={url}>
+        {title}
+      </Link>
+    );
+
+    lastIndex = matchStart + fullMatch.length;
+  }
+
+  // Add remaining text after the last match
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
+
+function ExpandNews(news: News, index: number) {
+  return (<li key={index}>
+    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <span style={{ width: '100px', flexShrink: 0 }}>
+        <em>{news.date}</em>
+      </span>
+      <span style={{ marginLeft: '1em' }}>
+        {replaceMarkdownLinks(news.content)}
+      </span>
+    </div>
+  </li>)
+}
+
 export default function Home() {
   return (
     <>
@@ -41,9 +90,9 @@ export default function Home() {
         <h1 className={subtitle()}>🔥 News</h1>
         <ScrollShadow className="w-full h-[180px] px-8">
           <ul>
-	  <li>
-	  <p>The lab has received an <Link href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2403317&HistoricalAwards=false">NSF core program award</Link> on building foundation models for scientific discovery</p>
-	  </li>
+            {newsList.map((news, index) => ExpandNews(news, index))}
+
+	  {/*
             <li>
               Rex gave a tutorial on Machine Learning in Network Science at{" "}
               <Link href="https://netsci2024.com/en/schools">NetSci 2024</Link>
@@ -82,7 +131,7 @@ export default function Home() {
             <li>
               Rex gave a talk on multimodal graph models at AWS. Date: Jan 11,
               2024
-            </li>
+            </li> */}
           </ul>
         </ScrollShadow>
       </div>
