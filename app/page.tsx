@@ -7,7 +7,7 @@ import Image from "next/image";
 // import { Image } from "@heroui/image";
 
 import { title, subtitle } from "@/components/primitives";
-import { newsList, News } from "@/config/news.ts"
+import { newsList, News } from "@/config/news"
 
 function ResearchDirection({ title, image }: { title: string; image: string }) {
   return (
