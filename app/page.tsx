@@ -174,15 +174,15 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-4 gap-4 p-8">
         <ResearchDirection
-          image="/graph_learning.webp"
+          image="/graph_learning.png"
           title="Geometric and Graph Learning"
         />
         <ResearchDirection
-          image="/multimodal.webp"
-          title="Multi-Modal Foundation Model"
+          image="/multimodal.png"
+          title="Multimodal Foundation Model"
         />
-        <ResearchDirection image="/trustworthy.webp" title="Trustworthy AI" />
-        <ResearchDirection image="/application.webp" title="Applications" />
+        <ResearchDirection image="/trustworthy.png" title="Trustworthy AI" />
+        <ResearchDirection image="/application.png" title="Applications" />
       </div>
     </>
   );
