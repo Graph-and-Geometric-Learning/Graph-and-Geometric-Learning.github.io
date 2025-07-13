@@ -20,6 +20,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "MindLLM: A Subject-Agnostic and Versatile Model for fMRI-to-Text Decoding",
+    authors: "Weikang Qiu, Zheng Huang, Haoyu Hu, Aosong Feng, Yujun Yan, Rex Ying",
+    venue: "ICML 2025",
+    page: "mindllm",
+    code: "https://github.com/Graph-and-Geometric-Learning/MindLLM",
+    paper: "https://arxiv.org/abs/2502.15786",
+    abstract: "We introduce MindLLM, a subject-agnostic and versatile model for fMRI-to-text decoding. MindLLM is equipped with a novel encoder that employs neuroscience-informed attention, and is trained on a large-scale Brain Instruction Tuning (BIT) dataset, enabling it to decode fMRI signals into natural language descriptions across various tasks in a subject-agnostic manner.",
+    impact: "MindLLM achieves state-of-the-art performance on a wide range of fMRI-to-text decoding tasks, and demonstrates strong generalization ability to unseen subjects and tasks. This work paves the way for future research on high-quality fMRI-to-text decoding.",
+    tags: [Tag.MultiModalFoundationModel],
+  },
+  {
     title: "MTBench: A Multimodal Time Series Benchmark for Temporal Reasoning and Question Answering",
     authors: "Jialin Chen, Aosong Feng, Ziyu Zhao, Juan Garza, Gaukhar Nurbek, Ali Maatouk, Leandros Tassiulas, Yifeng Gao, Rex Ying",
     venue: "",
