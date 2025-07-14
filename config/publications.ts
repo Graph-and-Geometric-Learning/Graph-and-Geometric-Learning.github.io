@@ -36,7 +36,7 @@ export const publications: Publication[] = [
     venue: "ICML, 2025 (Spotlight)",
     page: "stflow",
     code: "https://github.com/Graph-and-Geometric-Learning/STFlow",
-    paper: "https://graph-and-geometric-learning.github.io/publications",
+    paper: "https://www.arxiv.org/abs/2506.05361",
     abstract: "Propose STFlow, a flow matching generative model to directly infer the spatial gene expression from whole slide images.",
     impact: "We reformulate the original regression task as a generative modeling problem, allowing gene regulation to be integrated across cells. Additionally, the proposed geometry-aware denoiser achieves significantly higher efficiency compared to previous methods.",
     tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
