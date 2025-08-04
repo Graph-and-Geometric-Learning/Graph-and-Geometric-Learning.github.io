@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     paper: "https://arxiv.org/abs/2504.05019",
     abstract: "We tackle the challenge of simulating diverse human behaviors using large language models (LLMs), which often struggle to reflect the variability across individuals and subpopulations. We introduce Mixture of Personas (MoP), a probabilistic prompting approach that models population diversity through a contextual mixture of persona-based language model agents.",
     impact: "Our work shows that probabilistic persona modeling offers a powerful mechanism for capturing population-level diversity in LLM simulations, opening up new possibilities for social science research, data augmentation.",
-    tags: [Tag.Applications],
+    tags: [],
   },
   {
     title: "Learning Along the Arrow of Time: Hyperbolic Geometry for Backward-Compatible Representation Learning",
@@ -39,7 +39,7 @@ export const publications: Publication[] = [
     paper: "https://arxiv.org/abs/2506.05826",
     abstract: "We address the challenge of backward compatibility in aligning representation spaces across successive model updates. Our approach leverages hyperbolic geometry, treating time as an intrinsic axis to capture a model’s confidence and evolution. By lifting embeddings into hyperbolic space and constraining new embeddings to remain within the entailment cones of their predecessors, we ensure generational consistency while accommodating uncertainties in the representations.",
     impact: "Our findings demonstrate that hyperbolic geometry provides a natural framework for modeling the temporal evolution of representation spaces, contributing to the development of more robust and adaptable machine learning systems.",
-    tags: [Tag.Applications],
+    tags: [Tag.GeometricAndGraphLearning],
   },
   {
     title: "MindLLM: A Subject-Agnostic and Versatile Model for fMRI-to-Text Decoding",
