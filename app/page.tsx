@@ -16,7 +16,7 @@ function ResearchDirection({ title, image }: { title: string; image: string }) {
     <Card
       isPressable
       className="col-span-1 p-0"
-      onClick={() => {
+      onPress={() => {
         window.location.href = `/publications?tag=${title}`;
       }}
     >
