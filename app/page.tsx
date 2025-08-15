@@ -76,47 +76,6 @@ export default function Home() {
         <ScrollShadow className="w-full h-[180px] px-8">
           <ul>
             {newsList.map((news, index) => ExpandNews(news, index))}
-
-	  {/*
-            <li>
-              Rex gave a tutorial on Machine Learning in Network Science at{" "}
-              <Link href="https://netsci2024.com/en/schools">NetSci 2024</Link>
-            </li>
-            <li>
-              Rex gave a tutorial on{" "}
-              <Link href="https://www2024.thewebconf.org/docs/tutorial-slides/text-attributed-graph-representation-learning.pdf">
-                Text-Attributed Graph Representation Learning: Methods,
-                Applications, and Challenges
-              </Link>{" "}
-              at WebConf 2024
-            </li>
-            <li>
-              Rex gave a keynote on Foundation Models and Geometry for Science
-              via Relational Reasoning at WebConf 2024{" "}
-              <Link href="https://www.www24gfm.com/">
-                Graph Foundation Models Workshop
-              </Link>
-            </li>
-            <li>
-              Rex gave a seminar talk on Self-supervised learning and foundation
-              models at{" "}
-              <Link href="https://www.utrgv.edu/">
-                University of Taxas, Rio Grande Valley
-              </Link>
-              . Date: April 25, 2024
-            </li>
-            <li>Rex awarded the Amazon Research Award 2024</li>
-            <li>
-              Rex gave a keynote at the{" "}
-              <Link href="https://datascience.uchicago.edu/events/gnns-for-the-sciences-from-theory-to-practice/">
-                GNNs for the Sciences: from Theory to Practice Workshop
-              </Link>
-              , University
-            </li>
-            <li>
-              Rex gave a talk on multimodal graph models at AWS. Date: Jan 11,
-              2024
-            </li> */}
           </ul>
         </ScrollShadow>
       </div>
