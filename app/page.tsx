@@ -8,6 +8,8 @@ import Image from "next/image";
 
 import { title, subtitle } from "@/components/primitives";
 import { newsList, News } from "@/config/news"
+import { remark } from 'remark';
+import html from 'remark-html';
 
 function ResearchDirection({ title, image }: { title: string; image: string }) {
   return (
@@ -35,52 +37,35 @@ function ResearchDirection({ title, image }: { title: string; image: string }) {
   );
 }
 
-
-function replaceMarkdownLinks(text: string): React.ReactNode[] {
-  const parts: React.ReactNode[] = [];
-  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let lastIndex = 0;
-  let match;
-
-  while ((match = regex.exec(text)) !== null) {
-    const [fullMatch, title, url] = match;
-    const matchStart = match.index;
-
-    // Add text before the link
-    if (lastIndex < matchStart) {
-      parts.push(text.slice(lastIndex, matchStart));
-    }
-
-    // Add JSX Link component
-    parts.push(
-      <Link key={parts.length} href={url}>
-        {title}
-      </Link>
-    );
-
-    lastIndex = matchStart + fullMatch.length;
-  }
-
-  // Add remaining text after the last match
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
-
-  return parts;
-}
-
-
 function ExpandNews(news: News, index: number) {
-  return (<li key={index}>
-    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-      <span style={{ width: '100px', flexShrink: 0 }}>
-        <em>{news.date}</em>
-      </span>
-      <span style={{ marginLeft: '1em' }}>
-        {replaceMarkdownLinks(news.content)}
-      </span>
-    </div>
-  </li>)
+  // Custom renderer for <a> tags
+  function renderHtmlWithCustomLinks(htmlString: string) {
+    return (
+      <span
+        dangerouslySetInnerHTML={{
+          __html: htmlString.replace(
+            /<a /g,
+            '<a style="color:#0070f3;text-decoration;" '
+          ),
+        }}
+      />
+    );
+  }
+
+  const htmlContent = remark().use(html).processSync(news.content).toString();
+
+  return (
+    <li key={index}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <span style={{ width: '100px', flexShrink: 0 }}>
+          <em>{news.date}</em>
+        </span>
+        <span style={{ marginLeft: '1em' }}>
+          {renderHtmlWithCustomLinks(htmlContent)}
+        </span>
+      </div>
+    </li>
+  );
 }
 
 export default function Home() {

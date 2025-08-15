@@ -11,7 +11,7 @@ export const newsList: News[] = [
   },
   {
     date: "Aug, 2025",
-    content: "Our paper *RephQA* received the ** Blue Sky Best Paper Award ** at ACM KDD 2025."
+    content: "Our paper *RephQA* received the *Blue Sky Best Paper Award* at ACM KDD 2025."
   },
   {
     date: "Jul, 2025",
