@@ -29,7 +29,7 @@ function PublicationTag({ tag }: { tag: Tag }) {
       color = "secondary";
       break;
     case Tag.MultiModalFoundationModel:
-      name = "Multi-Modal Foundation Model";
+      name = "Multimodal Foundation Model";
       color = "success";
       break;
     case Tag.GeometricAndGraphLearning:

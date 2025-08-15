@@ -1,6 +1,6 @@
 export enum Tag {
   GeometricAndGraphLearning = "Geometric and Graph Learning",
-  MultiModalFoundationModel = "Multi-Modal Foundation Model",
+  MultiModalFoundationModel = "Multimodal Foundation Model",
   TrustworthyAI = "Trustworthy AI",
   Applications = "Applications",
   Benchmark = "Benchmark",
