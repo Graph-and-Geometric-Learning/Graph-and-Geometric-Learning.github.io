@@ -6,8 +6,20 @@ export interface News {
 
 export const newsList: News[] = [
   {
+    date: "Dec, 2025",
+    content: "Upcoming NeurIPS workshop [Non-Euclidean Foundation Models and Geometric Learning Workshop @NeurIPS 2025 | Home](https://hyperboliclearning.github.io/events/neurips2025negelworkshop)"
+  },
+  {
     date: "Aug, 2025",
-    content: "Tutorial on Non-Euclidean Foundation Models. International Conference on Knowledge Discovery and Data Mining (KDD)."
+    content: "Our paper *RephQA* received the ** Blue Sky Best Paper Award ** at ACM KDD 2025."
+  },
+  {
+    date: "Jul, 2025",
+    content: "Talk at DeepLearn 2025 on Graph foundation models and Non-Euclidean foundation models."
+  },
+  {
+    date: "Aug, 2025",
+    content: "[Tutorial](https://hyperboliclearning.github.io/events/kdd2025tutorial) on Non-Euclidean Foundation Models. International Conference on Knowledge Discovery and Data Mining (KDD)."
   },
   {
     date: "May, 2025",
