@@ -82,8 +82,8 @@ export default function Home() {
 
       <div className="p-4">
         <h1 className={title()}>Vision</h1>
-        <div className="grid grid-cols-4 grid-rows-1">
-          <div className="col-span-2 px-8">
+        <div className="flex">
+          <div className="px-1 w-[520px]">
             <p className="my-4">
               We are a group of data-driven machine learning enthusiasts who are
               primarily interested in building unified approaches to integrate
@@ -104,14 +104,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative col-span-2">
+          <div className="relative flex-1">
             <Image
               fill
               alt="word cloud"
-              src="/word_cloud.png"
-              style={{
-                objectFit: "cover",
-              }}
+              src="/wordcloud.svg"
             />
           </div>
         </div>
