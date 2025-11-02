@@ -4,6 +4,7 @@ export enum Tag {
   TrustworthyAI = "Trustworthy AI",
   Applications = "Applications",
   Benchmark = "Benchmark",
+  GenerativeModel = "Generative Model",
 }
 
 export interface Publication {
@@ -19,6 +20,17 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
+  {
+    title: "Non-Markovian Discrete Diffusion with Causal Language Models",
+    authors: "Yangtian Zhang, Sizhuang He, Daniel Levine, Lawrence Zhao, David Zhang, Syed A. Rizvi, Shiyang Zhang, Emanuele Zappala, Rex Ying, David van Dijk",
+    venue: "NeurIPS 2025",
+    page: "caddi",
+    code: null,
+    paper: "https://arxiv.org/abs/2502.09767",
+    abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state and causes errors to accumulate. CaDDi lifts this constraint by conditioning on the entire generative trajectory, unifying sequential (causal) and temporal (diffusion) reasoning in a single transformer that can reuse pretrained language model weights.",
+    impact: "By bridging diffusion and autoregressive paradigms, CaDDi delivers stronger discrete sequence generation while remaining compatible with existing causal LLM infrastructure, opening the door to controllable editing and refinement with minimal architectural changes.",
+    tags: [Tag.GenerativeModel],
+  },
   {
     title: "Mixture-of-Personas Language Models for Population Simulation",
     authors: "Ngoc Bui, Hieu Trung Nguyen, Shantanu Kumar, Julian Theodore, Weikang Qiu, Viet Anh Nguyen, Rex Ying",
