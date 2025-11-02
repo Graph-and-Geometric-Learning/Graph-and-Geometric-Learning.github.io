@@ -40,6 +40,10 @@ function PublicationTag({ tag }: { tag: Tag }) {
       name = "Benchmark";
       color = "primary";
       break;
+    case Tag.GenerativeModel:
+      name = "Generative Model";
+      color = "default";
+      break;
   }
 
   return (

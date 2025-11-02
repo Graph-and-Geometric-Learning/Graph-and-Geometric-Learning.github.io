@@ -4,6 +4,7 @@ export enum Tag {
   TrustworthyAI = "Trustworthy AI",
   Applications = "Applications",
   Benchmark = "Benchmark",
+  GenerativeModel = "Generative Model",
 }
 
 export interface Publication {
@@ -51,6 +52,17 @@ export const publications: Publication[] = [
     abstract: "We introduce MindLLM, a subject-agnostic and versatile model for fMRI-to-text decoding. MindLLM is equipped with a novel encoder that employs neuroscience-informed attention, and is trained on a large-scale Brain Instruction Tuning (BIT) dataset, enabling it to decode fMRI signals into natural language descriptions across various tasks in a subject-agnostic manner.",
     impact: "MindLLM achieves state-of-the-art performance on a wide range of fMRI-to-text decoding tasks, and demonstrates strong generalization ability to unseen subjects and tasks. This work paves the way for future research on high-quality fMRI-to-text decoding.",
     tags: [Tag.MultiModalFoundationModel],
+  },
+  {
+    title: "Non-Markovian Discrete Diffusion with Causal Language Models",
+    authors: "Yangtian Zhang, Sizhuang He, Daniel Levine, Lawrence Zhao, David Zhang, Syed A. Rizvi, Shiyang Zhang, Emanuele Zappala, Rex Ying, David van Dijk",
+    venue: "NeurIPS 2025",
+    page: "caddi",
+    code: null,
+    paper: "https://arxiv.org/abs/2502.09767",
+    abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state and causes errors to accumulate. CaDDi lifts this constraint by conditioning on the entire generative trajectory, unifying sequential (causal) and temporal (diffusion) reasoning in a single transformer that can reuse pretrained language model weights.",
+    impact: "By bridging diffusion and autoregressive paradigms, CaDDi delivers stronger discrete sequence generation while remaining compatible with existing causal LLM infrastructure, opening the door to controllable editing and refinement with minimal architectural changes.",
+    tags: [Tag.GenerativeModel],
   },
   {
     title: "Scalable Generation of Spatial Transcriptomics from Histology Images via Whole-Slide Flow Matching",
