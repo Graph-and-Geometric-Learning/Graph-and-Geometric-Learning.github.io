@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "TRACE: Grounding Time Series in Context for Multimodal Embedding and Retrieval",
+    authors: "Jialin Chen, Ziyu Zhao, Gaukhar Nurbek, Aosong Feng, Ali Maatouk, Leandros Tassiulas, Yifeng Gao, Rex Ying",
+    venue: "NeurIPS 2025",
+    page: "trace",
+    code: "https://github.com/Graph-and-Geometric-Learning/TRACE-Multimodal-TSEncoder",
+    paper: "https://arxiv.org/pdf/2506.09114",
+    abstract: "We address the challenge of time-series retrieval, which remains largely underexplored as existing methods lack semantic grounding, struggle with heterogeneous modalities, and have limited capacity for multi-channel signals. We propose TRACE, a multimodal retriever that grounds time-series embeddings in aligned textual context.", 
+    impact: "TRACE enables fine-grained channel-level alignment and uses hard negative mining for semantically meaningful retrieval across flexible modes (Text-to-Timeseries and Timeseries-to-Text). Beyond retrieval, it functions as a standalone encoder that achieves state-of-the-art performance on forecasting and classification tasks.",
+    tags: [Tag.MultiModalFoundationModel],
+  },
+  {
     title: "Non-Markovian Discrete Diffusion with Causal Language Models",
     authors: "Yangtian Zhang, Sizhuang He, Daniel Levine, Lawrence Zhao, David Zhang, Syed A. Rizvi, Shiyang Zhang, Emanuele Zappala, Rex Ying, David van Dijk",
     venue: "NeurIPS 2025",
