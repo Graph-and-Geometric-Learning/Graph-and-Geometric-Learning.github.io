@@ -1,0 +1,92 @@
+[ 
+  {
+    "category": "",
+    "retriever": "Random",
+    "label_matching": { "p_at_1": 42.61, "p_at_5": 47.50, "mrr": 0.583 },
+    "modality_matching": { "p_at_1": 0.00, "p_at_5": 0.00, "mrr": 0.00 },
+    "text": { "rouge": 0.416 },
+    "time_series": { "mae": 0.874, "mse": 1.653 }
+  },
+  {
+    "category": "TS-to-Text",
+    "retriever": "w/ Time-MoE",
+    "label_matching": { "p_at_1": 46.46, "p_at_5": 43.98, "mrr": 0.612 },
+    "modality_matching": { "p_at_1": 1.79, "p_at_5": 5.93, "mrr": 0.052 },
+    "text": { "rouge": 0.482 },
+    "time_series": { "mae": 0.837, "mse": 1.607 }
+  },
+  {
+    "category": "TS-to-Text",
+    "retriever": "w/ Timer-XL",
+    "label_matching": { "p_at_1": 36.34, "p_at_5": 38.16, "mrr": 0.543 },
+    "modality_matching": { "p_at_1": 4.29, "p_at_5": 12.61, "mrr": 0.090 },
+    "text": { "rouge": 0.482 },
+    "time_series": { "mae": 0.793, "mse": 1.493 }
+  },
+  {
+    "category": "TS-to-Text",
+    "retriever": "w/ TS2Vec",
+    "label_matching": { "p_at_1": 50.47, "p_at_5": 48.72, "mrr": 0.651 },
+    "modality_matching": { "p_at_1": 4.37, "p_at_5": 14.57, "mrr": 0.112 },
+    "text": { "rouge": 0.503 },
+    "time_series": { "mae": 0.784, "mse": 1.462 }
+  },
+  {
+    "category": "TS-to-Text",
+    "retriever": "w/ Moment",
+    "label_matching": { "p_at_1": 55.73, "p_at_5": 53.18, "mrr": 0.691 },
+    "modality_matching": { "p_at_1": 7.78, "p_at_5": 21.68, "mrr": 0.154 },
+    "text": { "rouge": 0.515 },
+    "time_series": { "mae": 0.747, "mse": 1.415 }
+  },
+  {
+    "category": "TS-to-Text",
+    "retriever": "TRACE",
+    "label_matching": { "p_at_1": 90.08, "p_at_5": 77.60, "mrr": 0.940 },
+    "modality_matching": { "p_at_1": 44.10, "p_at_5": 70.24, "mrr": 0.560 },
+    "text": { "rouge": 0.717 },
+    "time_series": { "mae": 0.403, "mse": 0.771 },
+    "isBest": true
+  },
+  {
+    "category": "Text-to-TS",
+    "retriever": "w/ Time-MoE",
+    "label_matching": { "p_at_1": 57.08, "p_at_5": 52.22, "mrr": 0.656 },
+    "modality_matching": { "p_at_1": 0.75, "p_at_5": 2.89, "mrr": 0.031 },
+    "text": { "rouge": 0.460 },
+    "time_series": { "mae": 0.857, "mse": 1.578 }
+  },
+  {
+    "category": "Text-to-TS",
+    "retriever": "w/ Timer-XL",
+    "label_matching": { "p_at_1": 63.91, "p_at_5": 58.71, "mrr": 0.731 },
+    "modality_matching": { "p_at_1": 2.94, "p_at_5": 9.47, "mrr": 0.073 },
+    "text": { "rouge": 0.463 },
+    "time_series": { "mae": 0.821, "mse": 1.568 }
+  },
+  {
+    "category": "Text-to-TS",
+    "retriever": "w/ TS2Vec",
+    "label_matching": { "p_at_1": 60.28, "p_at_5": 56.41, "mrr": 0.706 },
+    "modality_matching": { "p_at_1": 7.42, "p_at_5": 23.70, "mrr": 0.184 },
+    "text": { "rouge": 0.471 },
+    "time_series": { "mae": 0.806, "mse": 1.490 }
+  },
+  {
+    "category": "Text-to-TS",
+    "retriever": "w/ Moment",
+    "label_matching": { "p_at_1": 64.67, "p_at_5": 59.53, "mrr": 0.740 },
+    "modality_matching": { "p_at_1": 5.83, "p_at_5": 18.15, "mrr": 0.133 },
+    "text": { "rouge": 0.488 },
+    "time_series": { "mae": 0.778, "mse": 1.467 }
+  },
+  {
+    "category": "Text-to-TS",
+    "retriever": "TRACE",
+    "label_matching": { "p_at_1": 89.63, "p_at_5": 78.39, "mrr": 0.938 },
+    "modality_matching": { "p_at_1": 43.72, "p_at_5": 69.84, "mrr": 0.557 },
+    "text": { "rouge": 0.713 },
+    "time_series": { "mae": 0.411, "mse": 0.793 },
+    "isBest": true
+  }
+]
