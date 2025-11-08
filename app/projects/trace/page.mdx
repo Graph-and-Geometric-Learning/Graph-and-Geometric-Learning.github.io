@@ -1,0 +1,127 @@
+import { Authors, Badges } from '@/components/utils'
+import { Table1, Table2, Table3, Table4, Table5 } from './components/tables.tsx'
+
+# TRACE: Grounding Time Series in Context for Multimodal Embedding and Retrieval
+
+<Authors 
+    authors="Jialin Chen, Yale University; Ziyu Zhao, McGill University; Gaukhar Nurbek, University of Texas Rio Grande Valley; Aosong Feng, Yale University; Ali Maatouk, Yale University; Leandros Tassiulas, Yale University; Yifeng Gao, University of Texas Rio Grande Valley; Rex Ying, Yale University"
+/>
+
+<Badges
+  venue="NeurIPS 2025"
+  github="https://github.com/Graph-and-Geometric-Learning/TRACE-Multimodal-TSEncoder"
+  arxiv="https://arxiv.org/abs/2506.09114"
+  pdf="https://arxiv.org/pdf/2506.09114"
+/>
+
+## Introduction
+Time-series data is central to domains like healthcare, weather, and energy, yet it rarely exists alone. In real-world settings, it is often paired with rich textual context such as clinical notes or weather reports. This combination calls for models that can jointly understand time-series signals and text.
+As shown in figure below, a flash flood report describing heavy rainfall and strong winds can help retrieve historical time-series patterns with similar dynamics, supporting tasks like forecasting and disaster alerts. But existing approaches remain limited—they often ignore the textual context and struggle to align time-series and language representations effectively.
+![A Use Case of Text-to-Timeseries Retrieval|scale=0.7](./assets/use_case.png)
+## Method
+We introduce TRACE — a Time-series Retriever with Aligned Context Embedding. TRACE is the first multimodal retriever that learns semantically grounded time-series embeddings through fine-grained dual-level alignment. It uses a masked autoencoder with Channel Identity Tokens (CITs) to capture channel-specific behaviors and employs hierarchical hard negative mining to align time-series and textual representations effectively.
+TRACE serves two purposes:
+	1.	As a general-purpose retriever, it enhances foundation models via retrieval-augmented generation (RAG).
+	2.	As a standalone encoder, it achieves state-of-the-art performance on forecasting and classification benchmarks.
+![Overview of TRACE|scale=0.7](./assets/cover_fig.png)
+
+As shown in the figure below, TRACE first learns robust time-series representations through masked reconstruction with channel-aware attention. It then aligns each time-series channel with its corresponding text using fine-grained contrastive learning. Building on this, TRACE introduces a retrieval-augmented generation strategy that fetches relevant context for downstream tasks. This modular design delivers strong standalone performance while integrating seamlessly with existing time-series foundation models.
+![Architecture of TRACE|scale=0.7](./assets/architecture.png)
+### Stage 1: Time Series Encoder Pre-training
+In this stage TRACE learns robust time series representations through a masked reconstruction
+objective with channel-biased attention.
+<details>
+<summary>**Time Series Tokenization**</summary>
+<p>We process multivariate time series by dividing the temporal dimension into non-overlapping patches of fixed length. Each patch is flattened and projected into a d-dimensional embedding space, converting each channel into a sequence of patch tokens.
+To capture channel-specific semantics, we prepend a learnable channel identity token [CIT] to each channel's patch sequence. These tokens act as channel-level summaries—uniquely indexed, initialized from a standard Gaussian distribution, and trained with the model. This allows the model to differentiate channels and aggregate their patterns effectively.
+We concatenate all tokenized channels into a single sequence and insert a global [CLS] token at the beginning. The final token sequence follows this structure: the [CLS] token, followed by each channel's [CIT] and its patch tokens, repeated for all channels.
+This tokenization strategy preserves both temporal and structural granularity: patches encode local patterns, [CIT] tokens summarize channel-level dynamics, and [CLS] provides a global embedding for retrieval and classification tasks.</p>
+</details>
+
+<details>
+<summary>**Channel-biased Attention and Rotary PE**</summary>
+<p>We introduce a Channel-biased Attention (CbA) mechanism that combines channel disentanglement with temporal order encoding via rotary positional embeddings (RoPE).
+CbA uses a biased attention mask to prevent semantic entanglement across heterogeneous variables. Each [CIT] token can only attend to tokens within its own channel, while non-[CIT] tokens can attend to all positions. This enforces channel disentanglement while allowing rich token-level interactions.
+We apply RoPE to query and key vectors before computing attention. RoPE is applied independently within each channel to temporal patch tokens but not to [CIT] tokens, which act as position-agnostic aggregators.
+Crucially, RoPE uses the relative time difference between tokens in their original unflattened sequence rather than their flattened position. This ensures position encoding reflects true temporal structure—important because tokens close in actual time may appear far apart after channels are flattened into a single sequence.</p>
+</details>
+TRACE uses an encoder-only Transformer with multi-head channel-biased attention layers. We apply reversible instance normalization to multivariate time series before tokenization and embedding. A fixed proportion of tokens is randomly masked, and the model is pre-trained to reconstruct the missing values from the unmasked context using mean squared error loss. This encourages the model to capture cross-channel dependencies while learning transferable representations for downstream tasks.
+
+
+### Stage 2: Multimodal Alignment Learning
+In the following stage each time series channel is aligned with its corresponding textual description via fine-grained contrastive learning. Standard contrastive learning methods rely on sample-level random negatives. However, textual descriptions often reference specific variables like temperature spikes or wind gusts, which cannot be precisely aligned using a single global embedding.
+We introduce channel-level alignment that explicitly models the interaction between individual time-series channels and their corresponding textual context. This enhances semantic precision, promotes modularity in representation learning, and enables variable-specific interactions.
+<details>
+<summary>**Cross-attention Between Modalities**</summary>
+<p>After pre-training via masked reconstruction, we extract embeddings from the final transformer layer: the [CLS] token embedding and the channel identity token embeddings, which serve as fine-grained anchors for channel-level reasoning.
+Textual inputs are encoded using a pre-trained language model followed by a learnable linear projection into the same embedding space as the time series. This yields semantic embeddings for both sample-level context and individual channel-level descriptions.
+We apply cross-attention between the channel identity token embeddings and channel text embeddings, allowing the model to refine its channel-wise time-series representations using semantically aligned textual information.</p>
+</details>
+
+<details>
+<summary>**Dual-level Hard Negative Mining**</summary>
+<p>We develop a dual-level hard negative mining strategy that introduces contrastive pressure at both sample and channel levels. This enables the model to distinguish between unrelated time series and text, as well as subtly confusable pairs that share temporal similarity but diverge semantically.
+For each time series instance, we mine negative candidates based on embedding cosine similarity. Sample-level negatives come from other reports in the batch. Channel-level negatives come from a broader pool including both intra-instance distractors (other channels within the same sample) and inter-instance distractors (same-indexed channels across different samples).
+We compute bidirectional InfoNCE losses at both sample and channel levels. The total alignment objective averages both directions and is controlled by a hyperparameter that balances sample-level and channel-level contributions.
+This objective is optimized jointly with the trainable parameters of the time series encoder and the linear projection head, while keeping the language model frozen.</p>
+</details>
+
+### RAG with Time Series Foundation Models
+TRACE enables RAG for time series foundation models. Given a query time series, TRACE computes its [CLS] token embedding and retrieves the top-R most relevant multimodal pairs from a pre-built database based on embedding similarity. Each retrieved pair contains a historical time series and its associated textual context.
+The time series and text representations are concatenated, stacked, and mapped through a single trainable projection layer to generate a dense soft token. This token serves as a continuous prompt prepended to the query sequence input, allowing downstream models to incorporate external knowledge without architectural modification.
+Importantly, the base foundation model remains frozen during training—only the projection layer and a lightweight task-specific head are updated. This ensures efficiency and model-agnosticism, enabling plug-and-play integration across diverse architectures. TRACE effectively acts as structured external memory, enriching model input with historically grounded and semantically aligned context.
+
+## Results
+We evaluate TRACE from three perspectives:
+(1) its performance in cross-modal and time-series retrieval compared to strong baselines,
+(2) its effectiveness as a retriever in retrieval-augmented forecasting pipelines, and
+(3) its generalization as a standalone encoder for forecasting and classification.
+
+### Cross-modal Retrieval
+To assess retrieval performance, we replace TRACE’s encoder with several strong time-series foundation models that generate fixed-length embeddings. Each encoder is fine-tuned end-to-end with a lightweight projection layer and a contrastive learning objective for fair comparison.
+As shown in Table 1, TRACE achieves state-of-the-art results, with nearly 90% top-1 label matching and 44% top-1 modality matching. Its retrieval accuracy surpasses the classification performance of all models trained from scratch, underscoring the effectiveness of alignment-based supervision. Among baselines, Moment performs best, but TRACE’s fine-grained embeddings enable more precise cross-modal retrieval and semantic matching.
+
+<Table1/>
+
+### Timeseries-to-Timeseries Retrieval
+We tested TRACE on a time-series-to-time-series retrieval task, where the goal is finding the most semantically similar series for each query.
+Table 2 shows TRACE outperforming all baselines—ED, DTW, SAX-VSM, and CTSR—across key metrics: Precision@1, Precision@5, and Mean Reciprocal Rank (MRR). It also maintained the lowest retrieval latency.
+The performance gap highlights a key difference. Methods like SAX-VSM and CTSR struggle to capture deeper temporal and semantic patterns. TRACE's alignment-aware training, by contrast, delivers accurate and efficient retrieval across multivariate signals while remaining scalable.
+
+<Table2/>
+
+### Retrieval-augmented Time Series Forecasting
+We used TRACE to find the most relevant time-series and text pairs from our dataset based on embedding similarity.
+Table 3 shows that retrieval augmentation improves forecasting performance across all models. The biggest gains came from combining time series with text (TS+Text), especially for decoder-only models like Timer-XL and Time-MoE.
+Interestingly, TRACE itself showed minimal improvement between TS-only and TS+Text retrieval. This isn't a weakness—it indicates TRACE's embeddings are already well-aligned across modalities. The model doesn't need much help because its multimodal space is already doing the work.
+This makes TRACE effective as a lightweight, general-purpose retriever for RAG pipelines.
+
+<Table3/>
+
+### Standalone Time Series Encoder
+We tested TRACE on forecasting and classification tasks, comparing it against traditional models trained from scratch and existing time series foundation models.
+The classification results (Table 4) revealed an interesting pattern: fine-tuned foundation models actually performed worse than simpler train-from-scratch models. The likely reason is over-generalization—their embeddings become too broad and lose domain-specific signals needed for accurate classification. TRACE took a different approach. It achieved significantly higher accuracy and F1 scores than baselines, both with and without retrieval-augmented generation (RAG). This suggests TRACE maintains discriminative structure while preserving semantic alignment.
+
+<Table4/>
+
+Table 5 shows TRACE outperforming baselines across datasets, particularly on longer prediction horizons where other models struggle. Traditional approaches show inconsistent performance as the forecasting window extends. TRACE's cross-modal design appears to be the key difference—it provides better semantic understanding and more context-aware predictions.
+
+<Table5/>
+
+### Embedding visualization
+![UMAP Visualization of Aligned Text and Time Series Embeddings.|scale=0.3](./assets/umap.png)
+Figure above visualizes the joint embedding space using UMAP. Each color represents an event category, with circles for time series and crosses for text descriptions connected by lines.
+The visualization shows clear clustering by event type, with paired modalities positioned closely together. Some events like "Flood" and "Debris Flow" show overlapping clusters, reflecting shared underlying dynamics. The tight alignment between paired points validates our dual-level alignment strategy, while modality-mixing within clusters suggests successful fusion of structured and unstructured signals.
+
+
+### Empirical Case Study
+Following figure demonstrates alignment between detailed textual context and corresponding multivariate time series. The retrieval pool excludes the query's paired instance, ensuring retrieved results reflect the model's ability to identify semantically similar yet distinct examples.
+TRACE uses both high-level and fine-grained semantic cues to retrieve the most relevant time series. The top-1 retrieved sequence closely reflects key patterns in the query text, serving as a valuable reference for downstream forecasting, scenario simulation, or contextual explanation.
+![A case study of text-to-timeseries retrieval of flash flood-related time series. The key textual cues are highlighted in color for clarity.|scale=0.7](./assets/text2ts_retrieval.png)
+
+### TS-to-TS Retrieval Case Study
+Next figure shows a TS-to-TS retrieval case study. Given a query time series labeled as Flood, TRACE retrieves the top-3 most similar samples based on embedding similarity. Similarity scores appear on the left, with per-channel values annotated below each plot.
+All retrieved samples show high overall similarity (approximately 0.79–0.81), reflecting strong semantic alignment. The top-2 retrievals are also labeled as Flood, while the third is Flash Flood—a semantically related event. This demonstrates TRACE's ability to retrieve contextually relevant samples even across closely related labels.
+TRACE enables fine-grained channel-level similarity assessment through its Channel Identity Tokens (CIT), which independently embed channel-specific signals. Interestingly, high similarity in individual channels doesn't always guarantee high overall semantic alignment. The first retrieval shows moderate per-channel similarity yet achieves a high overall semantic score.
+This highlights TRACE's structured aggregation across channels to capture global semantics and identify the most semantically dominant channels. TRACE retrieves samples sharing latent event signatures rather than merely matching patterns uniformly across all channels.
+![Visualization of Timeseries-to-Timeseries Retrieval by TRACE|scale=0.7](./assets/retrieval_case7_6144.png)

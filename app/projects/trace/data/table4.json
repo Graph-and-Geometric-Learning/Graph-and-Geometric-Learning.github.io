@@ -1,0 +1,14 @@
+[
+  { "category": "Train-from-scratch Model", "model": "DLinear", "accuracy": 82.37, "f1": 65.78 },
+  { "category": "Train-from-scratch Model", "model": "iTransformer", "accuracy": 84.99, "f1": 68.29 },
+  { "category": "Train-from-scratch Model", "model": "PatchTST", "accuracy": 84.78, "f1": 69.13 },
+  { "category": "Train-from-scratch Model", "model": "TimesNet", "accuracy": 86.09, "f1": 68.97 },
+  { "category": "Train-from-scratch Model", "model": "TimeMixer", "accuracy": 84.78, "f1": 68.65 },
+  { "category": "Train-from-scratch Model", "model": "FSCA", "accuracy": 85.62, "f1": 69.41 },
+  { "category": "Finetune a Pre-trained Model", "model": "Time-MoE_large", "accuracy": 59.09, "f1": 19.74 },
+  { "category": "Finetune a Pre-trained Model", "model": "Moment_base", "accuracy": 65.43, "f1": 28.29 },
+  { "category": "Finetune a Pre-trained Model", "model": "Timer-XL", "accuracy": 72.38, "f1": 33.45 },
+  { "category": "Finetune a Pre-trained Model", "model": "Chronos_tiny", "accuracy": 74.79, "f1": 40.21 },
+  { "category": "Finetune a Pre-trained Model", "model": "TRACE w/o RAG", "accuracy": 85.20, "f1": 69.98, "isBest": true, "noBold": true },
+  { "category": "Finetune a Pre-trained Model", "model": "TRACE w/ RAG", "accuracy": 89.76, "f1": 72.36, "isBest": true }
+]

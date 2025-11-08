@@ -1,0 +1,24 @@
+[
+  {
+    "setting": "w/o RAG",
+    "timerXL": { "mae": 0.729, "mse": 1.055 },
+    "timeMoE": { "mae": 0.635, "mse": 0.903 },
+    "moment": { "mae": 0.645, "mse": 0.816 },
+    "trace": { "mae": 0.576, "mse": 0.718 }
+  },
+  {
+    "setting": "w/ TS-only",
+    "timerXL": { "mae": 0.720, "mse": 1.009 },
+    "timeMoE": { "mae": 0.621, "mse": 0.801 },
+    "moment": { "mae": 0.628, "mse": 0.797 },
+    "trace": { "mae": 0.556, "mse": 0.698 }
+  },
+  {
+    "setting": "w/ TS+Text",
+    "timerXL": { "mae": 0.712, "mse": 0.984 },
+    "timeMoE": { "mae": 0.611, "mse": 0.787 },
+    "moment": { "mae": 0.631, "mse": 0.801 },
+    "trace": { "mae": 0.555, "mse": 0.696 },
+    "isBest": true
+  }
+]
