@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "HELM: Hyperbolic Large Language Models via Mixture-of-Curvature Experts",
+    authors: "Neil He, Rishabh Anand, Hiren Madhu, Ali Maatouk, Smita Krishnaswamy, Leandros Tassiulas, Menglin Yang, Rex Ying",
+    venue: "NeurIPS 2025",
+    page: "helm",
+    code: "https://github.com/Graph-and-Geometric-Learning/helm",
+    paper: "https://arxiv.org/pdf/2505.24722",
+    abstract: "Natural language exhibits hierarchical and non-Euclidean structure that conventional Euclidean LLMs fail to model adequately, resulting in representational limitations and training instabilities. HELM introduces a family of fully hyperbolic large language models designed to align model geometry with the inherent structure of text. The framework includes both a dense variant (HELM-D) and a Mixture-of-Curvature Experts model (HELM-MICE), supported by newly developed hyperbolic counterparts of RoPE, RMSNorm, and an efficient hyperbolic latent attention mechanism. HELM constitutes the first successful scaling of fully hyperbolic LLMs to the billion-parameter regime. Empirical evaluations on benchmarks such as MMLU and ARC demonstrate consistent improvements—up to 4%—over comparable Euclidean architectures, indicating the advantages of hyperbolic geometry for large-scale language modeling.", 
+    impact: "HELM introduces fully hyperbolic large language models and proposes several new modules: hyperbolic RoPE, RMSNorm, and Mixture-of-Curvature Experts. At the scale of 1B parameters, HELM achieve geometry-aligned token representations and fine-grained curvature-aware modeling, consitstenly improving over Euclidean LLMs on reasoning benchmarks such as MMLU and ARC.",
+    tags: [Tag.MultiModalFoundationModel],
+  },
+  {
     title: "TRACE: Grounding Time Series in Context for Multimodal Embedding and Retrieval",
     authors: "Jialin Chen, Ziyu Zhao, Gaukhar Nurbek, Aosong Feng, Ali Maatouk, Leandros Tassiulas, Yifeng Gao, Rex Ying",
     venue: "NeurIPS 2025",
