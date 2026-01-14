@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "LitBench: A Graph-Centric Large Language Model Benchmarking Tool For Literature Tasks",
+    authors: "Andreas Varvarigos, Ali Maatouk, Jiasheng Zhang, Ngoc Bui, Jialin Chen, Leandros Tassiulas, Rex Ying",
+    venue: "KDD 2026",
+    page: "litbench",
+    code: "https://github.com/varvarigos/LitBench",
+    paper: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/arxiv.svg",
+    abstract: "Large Language Models (LLMs) demonstrate strong general-purpose language understanding but remain poorly suited as domain-specific literature agents. Existing benchmarks largely ignore the structured nature of scientific knowledge, overlooking citation graphs, concept hierarchies, and fine-grained citation context. LitBench introduces a graph-centric benchmarking framework for literature tasks that explicitly models scientific structure. The framework constructs domain-specific citation graphs from arXiv papers, enriched with structured textual fields (abstracts, introductions, related work) and aligned citation sentences. Given a user-specified domain, LitBench retrieves relevant papers via concept-based embeddings and builds focused citation sub-networks from which diverse instruction-tuning and evaluation datasets are generated, spanning node-level, edge-level, and higher-order synthesis tasks.",
+    impact: "LitBench establishes a new paradigm for training and evaluating literature-aware LLMs by leveraging graph-structured supervision rather than continual pretraining. It enables systematic benchmarking across tasks such as title generation, abstract completion, citation sentence generation, link prediction, and related work synthesis. Experiments across multiple scientific domains show that LitBench-trained models consistently outperform substantially larger general-purpose LLMs, demonstrating that explicit modeling of citation graphs and structured scientific context is critical for effective literature understanding.",
+    tags: [Tag.Benchmark],
+  },
+  {
     title: "HELM: Hyperbolic Large Language Models via Mixture-of-Curvature Experts",
     authors: "Neil He, Rishabh Anand, Hiren Madhu, Ali Maatouk, Smita Krishnaswamy, Leandros Tassiulas, Menglin Yang, Rex Ying",
     venue: "NeurIPS 2025",
