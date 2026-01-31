@@ -30,40 +30,36 @@ As shown in the figure below, TRACE first learns robust time-series representati
 ### Stage 1: Time Series Encoder Pre-training
 In this stage TRACE learns robust time series representations through a masked reconstruction
 objective with channel-biased attention.
+
 <details>
 <summary>**Time Series Tokenization**</summary>
-<p>We process multivariate time series by dividing the temporal dimension into non-overlapping patches of fixed length. Each patch is flattened and projected into a d-dimensional embedding space, converting each channel into a sequence of patch tokens.
-To capture channel-specific semantics, we prepend a learnable channel identity token [CIT] to each channel's patch sequence. These tokens act as channel-level summaries—uniquely indexed, initialized from a standard Gaussian distribution, and trained with the model. This allows the model to differentiate channels and aggregate their patterns effectively.
-We concatenate all tokenized channels into a single sequence and insert a global [CLS] token at the beginning. The final token sequence follows this structure: the [CLS] token, followed by each channel's [CIT] and its patch tokens, repeated for all channels.
-This tokenization strategy preserves both temporal and structural granularity: patches encode local patterns, [CIT] tokens summarize channel-level dynamics, and [CLS] provides a global embedding for retrieval and classification tasks.</p>
+<p>We divide multivariate time series into non-overlapping patches and project them into patch tokens. Each channel gets a learnable [CIT] token prepended as a channel-level summary, enabling the model to differentiate and aggregate channel patterns. A global [CLS] token is inserted at the beginning, forming the final sequence shown in the figure. This preserves temporal and structural granularity: patches encode local patterns, [CIT] tokens capture channel dynamics, and [CLS] provides a global embedding for downstream tasks.</p>
+<div>![|scale=0.35](./assets/tokenization.png)</div>
 </details>
+
 
 <details>
 <summary>**Channel-biased Attention and Rotary PE**</summary>
-<p>We introduce a Channel-biased Attention (CbA) mechanism that combines channel disentanglement with temporal order encoding via rotary positional embeddings (RoPE).
-CbA uses a biased attention mask to prevent semantic entanglement across heterogeneous variables. Each [CIT] token can only attend to tokens within its own channel, while non-[CIT] tokens can attend to all positions. This enforces channel disentanglement while allowing rich token-level interactions.
-We apply RoPE to query and key vectors before computing attention. RoPE is applied independently within each channel to temporal patch tokens but not to [CIT] tokens, which act as position-agnostic aggregators.
-Crucially, RoPE uses the relative time difference between tokens in their original unflattened sequence rather than their flattened position. This ensures position encoding reflects true temporal structure—important because tokens close in actual time may appear far apart after channels are flattened into a single sequence.</p>
+<p>To process these tokens effectively, we introduce a Channel-biased Attention (CbA) mechanism combining channel disentanglement with temporal encoding via rotary positional embeddings (RoPE). CbA uses a biased mask where [CIT] tokens only attend to their own channel, while non-[CIT] tokens attend globally. This enforces channel disentanglement while enabling rich token interactions. RoPE is applied independently within each channel to temporal tokens but not to [CIT] tokens. Crucially, RoPE uses relative time differences from the original sequence, preserving true temporal structure despite channel flattening.</p>
+<div>![|scale=0.35](./assets/rope_cba.png)</div>
 </details>
 TRACE uses an encoder-only Transformer with multi-head channel-biased attention layers. We apply reversible instance normalization to multivariate time series before tokenization and embedding. A fixed proportion of tokens is randomly masked, and the model is pre-trained to reconstruct the missing values from the unmasked context using mean squared error loss. This encourages the model to capture cross-channel dependencies while learning transferable representations for downstream tasks.
 
 
 ### Stage 2: Multimodal Alignment Learning
-In the following stage each time series channel is aligned with its corresponding textual description via fine-grained contrastive learning. Standard contrastive learning methods rely on sample-level random negatives. However, textual descriptions often reference specific variables like temperature spikes or wind gusts, which cannot be precisely aligned using a single global embedding.
-We introduce channel-level alignment that explicitly models the interaction between individual time-series channels and their corresponding textual context. This enhances semantic precision, promotes modularity in representation learning, and enables variable-specific interactions.
+In this stage, each time series channel is aligned with its textual description via fine-grained contrastive learning. Standard methods use sample-level negatives, but textual descriptions often reference specific variables that cannot be aligned with a single global embedding. We introduce channel-level alignment that explicitly models interactions between individual channels and their textual context, enhancing semantic precision and enabling variable-specific interactions.
 <details>
 <summary>**Cross-attention Between Modalities**</summary>
-<p>After pre-training via masked reconstruction, we extract embeddings from the final transformer layer: the [CLS] token embedding and the channel identity token embeddings, which serve as fine-grained anchors for channel-level reasoning.
-Textual inputs are encoded using a pre-trained language model followed by a learnable linear projection into the same embedding space as the time series. This yields semantic embeddings for both sample-level context and individual channel-level descriptions.
-We apply cross-attention between the channel identity token embeddings and channel text embeddings, allowing the model to refine its channel-wise time-series representations using semantically aligned textual information.</p>
+<p>After pre-training, we extract the [CLS] token and channel identity token embeddings from the final layer. Textual inputs are encoded via a pre-trained language model and projected into the same embedding space, yielding embeddings for both sample-level and channel-level descriptions. Cross-attention between channel tokens and text embeddings refines the time-series representations using semantically aligned textual information.</p>
+<div>![|scale=0.45](./assets/cross_attention.png)</div>
 </details>
 
 <details>
 <summary>**Dual-level Hard Negative Mining**</summary>
-<p>We develop a dual-level hard negative mining strategy that introduces contrastive pressure at both sample and channel levels. This enables the model to distinguish between unrelated time series and text, as well as subtly confusable pairs that share temporal similarity but diverge semantically.
-For each time series instance, we mine negative candidates based on embedding cosine similarity. Sample-level negatives come from other reports in the batch. Channel-level negatives come from a broader pool including both intra-instance distractors (other channels within the same sample) and inter-instance distractors (same-indexed channels across different samples).
-We compute bidirectional InfoNCE losses at both sample and channel levels. The total alignment objective averages both directions and is controlled by a hyperparameter that balances sample-level and channel-level contributions.
-This objective is optimized jointly with the trainable parameters of the time series encoder and the linear projection head, while keeping the language model frozen.</p>
+<p>We develop a dual-level hard negative mining strategy that introduces contrastive pressure at both sample and channel levels, enabling the model to distinguish between unrelated pairs and subtly confusable ones that share temporal similarity but diverge semantically.
+Negative candidates are mined based on embedding cosine similarity. Sample-level negatives come from other reports in the batch, while channel-level negatives include both intra-instance distractors (other channels within the same sample) and inter-instance distractors (same-indexed channels across samples).
+We compute bidirectional InfoNCE losses at both levels, with a hyperparameter balancing their contributions. This objective is optimized jointly with the time series encoder and projection head, while keeping the language model frozen.</p>
+<div>![|scale=0.15](./assets/hard_negative_mining.png)</div>
 </details>
 
 ### RAG with Time Series Foundation Models
