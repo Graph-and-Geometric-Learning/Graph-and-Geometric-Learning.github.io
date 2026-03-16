@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data",
+    authors: "Hiren Madhu, João Felipe Rocha, Tinglin Huang, Siddharth Viswanath, Smita Krishnaswamy, Rex Ying",
+    venue: "ICLR 2026",
+    page: "heist",
+    code: "https://github.com/Graph-and-Geometric-Learning/HEIST",
+    paper: "https://arxiv.org/pdf/2506.11152",
+    abstract: "HEIST is a hierarchical graph transformer foundation model that jointly captures spatial tissue organization and gene co-expression networks for spatial transcriptomics and proteomics. Unlike prior foundation models that rely on fixed gene vocabularies, HEIST computes gene embeddings dynamically from co-expression structure, enabling zero-retraining generalization to proteomics.",
+    impact: "Pretrained on 22.3 million cells from 124 tissues across 15 organs, HEIST achieves state-of-the-art performance on clinical outcome prediction, cell-type annotation, gene imputation, and cell clustering — while being 8× faster than scGPT-spatial and 48× faster than scFoundation. A 44.3% improvement on melanoma immunotherapy response prediction highlights its clinical potential.",
+    tags: [Tag.GeometricAndGraphLearning, Tag.Applications],
+  },
+  {
     title: "HELM: Hyperbolic Large Language Models via Mixture-of-Curvature Experts",
     authors: "Neil He, Rishabh Anand, Hiren Madhu, Ali Maatouk, Smita Krishnaswamy, Leandros Tassiulas, Menglin Yang, Rex Ying",
     venue: "NeurIPS 2025",
