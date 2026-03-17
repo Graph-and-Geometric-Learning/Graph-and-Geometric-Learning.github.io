@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+      title: "HypLoRA: Hyperbolic Fine-Tuning for Large Language Models",
+      authors: "Menglin Yang, Ram Samarth B B, Aosong Feng, Bo Xiong, Jiahong Liu, Irwin King, Rex Ying",
+      venue: "NeurIPS 2025 (Spotlight)",
+      page: "hyplora",
+      code: "https://github.com/marlin-codes/HypLoRA",
+      paper: "https://arxiv.org/abs/2410.04010",
+      abstract: "We investigate the geometric structure of token embeddings in large language models and find strong evidence of hyperbolic organization, where frequent abstract tokens lie near the origin and rare specific tokens are positioned farther away. Building on this insight, we propose HypLoRA, a parameter-efficient fine-tuning method that performs rank-reduced adaptation directly on the hyperbolic manifold. HypLoRA augments standard LoRA with a geometry-guided branch that projects representations to the Lorentz manifold, applies a Lorentz rank-reduced transform, and maps them back to Euclidean space for seamless integration.",
+      impact: "HypLoRA introduces a geometry-aware adaptation paradigm that aligns fine-tuning with the intrinsic hyperbolic structure of language. It consistently improves reasoning performance over standard LoRA across arithmetic and commonsense benchmarks while maintaining parameter efficiency, demonstrating the practical benefits of manifold-aware LLM adaptation.",
+      tags: [Tag.MultiModalFoundationModel, Tag.GeometricAndGraphLearning],
+  },
+  {
     title: "HELM: Hyperbolic Large Language Models via Mixture-of-Curvature Experts",
     authors: "Neil He, Rishabh Anand, Hiren Madhu, Ali Maatouk, Smita Krishnaswamy, Leandros Tassiulas, Menglin Yang, Rex Ying",
     venue: "NeurIPS 2025",
