@@ -35,6 +35,21 @@ function MarkDownImage(props: any) {
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
+        table: (props) => (
+            <table className="table-auto border-collapse border border-gray-300 w-full">
+            {props.children}
+            </table>
+        ),
+        th: (props) => (
+            <th className="border px-4 py-2 bg-gray-100 text-left">
+            {props.children}
+            </th>
+        ),
+        td: (props) => (
+            <td className="border px-4 py-2">
+            {props.children}
+            </td>
+        ),
         h1: ({ children }) => <h1 className="font-bold text-5xl text-center">{children}</h1>,
         h2: ({ children }) => <h2 className="font-bold text-3xl text-left">{children}</h2>,
         h3: ({ children }) => <h3 className="font-bold text-2xl text-left">{children}</h3>,
