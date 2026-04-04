@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs",
+    authors: "Ngoc Bui, Shubham Sharma, Simran Lamba, Saumitra Mishra, Rex Ying",
+    venue: "ICLR 2026",
+    page: "trimkv",
+    code: "https://github.com/ngocbh/trimkv",
+    paper: "https://arxiv.org/abs/2512.03324",
+    abstract: "We propose TRIM-KV, a learnable KV cache eviction method for long-context and long-horizon LLM inference. Instead of relying on recent attention as a proxy for importance, TRIM-KV predicts each token’s intrinsic long-term utility at creation time using a lightweight retention gate whose score decays over time. Under a fixed memory budget, the model evicts tokens with the lowest retention scores, preserving the most useful context with negligible inference overhead.",
+    impact: "TRIM-KV reframes KV cache eviction as a trainable memory-retention problem rather than a hand-crafted heuristic. It consistently improves memory-bounded LLM inference across reasoning, procedural generation, conversational memory, and long-context understanding benchmarks, often outperforming stronger eviction baselines and in some cases even full-cache inference, while also exposing interpretable token-retention patterns.",
+    tags: [Tag.GenerativeModel],
+  },
+  {
     title: "HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data",
     authors: "Hiren Madhu, João Felipe Rocha, Tinglin Huang, Siddharth Viswanath, Smita Krishnaswamy, Rex Ying",
     venue: "ICLR 2026",
@@ -84,7 +95,7 @@ export const publications: Publication[] = [
     paper: "https://arxiv.org/abs/2504.05019",
     abstract: "We tackle the challenge of simulating diverse human behaviors using large language models (LLMs), which often struggle to reflect the variability across individuals and subpopulations. We introduce Mixture of Personas (MoP), a probabilistic prompting approach that models population diversity through a contextual mixture of persona-based language model agents.",
     impact: "Our work shows that probabilistic persona modeling offers a powerful mechanism for capturing population-level diversity in LLM simulations, opening up new possibilities for social science research, data augmentation.",
-    tags: [],
+    tags: [Tag.Applications],
   },
   {
     title: "Learning Along the Arrow of Time: Hyperbolic Geometry for Backward-Compatible Representation Learning",
