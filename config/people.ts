@@ -20,21 +20,14 @@ export const peopleList = {
 
   postdocs: [
     {
-      name: "Menglin Yang",
-      intro:
-        "Geometry has always been palying an instrumental role driving scientific discovery. In the era of foundation models and LLM, geometry helps us understand the underlying structures in data, enabling better data perception, modeling, and reasoning. My current research focuses on hyperbolic machine learning methods and their applications, with a particular interest in large language models (LLM), Transformers, recommendation systems, and AI for Science (AI4SCI).",
-      homepage: "https://yangmenglin.site/",
-      photo: "/people/menglin.jpg",
+      name: "Haiwen Wang",
+      intro: "My research focuses on multimodal time series learning and foundation model development, particularly on integrating sequential, textual, and structured signals for real-world decision-making. I am particularly interested in Transformers, large language models, and reinforcement learning, as well as in how foundation models can better understand, forecast, and act on complex temporal data.",
+      homepage: "https://haiwencn.github.io",
+      photo: "/people/haiwen_wang.jpg",
     },
   ],
 
   phds: [
-    {
-      name: "Borui Wang",
-      intro: "I am a final-year CS Ph.D. Student working on large language models, natural language processing and machine learning. My main research directions are in large language models, LLM-powered reinforcement learning, knowledge and logical reasoning, neuro-symbolic reasoning, graph neural networks, multimodal language grounding, and applications of LLMs and deep learning in quantitative finance and financial technology.",
-      homepage: "https://borui-wang.github.io/",
-      photo: "/people/borui.jpg",
-    },
     {
       name: "Tinglin Huang",
       intro:
@@ -77,6 +70,18 @@ export const peopleList = {
       homepage: "https://zytzrh.github.io/",
       photo: "/people/yangtian.png",
     },
+    {
+      name: "Siyi Gu",
+      intro: "I am a first year Ph.D student and my primary research focus is Generative AI, particually post-training of LLMs and Multi-Modal Foundation Models. I am committed to developing AI technologies motivated by real-world application and societal benefits.",
+      homepage: "https://carriegu0818.github.io/",
+      photo: "/people/siyi_gu.jpg",
+    },
+    {
+      name: "Peiwen Li",
+      intro: "My research focuses on LLM agents, with an emphasis on improving long-horizon reasoning and decision-making through reinforcement learning. I am particularly interested in building structured agentic frameworks that enable effective planning, collaboration, and specialization for complex real-world tasks. I also have experience in AutoML, OOD generalization, causal discovery, and graph learning. More broadly, I aim to develop scalable and reliable AI systems capable of reasoning over complex, structured, real-world data.",
+      homepage: "https://lpwpower.github.io",
+      photo: "/people/peiwen_li.jpg"
+    }
   ],
   masters_and_undergrad: [
     {
@@ -102,6 +107,21 @@ export const peopleList = {
       intro: null,
       homepage: "https://rish-16.github.io/",
       photo: null,
+    },
+  ],
+  alumni: [
+    {
+      name: "Menglin Yang",
+      intro:
+        "I was a postdoctoral researcher. Geometry has always been playing an instrumental role driving scientific discovery. In the era of foundation models and LLM, geometry helps us understand the underlying structures in data, enabling better data perception, modeling, and reasoning. My current research focuses on hyperbolic machine learning methods and their applications, with a particular interest in large language models (LLM), Transformers, recommendation systems, and AI for Science (AI4SCI).",
+      homepage: "https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=509",
+      photo: "/people/menglin.jpg",
+    },
+    {
+      name: "Borui Wang",
+      intro: "I was a CS Ph.D. Student working on large language models, natural language processing and machine learning. My main research directions are in large language models, LLM-powered reinforcement learning, knowledge and logical reasoning, neuro-symbolic reasoning, graph neural networks, multimodal language grounding, and applications of LLMs and deep learning in quantitative finance and financial technology.",
+      homepage: "https://borui-wang.github.io/",
+      photo: "/people/borui.jpg",
     },
   ],
 };

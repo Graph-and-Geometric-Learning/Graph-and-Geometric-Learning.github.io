@@ -22,6 +22,13 @@ export default function PeoplePage() {
         people={peopleList.masters_and_undergrad}
         text={"Master/Undergrad Students"}
       />
+
+      {peopleList.alumni.length > 0 && (
+        <>
+          <Divider />
+          <ExpandOtherPeople people={peopleList.alumni} text={"Alumni"} />
+        </>
+      )}
     </div>
   );
 }
