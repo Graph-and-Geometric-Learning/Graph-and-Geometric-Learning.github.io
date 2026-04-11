@@ -84,30 +84,30 @@ export const peopleList = {
     }
   ],
   masters_and_undergrad: [
-    {
-      name: "Chuhan Li",
-      intro: null,
-      homepage: null,
-      photo: null,
-    },
-    {
-      name: "Qifan Zhang",
-      intro: null,
-      homepage: null,
-      photo: null,
-    },
-    {
-      name: "Haolan Zuo",
-      intro: null,
-      homepage: null,
-      photo: null,
-    },
-    {
-      name: "Rishabh Anand",
-      intro: null,
-      homepage: "https://rish-16.github.io/",
-      photo: null,
-    },
+    // {
+    //   name: "Chuhan Li",
+    //   intro: null,
+    //   homepage: null,
+    //   photo: null,
+    // },
+    // {
+    //   name: "Qifan Zhang",
+    //   intro: null,
+    //   homepage: null,
+    //   photo: null,
+    // },
+    // {
+    //   name: "Haolan Zuo",
+    //   intro: null,
+    //   homepage: null,
+    //   photo: null,
+    // },
+    // {
+    //   name: "Rishabh Anand",
+    //   intro: null,
+    //   homepage: "https://rish-16.github.io/",
+    //   photo: null,
+    // },
   ],
   alumni: [
     {
