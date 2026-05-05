@@ -6,6 +6,14 @@ export interface News {
 
 export const newsList: News[] = [
   {
+    date: "April, 2026",
+    content: "Co-organizing the [Symposium on Machine Learning across Modalities (SMLM)](https://smlm.yale.edu/) at Yale, April 10, 2026."
+  },
+  {
+    date: "January, 2026",
+    content: "[Tutorial on Hyperbolic Geometry for Foundation Models](https://hyperboliclearning.github.io/events/aaai2026tutorial) at AAAI 2026, Singapore."
+  },
+  {
     date: "Dec, 2025",
     content: "Upcoming NeurIPS workshop [Non-Euclidean Foundation Models and Geometric Learning Workshop @NeurIPS 2025 | Home](https://hyperboliclearning.github.io/events/neurips2025negelworkshop)"
   },

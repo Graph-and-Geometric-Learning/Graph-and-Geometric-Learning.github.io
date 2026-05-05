@@ -17,6 +17,10 @@ export const siteConfig = {
       href: "/publications",
     },
     {
+      label: "Events",
+      href: "/events",
+    },
+    {
       label: "Teaching",
       href: "/teaching",
     },
