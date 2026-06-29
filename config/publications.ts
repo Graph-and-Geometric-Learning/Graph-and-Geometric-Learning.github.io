@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "HypRAG: Hyperbolic Dense Retrieval for Retrieval Augmented Generation",
+    authors: "Hiren Madhu, Ngoc Bui, Ali Maatouk, Leandros Tassiulas, Smita Krishnaswamy, Menglin Yang, Sukanta Ganguly, Kiran Srinivasan, Rex Ying",
+    venue: "ICML 2026",
+    page: "hyprag",
+    code: "https://github.com/Graph-and-Geometric-Learning/HypRAG",
+    paper: "https://icml.cc/virtual/2026/poster/60847",
+    abstract: "Dense retrievers for retrieval-augmented generation (RAG) remain largely confined to Euclidean space, yet natural language exhibits hierarchical structure that Euclidean embeddings fail to preserve, causing semantically distant documents to appear spuriously similar and increasing hallucination risk. We introduce hyperbolic dense retrieval, developing two encoders in the Lorentz model of hyperbolic space: HyTE-FH, a fully hyperbolic transformer, and HyTE-H, a hybrid architecture that projects pre-trained Euclidean embeddings into hyperbolic space. To prevent representational collapse during sequence aggregation, we introduce the Outward Einstein Midpoint, a geometry-aware pooling operator that provably preserves hierarchical structure.",
+    impact: "On MTEB, HyTE-FH outperforms matched Euclidean baselines, while on RAGBench HyTE-H achieves up to 29% gains over Euclidean baselines in context relevance and answer relevance, using substantially smaller models than state-of-the-art retrievers. Hyperbolic representations encode document specificity through norm-based separation — a 20.2% radial increase from general to specific concepts — a property absent in Euclidean embeddings, underscoring the critical role of geometric inductive bias in faithful RAG systems.",
+    tags: [Tag.GeometricAndGraphLearning, Tag.GenerativeModel],
+  },
+  {
     title: "Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs",
     authors: "Ngoc Bui, Shubham Sharma, Simran Lamba, Saumitra Mishra, Rex Ying",
     venue: "ICLR 2026",
