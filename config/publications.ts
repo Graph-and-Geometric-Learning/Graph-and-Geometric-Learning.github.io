@@ -21,6 +21,19 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
+    authors: "Yidong Jiang, Junrong Chen, Eftychia Makri, Jialin Chen, Peiwen Li, Ali Maatouk, Leandros Tassiulas, Eliot Brenner, Bing Xiang, Rex Ying",
+    venue: "KDD 2026",
+    page: "finrate",
+    code: "https://github.com/jyd777/Fin-RATE",
+    paper: "https://arxiv.org/abs/2602.07294",
+    abstract:
+      "Fin-RATE is a benchmark for evaluating LLMs on U.S. Securities and Exchange Commission (SEC) filings, designed to mirror financial analyst workflows. It covers detail-oriented reasoning within individual disclosures, cross-entity comparison under shared financial topics, and longitudinal tracking of the same firm across reporting periods. Experiments on 17 leading LLMs show substantial performance degradation as tasks move beyond single-document reasoning, with accuracy dropping by 18.60% and 14.35% on longitudinal and cross-entity analysis, respectively. These results reveal comparison hallucinations, temporal/entity mismatches, and weaknesses in reasoning quality and factual consistency.",
+    impact:
+      "Fin-RATE provides a diagnostic framework for evaluating LLMs in realistic financial analysis workflows. It reveals that current models struggle with cross-document reasoning, long-context financial tracking, and distinguishing retrieval, generation, reasoning, and context-interpretation errors.",
+    tags: [Tag.Benchmark],
+  },
+  {
     title: "Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs",
     authors: "Ngoc Bui, Shubham Sharma, Simran Lamba, Saumitra Mishra, Rex Ying",
     venue: "ICLR 2026",
