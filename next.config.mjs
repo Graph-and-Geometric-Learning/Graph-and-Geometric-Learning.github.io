@@ -1,11 +1,4 @@
 import createMDX from '@next/mdx'
-import remarkMath from 'remark-math'
-import rehypeKatex from 'rehype-katex'
-import rehypeStringify from "rehype-stringify";
-import remarkMdxImages from 'remark-mdx-images'
-import remarkGfm from 'remark-gfm'
-import rehypeUnwrapImages from 'rehype-unwrap-images'
-import rehypePrettyCode from "rehype-pretty-code";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -32,12 +25,16 @@ const code_options = {
     keepBackground: true
 };
 
-
+// NOTE: With Turbopack (the default bundler in Next.js 16+), the MDX loader runs
+// in a separate worker and its options must be serializable. Pass remark/rehype
+// plugins by name (string) rather than as imported function instances — the
+// @next/mdx loader resolves the strings itself. Options go in a [name, options]
+// tuple.
 const withMDX = createMDX({
     // Add markdown plugins here, as desired
     options: {
-        remarkPlugins: [remarkGfm, remarkMath, remarkMdxImages],
-        rehypePlugins: [rehypeKatex, [rehypePrettyCode, code_options]],
+        remarkPlugins: ['remark-gfm', 'remark-math', 'remark-mdx-images'],
+        rehypePlugins: ['rehype-katex', ['rehype-pretty-code', code_options]],
     },
 })
 export default withMDX(nextConfig)

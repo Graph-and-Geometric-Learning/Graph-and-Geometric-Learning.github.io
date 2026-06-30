@@ -26,6 +26,7 @@ function MarkDownImage(props: any) {
             width={0}
             height={0}
             sizes="100vw"
+            alt={title}
             {...rest}
             style={style}
         />
