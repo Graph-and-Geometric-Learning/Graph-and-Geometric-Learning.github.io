@@ -7,13 +7,14 @@ interface ImageOption {
 }
 
 function MarkDownImage(props: any) {
-    const [title, optionPart] = props.alt.split('|')
+    const { alt = '', style: _style, ...rest } = props
+    const [title, optionPart] = alt.split('|')
     const option: ImageOption = optionPart ? optionPart.split(",").reduce((acc: any, cur: string) => {
         const [key, value] = cur.split("=")
         acc[key] = value
         return acc
     }, {}) : { scale: 1 }
-    const width_scale = 100 * option.scale
+    const width_scale = 100 * Number(option.scale)
     const style = {
         width: `${width_scale}%`,
         height: 'auto',
@@ -25,8 +26,9 @@ function MarkDownImage(props: any) {
             width={0}
             height={0}
             sizes="100vw"
+            alt={title}
+            {...rest}
             style={style}
-            {...(props as ImageProps)}
         />
         <span className="block mx-auto my-2 text-sm text-slate-600 text-center">{title}</span>
         </>

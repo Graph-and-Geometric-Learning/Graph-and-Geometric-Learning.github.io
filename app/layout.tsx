@@ -28,15 +28,35 @@ export const viewport: Viewport = {
 };
 
 
-function Sponsor({ src, title }: { src: string; title: string }) {
+function Sponsor({
+  src,
+  title,
+  width,
+  height,
+}: {
+  src: string;
+  title: string;
+  width: number;
+  height: number;
+}) {
   return (
     <div>
-      <Image
-        alt={title}
-        height={60}
-        src={src}
-        width={60}
-      />
+      {/* Fixed 60px-tall box that centers each logo. Shorter logos (e.g. the
+          wide AWS wordmark) sit vertically centered in the same band as the
+          square NSF/Snap logos instead of being bottom-aligned. */}
+      <div className="flex h-[60px] items-center justify-center">
+        <Image
+          alt={title}
+          height={height}
+          src={src}
+          width={width}
+          // Fit each logo within the 60x60 box (matching the original
+          // appearance) while preserving its intrinsic aspect ratio. Both
+          // dimensions are `auto` so next/image doesn't warn about one being
+          // modified, and the max-* caps keep every logo the same footprint.
+          style={{ width: "auto", height: "auto", maxWidth: 60, maxHeight: 60 }}
+        />
+      </div>
       <span className="block mx-auto">{title}</span>
     </div>
     )
@@ -67,9 +87,9 @@ export default function RootLayout({
                 <p className="text-gray-600">Sponsored by</p>
               </div>
               <div className="flex items-end gap-6">
-                <Sponsor src="/sponsors/nsf.png" title="NSF" />
-                <Sponsor src="/sponsors/snap.png" title="Snap Inc" />
-                <Sponsor src="/sponsors/aws.png" title="AWS" />
+                <Sponsor src="/sponsors/nsf.png" title="NSF" width={1090} height={1090} />
+                <Sponsor src="/sponsors/snap.png" title="Snap Inc" width={2156} height={2160} />
+                <Sponsor src="/sponsors/aws.png" title="AWS" width={2560} height={1533} />
               </div>
             </footer>
           </div>

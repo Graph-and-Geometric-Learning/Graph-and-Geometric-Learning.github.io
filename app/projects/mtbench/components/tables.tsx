@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import { SortableTable, SortableTableTask1, SortableTableTask2, SortableTableTask3, SortableTableTask4 } from "./sortable-tables";
 
