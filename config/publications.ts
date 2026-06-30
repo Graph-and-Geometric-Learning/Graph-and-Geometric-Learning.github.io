@@ -30,9 +30,9 @@ export const publications: Publication[] = [
     abstract: "Dense retrievers for retrieval-augmented generation (RAG) remain largely confined to Euclidean space, yet natural language exhibits hierarchical structure that Euclidean embeddings fail to preserve, causing semantically distant documents to appear spuriously similar and increasing hallucination risk. We introduce hyperbolic dense retrieval, developing two encoders in the Lorentz model of hyperbolic space: HyTE-FH, a fully hyperbolic transformer, and HyTE-H, a hybrid architecture that projects pre-trained Euclidean embeddings into hyperbolic space. To prevent representational collapse during sequence aggregation, we introduce the Outward Einstein Midpoint, a geometry-aware pooling operator that provably preserves hierarchical structure.",
     impact: "On MTEB, HyTE-FH outperforms matched Euclidean baselines, while on RAGBench HyTE-H achieves up to 29% gains over Euclidean baselines in context relevance and answer relevance, using substantially smaller models than state-of-the-art retrievers. Hyperbolic representations encode document specificity through norm-based separation — a 20.2% radial increase from general to specific concepts — a property absent in Euclidean embeddings, underscoring the critical role of geometric inductive bias in faithful RAG systems.",
     tags: [Tag.GeometricAndGraphLearning, Tag.GenerativeModel],
-    title: "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
   },
   {
+    title: "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
     authors: "Yidong Jiang, Junrong Chen, Eftychia Makri, Jialin Chen, Peiwen Li, Ali Maatouk, Leandros Tassiulas, Eliot Brenner, Bing Xiang, Rex Ying",
     venue: "KDD 2026",
     page: "finrate",
