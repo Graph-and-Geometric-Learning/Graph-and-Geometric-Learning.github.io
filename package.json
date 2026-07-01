@@ -4,7 +4,8 @@
  "private": true,
  "scripts": {
   "dev": "next dev",
-  "build": "next build",
+  "optimize-images": "node tools/optimize-images.mjs",
+  "build": "npm run optimize-images && next build",
   "start": "next start",
   "lint": "eslint . --fix"
  },
