@@ -47,6 +47,10 @@ const courses: Course[] = [
       "This course provides an introduction to machine learning algorithms designed for graph-structured data, such as social networks, knowledge graphs, and molecular structures. The course covers key graph representation learning techniques, such as node embeddings, graph neural networks, deep generative models for graphs, and non-Euclidean embeddings and other practical topics like AutoML and explainability in graph learning. We also explore applications of graph machine learning, showing how to model and apply graph learning techniques to areas such as online recommender systems, knowledge graphs, biological networks, and physical simulations.",
     happens: [
       {
+        year: "2026 Spring",
+        link: "https://graph-and-geometric-learning.github.io/cpsc483-583-website-26spring/",
+      },
+      {
         year: "2024 Fall",
         link: "https://graph-and-geometric-learning.github.io/cpsc483-583-website-24fall/",
       },
@@ -65,6 +69,10 @@ const courses: Course[] = [
     intro:
       "This course provides an in-depth exploration of the principles and practices required to build reliable, fair, and secure machine learning systems. As machine learning models become more embedded in critical applications, such as healthcare, finance, and autonomous systems, ensuring their trustworthiness is becoming increasingly essential. The course covers key topics including robustness against adversarial attacks, fairness in algorithmic decision-making, model interpretability, and privacy-preserving techniques such as differential privacy, federated learning and machine unlearning.",
     happens: [
+      {
+        year: "2025 fall",
+        link: "https://graph-and-geometric-learning.github.io/cpsc471-571-website-25fall",
+      },
       {
         year: "2024 Spring",
         link: "https://graph-and-geometric-learning.github.io/cpsc471-571-website-24spring",
