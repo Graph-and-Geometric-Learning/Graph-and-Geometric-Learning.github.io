@@ -6,6 +6,14 @@ export interface News {
 
 export const newsList: News[] = [
   {
+    date: "Sep, 2026",
+    content: "Rex gave a talk on [A Riemannian Geometry Perspective on Foundation Models](https://www.youtube.com/watch?v=DB1Zqh_QIa0) at the Harvard CMSA Big Data Conference 2026."
+  },
+  {
+    date: "May, 2026",
+    content: "Rex received the [NSF CAREER Award](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2540656) for *Exploring Non-Euclidean Representation Learning for Expressive and Explainable Graph-based Foundation Models*."
+  },
+  {
     date: "April, 2026",
     content: "Co-organizing the [Symposium on Machine Learning across Modalities (SMLM)](https://smlm.yale.edu/) at Yale, April 10, 2026."
   },

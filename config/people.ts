@@ -81,7 +81,13 @@ export const peopleList = {
       intro: "My research focuses on LLM agents, with an emphasis on improving long-horizon reasoning and decision-making through reinforcement learning. I am particularly interested in building structured agentic frameworks that enable effective planning, collaboration, and specialization for complex real-world tasks. I also have experience in AutoML, OOD generalization, causal discovery, and graph learning. More broadly, I aim to develop scalable and reliable AI systems capable of reasoning over complex, structured, real-world data.",
       homepage: "https://lpwpower.github.io",
       photo: "/people/peiwen_li.jpg"
-    }
+    },
+    {
+      name: "Xin Gao",
+      intro: "I originally majored in mathematics and pivoted to computer science to take part in building real intelligence in this transformative era. My current research focuses on multimodal learning and complex reasoning. In particular, I believe reasoning requires structures—spanning discrete tokens, latent representations, and probabilistic distributions—that can be made verifiable to enable scalable reasoning. Looking forward, I believe intelligence will evolve from today's language-centric paradigm to naturally emerge from a native multimodal world. Outside of research, I share my life with my twin cats, Fellow and Grape 🐱.",
+      homepage: "https://gaoxin492.github.io/",
+      photo: "/people/xin.png",
+    },
   ],
   masters_and_undergrad: [
     // {
@@ -108,6 +114,30 @@ export const peopleList = {
     //   homepage: "https://rish-16.github.io/",
     //   photo: null,
     // },
+    {
+      name: "Kunhan Gao",
+      intro: "My research mainly focuses on multimodal learning and long-context modeling, with a growing interest in agent memory and knowledge systems, long-horizon reasoning, and agent reliability. I hope to contribute to the development of more capable, reliable, and general AI systems.",
+      homepage: "https://kunhan-g.github.io/",
+      photo: "/people/kunhan.png",
+    },
+    {
+      name: "Chao Péter Yang",
+      intro: "I'm a first year MSCS student researching efficient and trustworthy agents and models, with previous research experience in LLM alignment, music generation and interpretable ML. In light of the current development of frontier AI models, I hope to build efficient models that are both performant and reliable, without compromising safety. In my free time, I'm also an avid amateur violinist, club tennis player, and cat lover!",
+      homepage: "https://site-cpyang.github.io/",
+      photo: "/people/peter.png",
+    },
+    {
+      name: "Ram Samarth B B",
+      intro: "My research mainly focuses on geometric representation learning, particularly hyperbolic foundation models and multimodal retrieval.",
+      homepage: "https://achiverram28.github.io/",
+      photo: "/people/ram.png",
+    },
+    {
+      name: "Mike Gee",
+      intro: "My research focuses on Time Series Foundation Models (TSFMs). I aim to build foundation models that can understand and forecast temporal data across a wide range of scenarios ranging from stock prices to energy demand. To this end, I'm currently exploring the relationship between pre-training data and downstream performance in TSFMs.",
+      homepage: "https://mpg05883.github.io/",
+      photo: "/people/mike.png",
+    },
   ],
   alumni: [
     {
