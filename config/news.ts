@@ -7,7 +7,7 @@ export interface News {
 export const newsList: News[] = [
   {
     date: "Oct, 2026",
-    content: "5 papers accepted at NeurIPS 2026: [DySta](https://arxiv.org/abs/2602.03983), [DBTrimKV](https://arxiv.org/abs/2605.09649), [MoRSE](https://arxiv.org/abs/2608.09251), [RWEFM](https://arxiv.org/abs/2609.25659), and papers on multi-table reasoning and hyperbolic language models. More details to come soon!"
+    content: "6 papers accepted at NeurIPS 2026: [DySta](https://arxiv.org/abs/2602.03983), [DBTrimKV](https://arxiv.org/abs/2605.09649), [MoRSE](https://arxiv.org/abs/2608.09251), [RWEFM](https://arxiv.org/abs/2609.25659), and papers on multi-table reasoning and hyperbolic language models. More details to come soon!"
   },
   {
     date: "Sep, 2026",
