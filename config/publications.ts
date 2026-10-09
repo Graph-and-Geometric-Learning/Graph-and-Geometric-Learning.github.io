@@ -21,17 +21,6 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
-    title: "HypRAG: Hyperbolic Dense Retrieval for Retrieval Augmented Generation",
-    authors: "Hiren Madhu, Ngoc Bui, Ali Maatouk, Leandros Tassiulas, Smita Krishnaswamy, Menglin Yang, Sukanta Ganguly, Kiran Srinivasan, Rex Ying",
-    venue: "ICML 2026",
-    page: "hyprag",
-    code: "https://github.com/Graph-and-Geometric-Learning/HypRAG",
-    paper: "https://icml.cc/virtual/2026/poster/60847",
-    abstract: "Dense retrievers for retrieval-augmented generation (RAG) remain largely confined to Euclidean space, yet natural language exhibits hierarchical structure that Euclidean embeddings fail to preserve, causing semantically distant documents to appear spuriously similar and increasing hallucination risk. We introduce hyperbolic dense retrieval, developing two encoders in the Lorentz model of hyperbolic space: HyTE-FH, a fully hyperbolic transformer, and HyTE-H, a hybrid architecture that projects pre-trained Euclidean embeddings into hyperbolic space. To prevent representational collapse during sequence aggregation, we introduce the Outward Einstein Midpoint, a geometry-aware pooling operator that provably preserves hierarchical structure.",
-    impact: "On MTEB, HyTE-FH outperforms matched Euclidean baselines, while on RAGBench HyTE-H achieves up to 29% gains over Euclidean baselines in context relevance and answer relevance, using substantially smaller models than state-of-the-art retrievers. Hyperbolic representations encode document specificity through norm-based separation — a 20.2% radial increase from general to specific concepts — a property absent in Euclidean embeddings, underscoring the critical role of geometric inductive bias in faithful RAG systems.",
-    tags: [Tag.GeometricAndGraphLearning, Tag.GenerativeModel],
-  },
-  {
     title: "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
     authors: "Yidong Jiang, Junrong Chen, Eftychia Makri, Jialin Chen, Peiwen Li, Ali Maatouk, Leandros Tassiulas, Eliot Brenner, Bing Xiang, Rex Ying",
     venue: "KDD 2026",
@@ -43,6 +32,17 @@ export const publications: Publication[] = [
     impact:
       "Fin-RATE provides a diagnostic framework for evaluating LLMs in realistic financial analysis workflows. It reveals that current models struggle with cross-document reasoning, long-context financial tracking, and distinguishing retrieval, generation, reasoning, and context-interpretation errors.",
     tags: [Tag.Benchmark],
+  },
+  {
+    title: "HypRAG: Hyperbolic Dense Retrieval for Retrieval Augmented Generation",
+    authors: "Hiren Madhu, Ngoc Bui, Ali Maatouk, Leandros Tassiulas, Smita Krishnaswamy, Menglin Yang, Sukanta Ganguly, Kiran Srinivasan, Rex Ying",
+    venue: "ICML 2026",
+    page: "hyprag",
+    code: "https://github.com/Graph-and-Geometric-Learning/HypRAG",
+    paper: "https://icml.cc/virtual/2026/poster/60847",
+    abstract: "Dense retrievers for retrieval-augmented generation (RAG) remain largely confined to Euclidean space, yet natural language exhibits hierarchical structure that Euclidean embeddings fail to preserve, causing semantically distant documents to appear spuriously similar and increasing hallucination risk. We introduce hyperbolic dense retrieval, developing two encoders in the Lorentz model of hyperbolic space: HyTE-FH, a fully hyperbolic transformer, and HyTE-H, a hybrid architecture that projects pre-trained Euclidean embeddings into hyperbolic space. To prevent representational collapse during sequence aggregation, we introduce the Outward Einstein Midpoint, a geometry-aware pooling operator that provably preserves hierarchical structure.",
+    impact: "On MTEB, HyTE-FH outperforms matched Euclidean baselines, while on RAGBench HyTE-H achieves up to 29% gains over Euclidean baselines in context relevance and answer relevance, using substantially smaller models than state-of-the-art retrievers. Hyperbolic representations encode document specificity through norm-based separation — a 20.2% radial increase from general to specific concepts — a property absent in Euclidean embeddings, underscoring the critical role of geometric inductive bias in faithful RAG systems.",
+    tags: [Tag.GeometricAndGraphLearning, Tag.GenerativeModel],
   },
   {
     title: "Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs",
@@ -111,6 +111,28 @@ export const publications: Publication[] = [
     tags: [Tag.GenerativeModel],
   },
   {
+    title: "STPath: A Generative Foundation Model for Integrating Spatial Transcriptomics and Whole Slide Images",
+    authors: "Tinglin Huang, Tianyu Liu, Mehrtash Babadi, Rex Ying, Wengong Jin",
+    venue: "npj Digital Medicine 8 (2025): 659",
+    page: "stpath",
+    code: "https://github.com/Graph-and-Geometric-Learning/STPath",
+    paper: "https://doi.org/10.1038/s41746-025-02020-3",
+    abstract: "Propose STPath, a generative foundation model that infers spatially resolved gene expression across 38,984 genes and 17 organs directly from WSIs.",
+    impact: "STPath is the first model to generalize spatial gene expression prediction across organs and gene panels from WSIs. We believe that our work will contribute to this emerging field and provide a better understanding of pathology practice with the help of spatial transcriptomics.",
+    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
+  },
+  {
+    title: "Lorentzian Residual Neural Networks",
+    authors: "Neil He, Menglin Yang, Rex Ying",
+    venue: "KDD, 2025",
+    page: "lresnet",
+    code: "https://github.com/Graph-and-Geometric-Learning/LResNet",
+    paper: "https://arxiv.org/abs/2412.14695",
+    abstract: "We propose LResNet, a new residual connection in the Lorentz formulation of hyperbolic spaces. With provable properties including guaranteed numerical stability and generalizing previous methods, LresNet addresses previous limitations such as runtime inefficiencies, numerical instability, mapping errors, and lack of geometric meaning on the manifolds.",
+    impact: "Beyond theoretical guarantees, we demonstrate the improvements achieved by LResNet in building hyperbolic deep learning models, where we conduct extensive experiments to show its superior performance in graph and image modalities across CNNs, GNNs, and graph Transformers.",
+    tags: [Tag.GeometricAndGraphLearning, Tag.MultiModalFoundationModel],
+  },
+  {
     title: "Mixture-of-Personas Language Models for Population Simulation",
     authors: "Ngoc Bui, Hieu Trung Nguyen, Shantanu Kumar, Julian Theodore, Weikang Qiu, Viet Anh Nguyen, Rex Ying",
     venue: "ACL Findings 2025",
@@ -155,6 +177,17 @@ export const publications: Publication[] = [
     tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
   },
   {
+    title: "Online Detection of Anomalies in Temporal Knowledge Graphs with Interpretability",
+    authors: "Jiasheng Zhang, Rex Ying, Jie Shao",
+    venue: "SIGMOD 2025",
+    page: "anot",
+    code: "https://github.com/zjs123/ANoT",
+    paper: "https://arxiv.org/abs/2408.00872",
+    abstract: "we introduce AnoT, an efficient TKG summarization method tailored for interpretable online anomaly detection in TKGs. AnoT begins by summarizing a TKG into a novel rule graph, enabling flexible inference of complex patterns in TKGs.",
+    impact: "The first attempt at strategies to summarize a temporal knowledge graph and first explore how to inductively detect anomalies in TKG.",
+    tags: [Tag.GeometricAndGraphLearning],
+  },
+  {
     title: "MTBench: A Multimodal Time Series Benchmark for Temporal Reasoning and Question Answering",
     authors: "Jialin Chen, Aosong Feng, Ziyu Zhao, Juan Garza, Gaukhar Nurbek, Ali Maatouk, Leandros Tassiulas, Yifeng Gao, Rex Ying",
     venue: "",
@@ -164,17 +197,6 @@ export const publications: Publication[] = [
     abstract: "We introduce MTBench, a large-scale benchmark designed to evaluate large language models (LLMs) on time series and text understanding across financial and weather domains. MTBench comprises of paired time-series and textual data, including financial news with corresponding stock price movements and weather reports aligned with historical temperature records.", 
     impact: "We evaluate state-of-the-art LLMs on MTBench, analyzing their effectiveness in modeling the complex relationships between news narratives and temporal patterns. Our findings reveal significant challenges in current models, including difficulties in capturing long-term dependencies, interpreting causality in financial and weather trends, and effectively fusing multimodal information.",
     tags: [Tag.Benchmark, Tag.MultiModalFoundationModel],
-  },
-  {
-    title: "Lorentzian Residual Neural Networks",
-    authors: "Neil He, Menglin Yang, Rex Ying",
-    venue: "KDD, 2025",
-    page: "lresnet",
-    code: "https://github.com/Graph-and-Geometric-Learning/LResNet",
-    paper: "https://arxiv.org/abs/2412.14695",
-    abstract: "We propose LResNet, a new residual connection in the Lorentz formulation of hyperbolic spaces. With provable properties including guaranteed numerical stability and generalizing previous methods, LresNet addresses previous limitations such as runtime inefficiencies, numerical instability, mapping errors, and lack of geometric meaning on the manifolds.",
-    impact: "Beyond theoretical guarantees, we demonstrate the improvements achieved by LResNet in building hyperbolic deep learning models, where we conduct extensive experiments to show its superior performance in graph and image modalities across CNNs, GNNs, and graph Transformers.",
-    tags: [Tag.GeometricAndGraphLearning, Tag.MultiModalFoundationModel],
   },
   {
     title: "D-Edit: An Item is Worth a Prompt: Versatile Image Editing with Disentangled Control",
@@ -189,17 +211,6 @@ export const publications: Publication[] = [
       "D-Edit is a novel framework for diffusion-based image editing framework that disentangles image-prompt into item-prompt associations, enabling precise and harmonious edits across image, achieving state-of-the-art results in a unified, versatile approach.",
     impact:
       "The proposed method is a unified editing framework that supports image-based, text-based, mask-based editing, and item removal within a single cohesive system.",
-  },
-  {
-    title: "STPath: A Generative Foundation Model for Integrating Spatial Transcriptomics and Whole Slide Images",
-    authors: "Tinglin Huang, Tianyu Liu, Mehrtash Babadi, Rex Ying, Wengong Jin",
-    venue: "bioRxiv",
-    page: "stpath",
-    code: "https://github.com/Graph-and-Geometric-Learning/STPath",
-    paper: "https://www.biorxiv.org/content/10.1101/2025.04.19.649665v2",
-    abstract: "Propose STPath, a generative foundation model that infers spatially resolved gene expression across 38,984 genes and 17 organs directly from WSIs.",
-    impact: "STPath is the first model to generalize spatial gene expression prediction across organs and gene panels from WSIs. We believe that our work will contribute to this emerging field and provide a better understanding of pathology practice with the help of spatial transcriptomics.",
-    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
   },
   {
     title: "Protein-Nucleic Acid Complex Modeling with Frame Averaging Transformer",
@@ -224,42 +235,6 @@ export const publications: Publication[] = [
     tags: [Tag.Applications],
   },
   {
-    title: "Learning High-Order Relationships of Brain Regions",
-    authors:
-      "Weikang Qiu, Huangrui Chu, Selena Wang, Xiaoxiao Li, Yize Zhao, Rex Ying",
-    venue: "ICML 2024",
-    page: "hybrid",
-    paper: "https://arxiv.org/abs/2312.02203",
-    code: "https://github.com/Graph-and-Geometric-Learning/HyBRiD",
-    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
-    abstract:
-      "Traditional methods only focus on pariwise connectivity of brain regions. We proposed a new framework based on information bottleneck that learns high-order relationships of brain regions.",
-    impact:
-      "The learned high-order relationships achieve SOTA performance on predictive tasks and are demonstrated significantly more effective than traditional pairwise methods.",
-  },
-  {
-    title: "HEART: Learning Better Representation of EHR Data with a Heterogeneous Relation-Aware Transformer",
-    authors: "Tinglin Huang, Syed Asad Rizvi, Rohan Krishna Thakur, Vimig Socrates, Meili Gupta, David van Dijk, R. Andrew Taylor, Rex Ying",
-    venue: "Journal of Biomedical Informatics 159 (2024): 104741",
-    page: "heart",
-    code: "https://github.com/Graph-and-Geometric-Learning/HEART",
-    paper: "https://www.sciencedirect.com/science/article/abs/pii/S153204642400159X",
-    abstract: "We propose HEART, a pretrained language model for structured EHR data. HEART seamlessly encodes heterogeneous medical entity information through a novel relation embedding module and a multi-level attention scheme.",
-    impact: "This novel pretrained framework, featuring a new architecture and dedicated objectives, can inspire future research on foundation models in EHR.",
-    tags: [Tag.Applications],
-  },
-  {
-    title: "Online Detection of Anomalies in Temporal Knowledge Graphs with Interpretability",
-    authors: "Jiasheng Zhang, Rex Ying, Jie Shao",
-    venue: "SIGMOD 2025",
-    page: "anot",
-    code: "https://github.com/zjs123/ANoT",
-    paper: "https://arxiv.org/abs/2408.00872",
-    abstract: "we introduce AnoT, an efficient TKG summarization method tailored for interpretable online anomaly detection in TKGs. AnoT begins by summarizing a TKG into a novel rule graph, enabling flexible inference of complex patterns in TKGs.",
-    impact: "The first attempt at strategies to summarize a temporal knowledge graph and first explore how to inductively detect anomalies in TKG.",
-    tags: [Tag.GeometricAndGraphLearning],
-  },
-  {
     title: "DTGB: A Comprehensive Benchmark for Dynamic Text-Attributed Graphs",
     authors:
       "Jiasheng Zhang, Jialin Chen, Menglin Yang, Aosong Feng, Shuang Liang, Jie Shao, Rex Ying",
@@ -272,6 +247,17 @@ export const publications: Publication[] = [
     impact:
       "he proposed DTGB fosters research on DyTAGs and their broad applications. It offers a comprehensive benchmark for evaluating and advancing models to handle the interplay between dynamic graph structures and natural language.",
     tags: [Tag.GeometricAndGraphLearning],
+  },
+  {
+    title: "HEART: Learning Better Representation of EHR Data with a Heterogeneous Relation-Aware Transformer",
+    authors: "Tinglin Huang, Syed Asad Rizvi, Rohan Krishna Thakur, Vimig Socrates, Meili Gupta, David van Dijk, R. Andrew Taylor, Rex Ying",
+    venue: "Journal of Biomedical Informatics 159 (2024): 104741",
+    page: "heart",
+    code: "https://github.com/Graph-and-Geometric-Learning/HEART",
+    paper: "https://www.sciencedirect.com/science/article/abs/pii/S153204642400159X",
+    abstract: "We propose HEART, a pretrained language model for structured EHR data. HEART seamlessly encodes heterogeneous medical entity information through a novel relation embedding module and a multi-level attention scheme.",
+    impact: "This novel pretrained framework, featuring a new architecture and dedicated objectives, can inspire future research on foundation models in EHR.",
+    tags: [Tag.Applications],
   },
   {
     title:
@@ -288,6 +274,20 @@ export const publications: Publication[] = [
     impact:
       "Hypformer represents a significant advancement in the application of hyperbolic geometry to large-scale data representation, enabling the processing of billion-scale graph data and long-sequence inputs with hyperbolic geometry.",
   }, 
+  {
+    title: "Learning High-Order Relationships of Brain Regions",
+    authors:
+      "Weikang Qiu, Huangrui Chu, Selena Wang, Xiaoxiao Li, Yize Zhao, Rex Ying",
+    venue: "ICML 2024",
+    page: "hybrid",
+    paper: "https://arxiv.org/abs/2312.02203",
+    code: "https://github.com/Graph-and-Geometric-Learning/HyBRiD",
+    tags: [Tag.Applications, Tag.GeometricAndGraphLearning],
+    abstract:
+      "Traditional methods only focus on pariwise connectivity of brain regions. We proposed a new framework based on information bottleneck that learns high-order relationships of brain regions.",
+    impact:
+      "The learned high-order relationships achieve SOTA performance on predictive tasks and are demonstrated significantly more effective than traditional pairwise methods.",
+  },
   {
     title: "Explaining Graph Neural Networks via Structure-aware Interaction Index",
     authors: "Ngoc Bui, Hieu Trung Nguyen, Viet Anh Nguyen, Rex Ying",
