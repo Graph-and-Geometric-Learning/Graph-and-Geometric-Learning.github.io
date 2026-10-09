@@ -6,12 +6,16 @@ export interface News {
 
 export const newsList: News[] = [
   {
+    date: "Oct, 2026",
+    content: "5 papers accepted at NeurIPS 2026: [MoRSE](https://arxiv.org/abs/2608.09251), [RWEFM](https://arxiv.org/abs/2609.25659), [DBTrimKV](https://arxiv.org/abs/2605.09649), [DySta](https://arxiv.org/abs/2602.03983), and papers on multi-table reasoning and hyperbolic language models. More details to come soon!"
+  },
+  {
     date: "Sep, 2026",
     content: "Rex gave a talk on [A Riemannian Geometry Perspective on Foundation Models](https://www.youtube.com/watch?v=DB1Zqh_QIa0) at the Harvard CMSA Big Data Conference 2026."
   },
   {
     date: "May, 2026",
-    content: "Rex received the [NSF CAREER Award](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2540656) for *Exploring Non-Euclidean Representation Learning for Expressive and Explainable Graph-based Foundation Models*."
+    content: "Rex received the NSF CAREER Award for *Exploring Non-Euclidean Representation Learning for Expressive and Explainable Graph-based Foundation Models*."
   },
   {
     date: "April, 2026",
