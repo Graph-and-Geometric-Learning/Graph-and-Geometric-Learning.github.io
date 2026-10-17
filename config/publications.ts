@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "Rethinking Reward Supervision: Rubric-Conditioned Self-Distillation",
+    authors: "Siyi Gu, Jialin Chen, Sophia Zhou, Arman Cohan, Rex Ying",
+    venue: "COLM 2026",
+    page: "rcsd",
+    code: "https://github.com/carriegu0818/RCSD",
+    paper: "https://arxiv.org/abs/2606.19327",
+    abstract: "We propose Rubric-Conditioned Self-Distillation (RCSD), a post-training framework that uses rubrics as privileged teacher-side supervision for on-policy self-distillation. Instead of collapsing rubric feedback into a scalar reward or conditioning the teacher on a single reference rationale, RCSD conditions the teacher on criterion-level rubrics and distills its token-level guidance onto the student’s own sampled trajectories. A two-stage pipeline first learns a question-specific rubric generator and then trains a rubric-guided reasoner, so no rubric, reward model, or judge is needed at inference.",
+    impact: "RCSD reframes rubrics as a structured supervision interface for model self-improvement rather than an outcome-level scoring tool. On six science reasoning benchmarks with a Qwen3-8B backbone it achieves the best average, surpassing GRPO by 1.4 points and OPSD by 0.9 points, with the largest gains on open-ended and rubric-based tasks where scalar rewards are least informative. The gains hold across 1.7B, 4B, and 8B models, and learned rubrics recover most of the benefit of reference rubrics.",
+    tags: [Tag.GenerativeModel],
+  },
+  {
     title: "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
     authors: "Yidong Jiang, Junrong Chen, Eftychia Makri, Jialin Chen, Peiwen Li, Ali Maatouk, Leandros Tassiulas, Eliot Brenner, Bing Xiang, Rex Ying",
     venue: "KDD 2026",
