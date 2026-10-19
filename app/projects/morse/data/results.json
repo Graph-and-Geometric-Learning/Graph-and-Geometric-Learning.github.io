@@ -1,0 +1,75 @@
+{
+  "metrics": [
+    { "key": "srdd_exec", "bench": "SRDD", "label": "Exec", "unit": "%", "digits": 2, "desc": "Generated codebases that compile and run end to end" },
+    { "key": "srdd_eci_mean", "bench": "SRDD", "label": "ECI mean", "unit": "", "digits": 3, "desc": "Mean of executability, completeness, and consistency" },
+    { "key": "srdd_eci_product", "bench": "SRDD", "label": "ECI product", "unit": "", "digits": 3, "desc": "Product of executability, completeness, and consistency" },
+    { "key": "sci_step", "bench": "SciCode", "label": "Step pass", "unit": "%", "digits": 2, "desc": "Subproblems whose unit tests pass" },
+    { "key": "sci_mean_step", "bench": "SciCode", "label": "Mean step pass", "unit": "%", "digits": 2, "desc": "Per-problem step accuracy, averaged over problems" },
+    { "key": "sci_problem", "bench": "SciCode", "label": "Problem pass", "unit": "%", "digits": 2, "desc": "Problems where every step passes" }
+  ],
+  "backbones": [
+    { "key": "qwen", "label": "Qwen3-4B", "full": "Qwen3-4B-Instruct" },
+    { "key": "llama", "label": "Llama-3.1-8B", "full": "Llama-3.1-8B-Instruct" },
+    { "key": "gemma", "label": "Gemma-4-31B", "full": "Gemma-4-31B-IT" }
+  ],
+  "methods": [
+    { "key": "single", "label": "Single agent", "kind": "baseline" },
+    { "key": "chatchain", "label": "ChatChain", "kind": "baseline" },
+    { "key": "macnet", "label": "MacNet", "kind": "baseline" },
+    { "key": "aflow", "label": "AFlow", "kind": "baseline" },
+    { "key": "morse", "label": "MoRSE", "kind": "ours" }
+  ],
+  "main": {
+    "qwen": {
+      "single":    [65.00, 0.690, 0.286, 21.43, 19.33, 0.00],
+      "chatchain": [42.86, 0.641, 0.205, 14.29, 13.71, 0.00],
+      "macnet":    [60.76, 0.666, 0.254,  9.18,  9.50, 0.00],
+      "aflow":     [52.50, 0.580, 0.121, 18.37, 20.23, 0.00],
+      "morse":     [86.25, 0.755, 0.360, 29.00, 32.50, 10.00]
+    },
+    "llama": {
+      "single":    [70.51, 0.674, 0.251, 10.20, 10.02, 0.00],
+      "chatchain": [66.25, 0.628, 0.192,  8.16, 10.02, 0.00],
+      "macnet":    [55.00, 0.591, 0.143,  6.12,  7.20, 0.00],
+      "aflow":     [65.00, 0.636, 0.167, 11.22, 10.38, 0.00],
+      "morse":     [87.34, 0.767, 0.389, 26.00, 15.50, 5.00]
+    },
+    "gemma": {
+      "single":    [96.25, 0.767, 0.333, 45.92, 53.02, 20.00],
+      "chatchain": [88.75, 0.700, 0.256, 40.82, 49.38, 15.00],
+      "macnet":    [88.75, 0.688, 0.228, 46.94, 53.44, 20.00],
+      "aflow":     [87.50, 0.690, 0.246, 45.92, 53.02, 20.00],
+      "morse":     [98.65, 0.782, 0.394, 51.02, 56.36, 20.00]
+    }
+  },
+  "ablation": {
+    "qwen": {
+      "A": [72.50, 0.693, 0.268, 20.41, 19.65, 0.00],
+      "B": [82.50, 0.745, 0.329, 25.00, 20.25, 5.00],
+      "C": [73.75, 0.696, 0.257, 23.00, 29.12, 10.00],
+      "D": [86.25, 0.755, 0.360, 29.00, 32.50, 10.00]
+    },
+    "llama": {
+      "A": [78.75, 0.707, 0.281, 18.37, 14.92, 0.00],
+      "B": [82.50, 0.737, 0.326, 23.00, 14.00, 0.00],
+      "C": [72.50, 0.698, 0.316, 18.00, 14.64, 0.00],
+      "D": [87.34, 0.767, 0.389, 26.00, 15.50, 5.00]
+    }
+  },
+  "ood": {
+    "metrics": ["srdd_exec", "srdd_eci_mean", "srdd_eci_product", "sci_step"],
+    "qwen": {
+      "A": [90.00, 0.765, 0.370, 17.50],
+      "B": [88.75, 0.765, 0.374, 22.22],
+      "D": [96.25, 0.783, 0.392, 24.69]
+    },
+    "llama": {
+      "A": [72.50, 0.676, 0.242, 7.50],
+      "B": [76.25, 0.702, 0.285, 16.05],
+      "D": [80.00, 0.722, 0.310, 18.52]
+    }
+  },
+  "router": {
+    "top2Entropy": 1.009
+  }
+}

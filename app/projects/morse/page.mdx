@@ -1,0 +1,82 @@
+import { Authors, Badges } from '@/components/utils'
+import Figure from './components/figure'
+import Motivation from './components/motivation'
+import TwoLevels from './components/two-levels'
+import CreditAssignment from './components/credit-assignment'
+import ResultsExplorer from './components/results-explorer'
+import { Ablation, Generalization } from './components/variant-charts'
+import Bibtex from './components/bibtex'
+import framework from './assets/framework.png'
+
+# MoRSE: Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts
+
+<Authors
+  authors="Peiwen Li, Yale University; Shiyang Zhang, Yale University; Yangtian Zhang, Yale University; Sizhuang He, Yale University; David van Dijk, Yale University; Rex Ying, Yale University"
+/>
+
+<Badges
+  venue="NeurIPS 2026"
+  github="https://github.com/lpwpower/MoRSE"
+  arxiv="https://arxiv.org/abs/2608.09251"
+  pdf="https://arxiv.org/pdf/2608.09251"
+/>
+
+## TL;DR
+
+LLM-based multi-agent systems mostly tell agents apart through role prompts on one shared, frozen model. Without explicit subtask assignment, agents end up with overlapping responsibilities and correlated outputs, and a single shared model cannot meet the distinct demands of the many subtasks inside one complex task.
+
+**MoRSE** specializes every agent by its **(role, subtask)** pair at two levels: the *task structure* (which part of the task each agent owns) and the *parameters* (which LoRA experts each agent call uses). A hierarchical policy optimization trains the experts and their router stably from sparse task rewards.
+
+<Figure
+  image={framework}
+  alt="Overview of MoRSE: a task-oriented multi-agent system that builds a (role, subtask) DAG, a dynamic mixture of role and subtask LoRA experts on a shared frozen backbone, and hierarchical GRPO with two-layer credit assignment."
+  caption="Overview of MoRSE: (1) a task-oriented multi-agent system that decomposes each task into a per-instance (role, subtask) DAG; (2) a dynamic mixture of role and subtask LoRA experts on a shared frozen backbone; (3) hierarchical GRPO with two-layer credit assignment that decouples expert and router updates."
+/>
+
+## Why agents need to specialize
+
+To motivate MoRSE's design, we ran two diagnostics: how redundant the outputs of collaborating agents are, and whether a single shared adapter can meet the demands of every role and subtask.
+
+<Motivation />
+
+## Two levels of specialization
+
+Every agent call in MoRSE carries a (role, subtask) label. The label is used twice: to decide *what* the agent works on, and to decide *which parameters* it runs with.
+
+<TwoLevels />
+
+## Training experts and router together
+
+Updating the experts and the router with one shared advantage mixes two questions: was this answer good for the experts that produced it, and was this expert combination a good choice? At each node, **HGRPO** samples $B$ routes and $M$ candidates per route, and answers the two questions with separate advantages:
+
+$$
+A_{\text{within}}^{(b,m)} = \frac{u^{(b,m)} - \mu^{(b)}}{\sigma^{(b)} + \epsilon}
+$$
+
+$$
+A_{\text{cross}}^{(b)} = \frac{\mu^{(b)} - \bar{\mu}}{\sigma_C + \epsilon}
+$$
+
+Here $u^{(b,m)}$ is the step reward of candidate $m$ on route $b$, $\mu^{(b)}$ and $\sigma^{(b)}$ are the mean and standard deviation of the rewards within route $b$, $\bar{\mu}$ is the mean of the route means, and $\sigma_C$ is their standard deviation. The within-route advantage updates only the LoRA experts and the cross-route advantage updates only the router.
+
+<CreditAssignment />
+
+HGRPO keeps the expected gradient of standard GRPO while provably lowering the variance of the expert gradient: the within-route baseline removes the cross-route reward variance $\sigma_C^2$ from it.
+
+## Results
+
+We evaluate on two code-generation benchmarks: **SRDD** (1,200 software requirements in 40 categories) and **SciCode** (80 scientific computing problems with 338 unit-tested subproblems). Baselines are a single agent and three multi-agent systems, ChatChain, MacNet, and AFlow, all on the same backbone with the same prompts, decoding settings, and revision budget.
+
+<ResultsExplorer />
+
+### Both modules are needed
+
+<Ablation />
+
+### Generalization to held-out categories
+
+<Generalization />
+
+## Citation
+
+<Bibtex />

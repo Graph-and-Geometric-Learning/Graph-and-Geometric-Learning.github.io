@@ -21,6 +21,17 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    title: "MoRSE: Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts",
+    authors: "Peiwen Li, Shiyang Zhang, Yangtian Zhang, Sizhuang He, David van Dijk, Rex Ying",
+    venue: "NeurIPS 2026",
+    page: "morse",
+    code: "https://github.com/lpwpower/MoRSE",
+    paper: "https://arxiv.org/abs/2608.09251",
+    abstract: "LLM-based multi-agent systems mostly differentiate agents through role prompts on a shared frozen model, leaving agents with overlapping responsibilities and correlated outputs. MoRSE specializes agents by (role, subtask) at two levels: a task-oriented multi-agent system decomposes each task into a dependency-aware DAG and assigns every agent a specific (role, subtask), and a dynamic mixture of role and subtask LoRA experts, chosen by a prototype-based semantic router, adds parameter-level specialization on one shared backbone. A hierarchical GRPO with two-layer credit assignment co-optimizes experts and router under sparse task rewards by separating expert quality from routing quality.",
+    impact: "On SRDD and SciCode across Qwen3-4B, Llama-3.1-8B, and Gemma-4-31B backbones, MoRSE attains the best held-out test score on every reported metric, against single-agent and multi-agent baselines (ChatChain, MacNet, AFlow). The gains carry over to held-out task categories and domains, where MoRSE outperforms a fixed-LoRA GRPO baseline.",
+    tags: [Tag.GenerativeModel],
+  },
+  {
     title: "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
     authors: "Yidong Jiang, Junrong Chen, Eftychia Makri, Jialin Chen, Peiwen Li, Ali Maatouk, Leandros Tassiulas, Eliot Brenner, Bing Xiang, Rex Ying",
     venue: "KDD 2026",
