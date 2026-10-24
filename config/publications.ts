@@ -34,6 +34,19 @@ export const publications: Publication[] = [
     tags: [Tag.Benchmark],
   },
   {
+    title: "NumCache: KV Cache Compression and Retrieval for Financial Document QA",
+    authors: "Eftychia Makri, Peiwen Li, Yidong Jiang, Junrong Chen, Jialin Chen, Ali Maatouk, Leandros Tassiulas, Eliot Brenner, Bing Xiang, Rex Ying",
+    venue: "KDD 2026",
+    page: "numcache",
+    code: "https://github.com/eftymakr/NumCache",
+    paper: "https://dl.acm.org/doi/10.1145/3770855.3818131",
+    abstract:
+      "We propose NumCache, which compresses long, numerically dense SEC filings into KV caches initialized from numerically dense regions and trained directly on financial QAs. On top of these caches, we train a contrastive retriever that aligns questions with cache representations, so that retrieval and generation share the same representation.",
+    impact:
+      "On the Fin-RATE benchmark, NumCache achieves up to 4× context compression with competitive accuracy (41.4% vs. 44.8% for uncompressed Qwen3-4B on single-filing reasoning) and a 6.4× inference speedup, while its contrastive retriever attains 68.3% Recall@1 on single-filing retrieval, 2.3× the strongest text-based baseline. These results highlight cache-based retrieval with number-preserving representations as an effective approach for long-context financial QA.",
+    tags: [Tag.Applications, Tag.GenerativeModel],
+  },
+  {
     title: "HypRAG: Hyperbolic Dense Retrieval for Retrieval Augmented Generation",
     authors: "Hiren Madhu, Ngoc Bui, Ali Maatouk, Leandros Tassiulas, Smita Krishnaswamy, Menglin Yang, Sukanta Ganguly, Kiran Srinivasan, Rex Ying",
     venue: "ICML 2026",
