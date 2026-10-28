@@ -1,0 +1,167 @@
+/* Color roles for the MoRSE project page. Light values first; the site toggles
+   dark mode with a `dark` class on <html>. Data colors were checked with the
+   dataviz palette validator (light on #ffffff, dark on #0b0b0c). */
+.root {
+  --m-accent: #2a78d6;        /* MoRSE, role experts, positive advantage */
+  --m-accent-soft: #86b6ef;   /* MoRSE without training */
+  --m-accent-wash: rgba(42, 120, 214, 0.09);
+  --m-accent-line: rgba(42, 120, 214, 0.45);
+  --m-sub: #1baf7a;           /* subtask experts */
+  --m-sub-wash: rgba(27, 175, 122, 0.12);
+  --m-neg: #eb6834;           /* negative advantage */
+  --m-neg-wash: rgba(235, 104, 52, 0.12);
+  --m-gray: #a1a1aa;          /* baselines, de-emphasis */
+  --m-gray-wash: rgba(113, 113, 122, 0.10);
+  --m-grid: #e4e4e7;
+  --m-card: #ffffff;
+  --m-panel: #fafafa;
+  --m-border: rgba(0, 0, 0, 0.09);
+  --m-ink: #18181b;
+  --m-ink-2: #3f3f46;
+  --m-muted: #71717a;
+  --m-code: #22272e;
+  color: var(--m-ink);
+  color-scheme: light;
+}
+
+:global(.dark) .root {
+  --m-accent: #3987e5;
+  --m-accent-soft: #1c5cab;
+  --m-accent-wash: rgba(57, 135, 229, 0.13);
+  --m-accent-line: rgba(57, 135, 229, 0.55);
+  --m-sub: #199e70;
+  --m-sub-wash: rgba(25, 158, 112, 0.16);
+  --m-neg: #d95926;
+  --m-neg-wash: rgba(217, 89, 38, 0.16);
+  --m-gray: #52525b;
+  --m-gray-wash: rgba(161, 161, 170, 0.10);
+  --m-grid: #27272a;
+  --m-card: #0b0b0c;
+  --m-panel: #111113;
+  --m-border: rgba(255, 255, 255, 0.10);
+  --m-ink: #f4f4f5;
+  --m-ink-2: #d4d4d8;
+  --m-muted: #a1a1aa;
+  color-scheme: dark;
+}
+
+/* Quiet scrollbars for the few containers that scroll sideways on phones. */
+.root :global(.overflow-x-auto) {
+  scrollbar-width: thin;
+  scrollbar-color: var(--m-border) transparent;
+}
+
+.card {
+  background: var(--m-card);
+  border: 1px solid var(--m-border);
+  border-radius: 16px;
+}
+
+.panel {
+  background: var(--m-panel);
+  border: 1px solid var(--m-border);
+  border-radius: 12px;
+}
+
+.figureFrame {
+  background: #ffffff;
+  border: 1px solid var(--m-border);
+  border-radius: 16px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--m-muted);
+}
+
+/* Small label that keeps the original case (for names like SciCode or ToMAS). */
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--m-muted);
+}
+
+.ink { color: var(--m-ink); }
+.ink2 { color: var(--m-ink-2); }
+.muted { color: var(--m-muted); }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Segmented control */
+.seg {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 10px;
+  background: var(--m-panel);
+  border: 1px solid var(--m-border);
+}
+.segBtn {
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--m-muted);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.segBtn:hover { color: var(--m-ink); }
+.segBtn[aria-pressed="true"] {
+  background: var(--m-card);
+  color: var(--m-ink);
+  box-shadow: 0 0 0 1px var(--m-border), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.segBtn:focus-visible,
+.focusable:focus-visible {
+  outline: 2px solid var(--m-accent);
+  outline-offset: 2px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.chipUp { background: var(--m-accent-wash); color: var(--m-ink); }
+.chipDown { background: var(--m-neg-wash); color: var(--m-ink); }
+.chipFlat { background: var(--m-gray-wash); color: var(--m-ink-2); }
+
+.details summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--m-muted);
+  list-style: none;
+}
+.details summary::-webkit-details-marker { display: none; }
+.details summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 150ms ease;
+}
+.details[open] summary::before { transform: rotate(90deg); }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.table th,
+.table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--m-grid);
+  text-align: right;
+  white-space: nowrap;
+}
+.table th:first-child,
+.table td:first-child { text-align: left; white-space: normal; }
+.table th { color: var(--m-muted); font-weight: 600; }
