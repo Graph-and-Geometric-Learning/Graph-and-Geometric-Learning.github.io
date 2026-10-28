@@ -203,6 +203,10 @@
     "public/people/xin.png": "0d2808b2ae481d246e822d7d4e2f941fb7ceb6ad",
     "app/projects/numcache/assets/efficiency.png": "11bf5c2ffe2d603f2712637f96418dcde8a9c030",
     "app/projects/numcache/assets/framework.png": "6ce1660d7422bf97c7695264f4e319a93102dd4e",
-    "app/projects/numcache/assets/landscape.png": "ec43b4e7f5dcaed960597aa218cdbcc3e29e5354"
+    "app/projects/numcache/assets/landscape.png": "ec43b4e7f5dcaed960597aa218cdbcc3e29e5354",
+    "app/projects/morse/assets/framework.png": "f2dbadead2aa47a5e1816dfdabaaeff33182f746",
+    "app/projects/rcsd/assets/overview.png": "7991ca9ef70122998ad6c57669a6570029ee0522",
+    "app/projects/rcsd/assets/scaling.png": "dc6ef380a48bc6641f9897aaac28d0862dd8da74",
+    "app/projects/rcsd/assets/signals.png": "3902bdb600f9aac4aaa7ead7abb197fffa9343db"
   }
 }
