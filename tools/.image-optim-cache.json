@@ -200,6 +200,9 @@
     "public/people/peter.png": "e3d2d662ca4c49224a9447149da9478014a1e13e",
     "public/people/ram.png": "f0b2f5dea1d164f1230c1d912b59b975061b06cd",
     "public/people/weikang.jpeg": "f5de6aad21a133a2f3b290c4aa50d10aface9394",
-    "public/people/xin.png": "0d2808b2ae481d246e822d7d4e2f941fb7ceb6ad"
+    "public/people/xin.png": "0d2808b2ae481d246e822d7d4e2f941fb7ceb6ad",
+    "app/projects/numcache/assets/efficiency.png": "11bf5c2ffe2d603f2712637f96418dcde8a9c030",
+    "app/projects/numcache/assets/framework.png": "6ce1660d7422bf97c7695264f4e319a93102dd4e",
+    "app/projects/numcache/assets/landscape.png": "ec43b4e7f5dcaed960597aa218cdbcc3e29e5354"
   }
 }

@@ -43,7 +43,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </table>
         ),
         th: (props) => (
-            <th className="border px-4 py-2 bg-gray-100 text-left">
+            <th className="border px-4 py-2 bg-gray-100 dark:bg-gray-800 text-left">
             {props.children}
             </th>
         ),
