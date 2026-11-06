@@ -115,6 +115,12 @@ export const peopleList = {
     //   photo: null,
     // },
     {
+      name: "Weijia Zhang",
+      intro: "My research mainly focuses on self-improving agents through failure attribution, and on multimodal agents, including computer-use agents and visual coding agents. My goal is to build agents that learn from their own failures and keep improving as they act in the digital world, from desktop software to interactive games.",
+      homepage: "https://charliedreemur.github.io/",
+      photo: "/people/weijia.png",
+    },
+    {
       name: "Kunhan Gao",
       intro: "My research mainly focuses on multimodal learning and long-context modeling, with a growing interest in agent memory and knowledge systems, long-horizon reasoning, and agent reliability. I hope to contribute to the development of more capable, reliable, and general AI systems.",
       homepage: "https://kunhan-g.github.io/",
