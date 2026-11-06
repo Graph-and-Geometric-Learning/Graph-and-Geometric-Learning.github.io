@@ -115,6 +115,12 @@ export const peopleList = {
     //   photo: null,
     // },
     {
+      name: "Weijia Zhang",
+      intro: null,
+      homepage: "https://charliedreemur.github.io/",
+      photo: null,
+    },
+    {
       name: "Kunhan Gao",
       intro: "My research mainly focuses on multimodal learning and long-context modeling, with a growing interest in agent memory and knowledge systems, long-horizon reasoning, and agent reliability. I hope to contribute to the development of more capable, reliable, and general AI systems.",
       homepage: "https://kunhan-g.github.io/",
