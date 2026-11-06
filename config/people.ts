@@ -116,9 +116,9 @@ export const peopleList = {
     // },
     {
       name: "Weijia Zhang",
-      intro: null,
+      intro: "My research mainly focuses on self-improving agent with failure attribution and multimodal agent including computer-use agent, visual coding agent.",
       homepage: "https://charliedreemur.github.io/",
-      photo: null,
+      photo: "/people/weijia.png",
     },
     {
       name: "Kunhan Gao",
