@@ -116,7 +116,7 @@ export const peopleList = {
     // },
     {
       name: "Weijia Zhang",
-      intro: "My research mainly focuses on self-improving agent with failure attribution and multimodal agent including computer-use agent, visual coding agent.",
+      intro: "My research mainly focuses on self-improving agents through failure attribution, and on multimodal agents, including computer-use agents and visual coding agents. My goal is to build agents that learn from their own failures and keep improving as they act in the digital world, from desktop software to interactive games.",
       homepage: "https://charliedreemur.github.io/",
       photo: "/people/weijia.png",
     },
